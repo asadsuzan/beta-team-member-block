@@ -1,0 +1,45 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "b-blocks/team-section-beta",
+	"version": "1.0.0",
+	"title": "Team Section Beta",
+	"category": "design",
+	"description": "A team section block for beta testing.",
+	"keywords": [
+		"team section"
+	],
+	"textdomain": "b-blocks",
+	"attributes": {
+		"alignment": {
+			"type": "string",
+			"default": "center"
+		},
+		"colors": {
+			"type": "object",
+			"default": {
+				"color": "black",
+				"bg": "#B1C5A4"
+			}
+		},
+		"variation": {
+			"type": "string",
+			"default": "default"
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./view.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}
