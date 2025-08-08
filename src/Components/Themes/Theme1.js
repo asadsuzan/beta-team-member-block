@@ -1,8 +1,8 @@
 import teamMembers from '../../lib/data';
 import { Github, Linkedin, Twitter, Mail, MapPin, Award, Users, Palette, Code, Camera, Lightbulb } from 'lucide-react';
 // Variation 1: Clean Minimal Cards
-import "./variation1.css"
-const Variation1 = () => (
+import "./theme1.css"
+const Theme1 = () => (
     <section className="team-section">
         <div className="container">
             <div className="header">
@@ -57,4 +57,4 @@ const Variation1 = () => (
     </section>
 );
 
-export default Variation1
+export default Theme1

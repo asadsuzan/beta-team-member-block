@@ -9,7 +9,7 @@ import Style from './Style/Style';
 
 const Settings = ({ attributes, setAttributes }) => {
 	const { alignment } = attributes;
-
+	console.log(alignment);
 	return <>
 		<InspectorControls>
 			<div className='bBlocksInspectorInfo'>

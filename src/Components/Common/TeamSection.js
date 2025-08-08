@@ -1,13 +1,14 @@
-import Variation1 from '../TeamSections/Variation1';
-import Variation2 from '../TeamSections/Variation2';
+import Theme1 from '../Themes/Theme1';
+import Theme2 from '../Themes/Theme2';
 
 const TeamSection = ({ attributes }) => {
-  const { variation = 'variation2' } = attributes;
+  const { theme = 'default', section, teamMembers } = attributes;
+
   return (
     <div className="bBlocksBetaTeamSection">
 
       {
-        variation === 'default' ? <Variation2 /> : <Variation1 />
+        theme === 'default' ? <Theme2  {...{ section, teamMembers }} /> : <Theme1 />
       }
     </div>
   );
