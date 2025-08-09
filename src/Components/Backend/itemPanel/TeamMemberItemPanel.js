@@ -1,5 +1,5 @@
 import { __ } from "@wordpress/i18n";
-import { CheckboxControl, Flex, FlexItem, PanelRow, TextControl, ToggleControl, Tooltip } from "@wordpress/components";
+import { CheckboxControl, Flex, FlexItem, PanelRow, TextareaControl, TextControl, ToggleControl, Tooltip } from "@wordpress/components";
 import { URLInput } from "@wordpress/block-editor";
 import { IconLibrary, Label } from '../../../../../bpl-tools-main/Components';
 import { updateData } from '../../../utils/functions';
@@ -48,7 +48,7 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
                 {__('Bio', "bpl-tools")}
             </Label>
 
-            <TextControl
+            <TextareaControl
                 value={bio}
                 onChange={(v) => {
                     setAttributes({
