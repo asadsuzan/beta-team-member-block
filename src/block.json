@@ -168,7 +168,51 @@
 		},
 		"styles": {
 			"type": "object",
-			"default": {}
+			"default": {
+				"section": {
+					"width": "100%",
+					"height": "auto",
+					"padding": {
+						"top": "80px",
+						"right": "0px",
+						"bottom": "80px",
+						"left": "0px"
+					},
+					"margin": {
+						"top": "0px",
+						"right": "0px",
+						"bottom": "0px",
+						"left": "0px"
+					},
+					"bg": {
+						"color": "linear-gradient(to bottom right, #9333ea, #db2777, #f97316)"
+					}
+				},
+				"header": {
+					"margin": {
+						"top": "0px",
+						"right": "0px",
+						"bottom": "64px",
+						"left": "0px"
+					},
+					"padding": {
+						"top": "0px",
+						"right": "0px",
+						"bottom": "0px",
+						"left": "0px"
+					},
+					"textAlign": "center",
+					"bg": {
+						"color": ""
+					}
+				}
+			}
+		},
+		"options": {
+			"type": "object",
+			"default": {
+				"headerBg": false
+			}
 		}
 	},
 	"supports": {

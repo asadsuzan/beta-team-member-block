@@ -16,7 +16,7 @@ const Theme2 = ({ section = {}, teamMembers = [] }) => {
 
                 <div className="btms-grid">
                     {teamMembers?.map((member) => {
-                        console.log(member);
+
                         return <div key={member?.id} className="btms-card-group">
                             <div className="btms-card-blur-bg" />
                             <div className="btms-card">
