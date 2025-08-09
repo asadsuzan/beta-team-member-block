@@ -205,6 +205,25 @@
 					"bg": {
 						"color": ""
 					}
+				},
+				"title": {
+					"typo": {
+						"fontWeight": 700,
+						"fontSize": {
+							"desktop": 32,
+							"tablet": 20,
+							"mobile": 18
+						},
+						"lineHeight": 1.2,
+						"fontFamily": ""
+					},
+					"margin": {
+						"top": "0px",
+						"right": "0px",
+						"bottom": "24px",
+						"left": "0px"
+					},
+					"color": "#ffffff"
 				}
 			}
 		},

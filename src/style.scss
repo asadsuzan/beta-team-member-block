@@ -37,21 +37,23 @@ $primaryColor: #4527a4;
 				// margin-bottom: 4rem;
 
 				.btms-title {
-					font-size: clamp(2rem, 5vw, 3rem);
-					font-weight: 700;
-					color: $text-white;
-					margin-bottom: 1.5rem;
-					line-height: 1.2;
+					// font-size: clamp(2rem, 5vw, 3rem);
+					// font-weight: 700;
+					// color: $text-white;
+					// margin-bottom: 1.5rem;
+					// line-height: 1.2;
+				}
+
+				.btms-subtitle {
+					font-size: clamp(1rem, 3vw, 1.25rem);
+					color: rgba($text-white, 0.9);
+					max-width: 48rem;
+					margin: 0 auto;
+					line-height: 1.6;
 				}
 			}
 
-			.btms-subtitle {
-				font-size: clamp(1rem, 3vw, 1.25rem);
-				color: rgba($text-white, 0.9);
-				max-width: 48rem;
-				margin: 0 auto;
-				line-height: 1.6;
-			}
+
 		}
 
 		// Grid layout

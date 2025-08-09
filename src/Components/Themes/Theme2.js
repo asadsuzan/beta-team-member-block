@@ -8,7 +8,7 @@ const Theme2 = ({ section = {}, teamMembers = [] }) => {
         <section className="btms-variation2-section">
             <div className="btms-container">
                 <div className="btms-header">
-                    <h2 className="title">{section?.headline}</h2>
+                    <h2 className="btms-title">{section?.headline}</h2>
                     <p className="btms-subtitle">
                         {section?.slogan}
                     </p>

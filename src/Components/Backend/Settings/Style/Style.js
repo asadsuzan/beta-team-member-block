@@ -1,12 +1,12 @@
 
 import { __ } from '@wordpress/i18n';
 import { PanelBody } from '@wordpress/components';
-import { Background, BButtonGroup, BoxControl, ColorsControl, Label } from "../../../../../../bpl-tools-main/Components";
+import { Background, BButtonGroup, BoxControl, ColorControl, ColorsControl, Label, Typography } from "../../../../../../bpl-tools-main/Components";
 import { __experimentalUnitControl as UnitControl } from "@wordpress/components"
 import { updateData } from '../../../../utils/functions';
 const Style = ({ attributes, setAttributes }) => {
   const { styles } = attributes;
-  const { section, header = {} } = styles || {}
+  const { section, header = {}, title } = styles || {}
   const { textAlign } = header
   return (
     <>
@@ -153,6 +153,57 @@ const Style = ({ attributes, setAttributes }) => {
           }}
 
         />
+
+      </PanelBody>
+
+
+      <PanelBody
+        className='bPlPanelBody'
+        title={__('title', 'b-blocks')}
+        initialOpen={false}
+      >
+
+        <Typography
+          label={__('Typography', 'b-blocks')}
+          value={title.typo}
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'title', "typo")
+            })
+          }
+        />
+
+        <ColorControl
+          label={__('Color', 'b-blocks')}
+          value={title}
+
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'title', 'color')
+            }
+            )}
+          defaults={title.color}
+
+        />
+        <Label>{__('margin', 'b-blocks')} </Label>
+
+        <BoxControl
+          values={title?.margin}
+          resetValues={{
+            "top": "0px",
+            "right": "0px",
+            "bottom": "24px",
+            "left": "0px"
+          }}
+          onChange={(v) => {
+            setAttributes({
+              styles: updateData(styles, v, 'title', 'margin')
+            })
+          }}
+
+        />
+
+
 
       </PanelBody>
     </>
