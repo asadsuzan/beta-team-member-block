@@ -28,22 +28,33 @@ const Theme2 = ({ section = {}, teamMembers = [] }) => {
                                     <h3 className="btms-card-name">{member.name}</h3>
                                     <p className="btms-card-role">{member.role}</p>
                                     <p className="btms-card-bio">{member.bio}</p>
-                                    <div className="btms-card-icons">
+                                    {
+                                        member?.isShowSocial && <div className="btms-card-icons">
+                                            {
+                                                member.social.map((item, idx) => {
+                                                    return <>
+                                                        {
 
-                                        <div
-                                            className="btms-card-icon"
-                                            dangerouslySetInnerHTML={{ __html: member.social.linkedin.icon }}>
-                                        </div>
-                                        <div
-                                            className="btms-card-icon"
-                                            dangerouslySetInnerHTML={{ __html: member.social.twitter.icon }}>
-                                        </div>
-                                        <div
-                                            className="btms-card-icon"
-                                            dangerouslySetInnerHTML={{ __html: member.social.email.icon }}>
-                                        </div>
+                                                            item?.isShow && <a
+                                                                href={item.url}
+                                                                target={item?.isOpenNewTab ? "_blank" : "_self"}
+                                                                rel={item?.isOpenNewTab ? "noreferrer" : undefined}
+                                                                key={idx}
+                                                                className="btms-card-icon"
+                                                                dangerouslySetInnerHTML={{ __html: item.icon }}>
+                                                            </a>
 
-                                    </div>
+
+                                                        }
+
+                                                    </>
+                                                })
+                                            }
+
+
+
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
