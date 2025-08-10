@@ -1,7 +1,7 @@
 import { __ } from "@wordpress/i18n";
 import { CheckboxControl, Flex, FlexItem, PanelRow, TextareaControl, TextControl, ToggleControl, Tooltip } from "@wordpress/components";
 import { URLInput } from "@wordpress/block-editor";
-import { IconLibrary, Label } from '../../../../../bpl-tools-main/Components';
+import { IconLibrary, InlineMediaUpload, Label } from '../../../../../bpl-tools-main/Components';
 import { updateData } from '../../../utils/functions';
 
 const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
@@ -57,6 +57,17 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
                 }}
             />
 
+            <InlineMediaUpload
+                label="avatar"
+                className="m20"
+                value={teamMembers[index].image}
+
+                onChange={(v) => {
+                    setAttributes({
+                        teamMembers: updateData(teamMembers, v, index, 'image')
+                    })
+                }}
+            />
 
 
             <Flex>
