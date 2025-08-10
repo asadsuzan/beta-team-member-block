@@ -26,8 +26,8 @@ $primaryColor: #4527a4;
 		// margin: 0;
 
 		.btms-container {
-			// max-width: 80rem;
-			// margin: 0 auto;
+			max-width: 80rem;
+			margin: 0 auto;
 			padding: 0 1rem;
 			width: 100%;
 
@@ -121,16 +121,16 @@ $primaryColor: #4527a4;
 
 							.btms-card-overlay {
 								position: absolute;
-								inset: 0;
+								inset: 1;
 								background: linear-gradient(to top,
 										rgba(88, 28, 135, 0.4),
 										transparent 50%);
 								border-radius: 1rem;
-								opacity: 0;
+								opacity: 1;
 								transition: opacity 0.3s ease;
 
 								.btms-card-group:hover & {
-									opacity: 1;
+									opacity: 0;
 								}
 							}
 						}
@@ -140,9 +140,6 @@ $primaryColor: #4527a4;
 						// Text content
 						.btms-card-text {
 							text-align: center;
-							flex-grow: 1;
-							display: flex;
-							flex-direction: column;
 
 							.btms-card-name {
 								font-size: 1.25rem;
@@ -166,7 +163,7 @@ $primaryColor: #4527a4;
 								font-size: 0.875rem;
 								line-height: 1.6;
 								margin-bottom: 1.5rem;
-								flex-grow: 1;
+
 							}
 						}
 

@@ -2,7 +2,7 @@ import { getBackgroundCSS, getBoxCSS, getTypoCSS, isValidCSS } from "../../../..
 
 const Style = ({ attributes, id }) => {
 	const { styles = {} } = attributes;
-	const { section, header, title, subTitle, card, img } = styles
+	const { section, header, title, subTitle, card, img, cardContent } = styles
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .bBlocksBetaTeamSection`;
 	const sectionSL = `${blockSl} .btms-variation2-section`;
@@ -16,14 +16,26 @@ const Style = ({ attributes, id }) => {
 	const cardImgWrapperSL = `${cardSL} .btms-card-img-wrapper`
 	const cardImgSL = `${cardImgWrapperSL} .btms-card-img`
 
-	console.log(section.bg)
+	const cardTextSL = `${cardSL} .btms-card-text`
+	const cardNameSL = `${cardTextSL} .btms-card-name`
+	const cardRoleSL = `${cardTextSL} .btms-card-role`
+	const cardBioSL = `${cardTextSL} .btms-card-bio`
+
+
+
 	return <style dangerouslySetInnerHTML={{
 		__html: `
 		   ${getTypoCSS("", title.typo).googleFontLink} 
 		   ${getTypoCSS("", subTitle.typo).googleFontLink} 
+		   ${getTypoCSS("", cardContent.name.typo).googleFontLink} 
+		   ${getTypoCSS("", cardContent.role.typo).googleFontLink} 
+		   ${getTypoCSS("", cardContent.bio.typo).googleFontLink} 
 
            ${getTypoCSS(titleSL, title.typo).styles} 
            ${getTypoCSS(subTitleSL, subTitle.typo).styles} 
+           ${getTypoCSS(cardNameSL, cardContent.name.typo).styles} 
+           ${getTypoCSS(cardRoleSL, cardContent.role.typo).styles} 
+           ${getTypoCSS(cardBioSL, cardContent.bio.typo).styles} 
 
            ${subTitleSL}{
 		    margin:${getBoxCSS(subTitle.margin)};
@@ -45,9 +57,23 @@ const Style = ({ attributes, id }) => {
 			   
 			 
 			 }
+             ${cardTextSL}{
+			  text-align:${cardContent.textAlign}
+			 
+			 }
 
-
-
+             ${cardNameSL}{
+			   margin:${getBoxCSS(cardContent?.name?.margin)};
+			   color:${cardContent?.name?.color}
+			 }
+             ${cardRoleSL}{
+			   margin:${getBoxCSS(cardContent?.role?.margin)};
+			   color:${cardContent?.role?.color}
+			 }
+             ${cardBioSL}{
+			   margin:${getBoxCSS(cardContent?.bio?.margin)};
+			   color:${cardContent?.bio?.color}
+			 }
 
 
 

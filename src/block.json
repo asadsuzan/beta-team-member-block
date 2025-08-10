@@ -269,6 +269,66 @@
 					"width": "100%",
 					"height": "256px",
 					"radius": 16
+				},
+				"cardContent": {
+					"textAlign": "center",
+					"name": {
+						"typo": {
+							"fontSize": {
+								"desktop": 24,
+								"tablet": 20,
+								"mobile": 18
+							},
+							"fontWeight": 700,
+							"lineHeight": 1.3
+						},
+						"color": "#ffffff",
+						"margin": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "8px",
+							"left": "0px"
+						}
+					},
+					"role": {
+						"typo": {
+							"fontSize": {
+								"desktop": 15,
+								"tablet": 14,
+								"mobile": 12
+							},
+							"fontWeight": 600,
+							"lineHeight": 1.3,
+							"letterSpacing": "0.05em",
+							"textTransform": "uppercase"
+						},
+						"color": "#facc15",
+						"margin": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "10px",
+							"left": "0px"
+						}
+					},
+					"bio": {
+						"typo": {
+							"fontSize": {
+								"desktop": 14,
+								"tablet": 12,
+								"mobile": 12
+							},
+							"lineHeight": 1.6,
+							"letterSpacing": "0.05em",
+							"textTransform": ""
+						},
+						"color": "rgba(255, 255, 255, 0.8)",
+						"margin": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "24px",
+							"left": "0px"
+						}
+					}
 				}
 			}
 		},
