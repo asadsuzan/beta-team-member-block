@@ -19,7 +19,7 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
             {/* name  */}
 
             <Label>
-                {__('Name', "bpl-tools")}
+                Name
             </Label>
 
             <TextControl
@@ -84,16 +84,18 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
 
 
             <div style={{
+                color: `${isShowSocial ? "inherit" : "#842029"}`,
                 borderWidth: "1px",
                 borderStyle: "solid",
-                borderColor: `${isShowSocial ? "#ddd" : "red"}`,
+                borderColor: `${isShowSocial ? "#ddd" : "#f5c2c7"}`,
                 margin: "10px 0",
                 padding: "10px"
             }}>
                 {teamMembers[index]?.social.map((item, idx) => (
                     <div key={idx}
                         style={{
-                            border: `${!item?.isShow ? "1px solid red" : "1px solid green"}`,
+                            // border: `${!item?.isShow ? "1px solid red" : "1px solid green"}`,
+                            color: `${!item?.isShow ? "#842029" : "inherit"}`,
 
                         }}
 
