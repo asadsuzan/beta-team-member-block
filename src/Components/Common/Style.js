@@ -33,6 +33,9 @@ const Style = ({ attributes, id }) => {
 		padding:${getBoxCSS(section.padding)};
 	    margin:${getBoxCSS(section.margin)};
 		${getBackgroundCSS(section.bg)}
+
+
+		
         .btms-container {
 		.btms-header{
 					 padding:${getBoxCSS(header.padding)};

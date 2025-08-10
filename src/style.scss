@@ -53,173 +53,171 @@ $primaryColor: #4527a4;
 				}
 			}
 
+			// Grid layout
+			.btms-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 2rem;
 
-		}
-
-		// Grid layout
-		.btms-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-			gap: 2rem;
-
-
-
-
-		}
-	}
-
-	// Card component styles
-	.btms-card-group {
-		position: relative;
-		transition: $transition;
-
-		&:hover {
-			transform: translateY(-4px);
-		}
-
-		.btms-card-blur-bg {
-			position: absolute;
-			top: -0.25rem;
-			bottom: -0.25rem;
-			left: -0.25rem;
-			right: -0.25rem;
-			background: linear-gradient(to right, $accent-color, #ef4444, #ec4899);
-			border-radius: $border-radius;
-			filter: blur(10px);
-			opacity: 0.25;
-			transition: opacity 1s ease;
-
-			.btms-card-group:hover & {
-				opacity: 0.75;
-				transition-duration: 0.2s;
-			}
-		}
-
-		.btms-card {
-			position: relative;
-			background-color: $glass-bg;
-			backdrop-filter: blur($blur-amount);
-			-webkit-backdrop-filter: blur($blur-amount);
-			border: 1px solid $glass-border;
-			border-radius: $border-radius;
-			padding: 1.5rem;
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-
-			// Image wrapper
-			.btms-card-img-wrapper {
-				position: relative;
-				overflow: hidden;
-				border-radius: 1rem;
-				margin-bottom: 1.5rem;
-				flex-shrink: 0;
-
-				.btms-card-img {
-					width: 100%;
-					height: 16rem;
-					object-fit: cover;
-					transition: transform 0.7s ease;
-					border-radius: 1rem;
-				}
-
-				.btms-card-overlay {
-					position: absolute;
-					inset: 0;
-					background: linear-gradient(to top,
-							rgba(88, 28, 135, 0.4),
-							transparent 50%);
-					border-radius: 1rem;
-					opacity: 0;
-					transition: opacity 0.3s ease;
-
-					.btms-card-group:hover & {
-						opacity: 1;
-					}
-				}
-			}
-
-			.btms-card-group:hover .btms-card-img {
-				transform: scale(1.1);
-			}
-
-			// Text content
-			.btms-card-text {
-				text-align: center;
-				flex-grow: 1;
-				display: flex;
-				flex-direction: column;
-
-				.btms-card-name {
-					font-size: 1.25rem;
-					font-weight: 700;
-					color: $text-white;
-					margin-bottom: 0.5rem;
-					line-height: 1.3;
-				}
-
-				.btms-card-role {
-					color: $accent-color;
-					font-weight: 600;
-					font-size: 0.875rem;
-					text-transform: uppercase;
-					letter-spacing: 0.05em;
-					margin-bottom: 0.75rem;
-				}
-
-				.btms-card-bio {
-					color: $text-muted;
-					font-size: 0.875rem;
-					line-height: 1.6;
-					margin-bottom: 1.5rem;
-					flex-grow: 1;
-				}
-			}
-
-			// Social icons
-			.btms-card-icons {
-				display: flex;
-				justify-content: center;
-				gap: 0.75rem;
-				margin-top: auto;
-
-				.btms-card-icon {
-					width: 2.5rem;
-					height: 2.5rem;
-					background-color: rgba($text-white, 0.2);
-					border: 1px solid rgba($text-white, 0.1);
-					border-radius: 50%;
-					display: flex;
-					align-items: center;
-					justify-content: center;
+				// Card component styles
+				.btms-card-group {
+					position: relative;
 					transition: $transition;
-					cursor: pointer;
 
-					&:hover {
-						background-color: rgba($text-white, 0.3);
-						transform: translateY(-2px);
+					&:hover .btms-card-blur-bg {
+						opacity: 1;
+						transition-duration: 0.2s;
+
 					}
 
-					svg {
-						// color: $text-white;
-						// color: red;
-						transition: $transition;
-						height: 20px;
-						width: 20px;
+					&:hover .btms-card-img {
+						transform: scale(1.1);
+
+					}
+
+					.btms-card-blur-bg {
+						position: absolute;
+						top: -0.25rem;
+						bottom: -0.25rem;
+						left: -0.25rem;
+						right: -0.25rem;
+						background: linear-gradient(to right, #facc15, #ef4444, #ec4899);
+						border-radius: $border-radius;
+						filter: blur(10px);
+						opacity: 0.25;
+						transition: opacity 1s ease;
+					}
+
+
+					.btms-card {
+						position: relative;
+						background-color: $glass-bg;
+						backdrop-filter: blur($blur-amount);
+						-webkit-backdrop-filter: blur($blur-amount);
+						border: 1px solid $glass-border;
+						border-radius: $border-radius;
+						padding: 1.5rem;
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+
+						// Image wrapper
+						.btms-card-img-wrapper {
+							position: relative;
+							overflow: hidden;
+							border-radius: 1rem;
+							margin-bottom: 1.5rem;
+							flex-shrink: 0;
+
+							.btms-card-img {
+								width: 100%;
+								height: 16rem;
+								object-fit: cover;
+								transition: transform 0.7s ease;
+								border-radius: 1rem;
+							}
+
+							.btms-card-overlay {
+								position: absolute;
+								inset: 0;
+								background: linear-gradient(to top,
+										rgba(88, 28, 135, 0.4),
+										transparent 50%);
+								border-radius: 1rem;
+								opacity: 0;
+								transition: opacity 0.3s ease;
+
+								.btms-card-group:hover & {
+									opacity: 1;
+								}
+							}
+						}
+
+
+
+						// Text content
+						.btms-card-text {
+							text-align: center;
+							flex-grow: 1;
+							display: flex;
+							flex-direction: column;
+
+							.btms-card-name {
+								font-size: 1.25rem;
+								font-weight: 700;
+								color: $text-white;
+								margin-bottom: 0.5rem;
+								line-height: 1.3;
+							}
+
+							.btms-card-role {
+								color: $accent-color;
+								font-weight: 600;
+								font-size: 0.875rem;
+								text-transform: uppercase;
+								letter-spacing: 0.05em;
+								margin-bottom: 0.75rem;
+							}
+
+							.btms-card-bio {
+								color: $text-muted;
+								font-size: 0.875rem;
+								line-height: 1.6;
+								margin-bottom: 1.5rem;
+								flex-grow: 1;
+							}
+						}
+
+						// Social icons
+						.btms-card-icons {
+							display: flex;
+							justify-content: center;
+							gap: 0.75rem;
+							margin-top: auto;
+
+							.btms-card-icon {
+								width: 2.5rem;
+								height: 2.5rem;
+								background-color: rgba($text-white, 0.2);
+								border: 1px solid rgba($text-white, 0.1);
+								border-radius: 50%;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								transition: $transition;
+								cursor: pointer;
+
+								&:hover {
+									background-color: rgba($text-white, 0.3);
+									transform: translateY(-2px);
+								}
+
+								svg {
+									// color: $text-white;
+									// color: red;
+									transition: $transition;
+									height: 20px;
+									width: 20px;
+								}
+							}
+						}
 					}
 				}
+
 			}
+
 		}
+
+
+
 	}
-
-
-
-
-
-
-
-
-
 
 
 }
+
+
+
+
+// .btms-card-group:hover .btms-card-img {
+// 	transform: scale(1.1);
+// }
