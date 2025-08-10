@@ -264,6 +264,11 @@
 						"color": " rgba(255, 255, 255, 0.2)",
 						"radius": 24
 					}
+				},
+				"img": {
+					"width": "100%",
+					"height": "256px",
+					"radius": 16
 				}
 			}
 		},

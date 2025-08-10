@@ -6,7 +6,7 @@ import { __experimentalUnitControl as UnitControl } from "@wordpress/components"
 import { updateData } from '../../../../utils/functions';
 const Style = ({ attributes, setAttributes }) => {
   const { styles } = attributes;
-  const { section, header = {}, title, subTitle, card } = styles || {}
+  const { section, header = {}, title, subTitle, card, img } = styles || {}
   const { textAlign } = header
   console.log(subTitle)
   return (
@@ -325,6 +325,41 @@ const Style = ({ attributes, setAttributes }) => {
 
 
 
+      </PanelBody>
+
+      {/* img  */}
+
+      <PanelBody
+        className='bPlPanelBody'
+        title={__('Image', 'b-blocks')}
+        initialOpen={false}
+
+      >
+        {/* width  */}
+        <Label>{__('width', 'b-blocks')} </Label>
+        <UnitControl
+          value={img.width}
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'img', 'width')
+            })
+          }
+
+        />
+        {/* height  */}
+        <Label>{__('height', 'b-blocks')} </Label>
+        <UnitControl
+          value={img.height}
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'img', 'height')
+            })
+          }
+
+        />
+
+
+        <Label>{__('radius', 'b-blocks')} </Label>
       </PanelBody>
     </>
   )

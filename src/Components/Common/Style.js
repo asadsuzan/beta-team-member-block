@@ -2,7 +2,7 @@ import { getBackgroundCSS, getBoxCSS, getTypoCSS, isValidCSS } from "../../../..
 
 const Style = ({ attributes, id }) => {
 	const { styles = {} } = attributes;
-	const { section, header, title, subTitle, card } = styles
+	const { section, header, title, subTitle, card, img } = styles
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .bBlocksBetaTeamSection`;
 	const sectionSL = `${blockSl} .btms-variation2-section`;
@@ -13,6 +13,8 @@ const Style = ({ attributes, id }) => {
 	const gridSL = `${containerSL} .btms-grid`;
 	const cardGroupSL = `${containerSL} .btms-card-group`;
 	const cardSL = `${cardGroupSL} .btms-card`
+	const cardImgWrapperSL = `${cardSL} .btms-card-img-wrapper`
+	const cardImgSL = `${cardImgWrapperSL} .btms-card-img`
 
 	console.log(section.bg)
 	return <style dangerouslySetInnerHTML={{
@@ -30,12 +32,25 @@ const Style = ({ attributes, id }) => {
 
 		  ${cardSL} {
 		 		 ${isValidCSS('width', card?.width)}
-		 		 ${isValidCSS('height', card?.width)}
+		 		 ${isValidCSS('height', card?.height)}
 				  padding:${getBoxCSS(card?.padding)};
 				  margin:${getBoxCSS(card?.margin)};
 
 				 }
 	      
+             ${cardImgSL}{
+			   ${isValidCSS('width', img?.width)}
+		 	   ${isValidCSS('height', img?.height)}
+			   border-radius:${img.radius}px;
+			   
+			 
+			 }
+
+
+
+
+
+
 
 		${blockSl} .btms-variation2-section {
 		
