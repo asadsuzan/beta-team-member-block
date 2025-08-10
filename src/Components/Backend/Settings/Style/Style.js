@@ -6,8 +6,9 @@ import { __experimentalUnitControl as UnitControl } from "@wordpress/components"
 import { updateData } from '../../../../utils/functions';
 const Style = ({ attributes, setAttributes }) => {
   const { styles } = attributes;
-  const { section, header = {}, title } = styles || {}
+  const { section, header = {}, title, subTitle } = styles || {}
   const { textAlign } = header
+  console.log(subTitle)
   return (
     <>
 
@@ -156,7 +157,7 @@ const Style = ({ attributes, setAttributes }) => {
 
       </PanelBody>
 
-
+      {/* title  */}
       <PanelBody
         className='bPlPanelBody'
         title={__('title', 'b-blocks')}
@@ -175,7 +176,7 @@ const Style = ({ attributes, setAttributes }) => {
 
         <ColorControl
           label={__('Color', 'b-blocks')}
-          value={title}
+          value={title.color}
 
           onChange={(v) =>
             setAttributes({
@@ -206,6 +207,61 @@ const Style = ({ attributes, setAttributes }) => {
 
 
       </PanelBody>
+
+
+      {/* sub title  */}
+      <PanelBody
+        className='bPlPanelBody'
+        title={__('sub-title', 'b-blocks')}
+        initialOpen={false}
+      >
+
+        <Typography
+          label={__('Typography', 'b-blocks')}
+          value={subTitle.typo}
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'subTitle', "typo")
+            })
+          }
+        />
+
+        <ColorControl
+          label={__('Color', 'b-blocks')}
+          value={subTitle.color}
+
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'subTitle', 'color')
+            }
+            )}
+          defaults={subTitle.color}
+
+        />
+        <Label>{__('margin', 'b-blocks')} </Label>
+
+        <BoxControl
+          values={subTitle?.margin}
+          resetValues={{
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          }}
+          onChange={(v) => {
+            setAttributes({
+              styles: updateData(styles, v, 'subTitle', 'margin')
+            })
+          }}
+
+        />
+
+
+
+      </PanelBody>
+
+
+
     </>
   )
 }
