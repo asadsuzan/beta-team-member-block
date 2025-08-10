@@ -91,7 +91,7 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
                 margin: "10px 0",
                 padding: "10px"
             }}>
-                {teamMembers[index]?.social.map((item, idx) => (
+                {teamMembers[index]?.social?.map((item, idx) => (
                     <div key={idx}
                         style={{
                             // border: `${!item?.isShow ? "1px solid red" : "1px solid green"}`,
