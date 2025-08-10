@@ -2,7 +2,7 @@ import { getBackgroundCSS, getBoxCSS, getTypoCSS, isValidCSS } from "../../../..
 
 const Style = ({ attributes, id }) => {
 	const { styles = {} } = attributes;
-	const { section, header, title, subTitle } = styles
+	const { section, header, title, subTitle, card } = styles
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .bBlocksBetaTeamSection`;
 	const sectionSL = `${blockSl} .btms-variation2-section`;
@@ -10,6 +10,9 @@ const Style = ({ attributes, id }) => {
 	const headerSL = `${containerSL} .btms-header`;
 	const titleSL = `${headerSL} .btms-title`;
 	const subTitleSL = `${headerSL} .btms-subtitle`;
+	const gridSL = `${containerSL} .btms-grid`;
+	const cardGroupSL = `${containerSL} .btms-card-group`;
+	const cardSL = `${cardGroupSL} .btms-card`
 
 	console.log(section.bg)
 	return <style dangerouslySetInnerHTML={{
@@ -24,6 +27,14 @@ const Style = ({ attributes, id }) => {
 		    margin:${getBoxCSS(subTitle.margin)};
             color:${subTitle?.color};
 		  }
+
+		  ${cardSL} {
+		 		 ${isValidCSS('width', card?.width)}
+		 		 ${isValidCSS('height', card?.width)}
+				  padding:${getBoxCSS(card?.padding)};
+				  margin:${getBoxCSS(card?.margin)};
+
+				 }
 	      
 
 		${blockSl} .btms-variation2-section {

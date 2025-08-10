@@ -6,7 +6,7 @@ import { __experimentalUnitControl as UnitControl } from "@wordpress/components"
 import { updateData } from '../../../../utils/functions';
 const Style = ({ attributes, setAttributes }) => {
   const { styles } = attributes;
-  const { section, header = {}, title, subTitle } = styles || {}
+  const { section, header = {}, title, subTitle, card } = styles || {}
   const { textAlign } = header
   console.log(subTitle)
   return (
@@ -32,7 +32,7 @@ const Style = ({ attributes, setAttributes }) => {
         {/* height  */}
         <Label>{__('height', 'b-blocks')} </Label>
         <UnitControl
-          value={section.width}
+          value={section.height}
           onChange={(v) =>
             setAttributes({
               styles: updateData(styles, v, 'section', 'height')
@@ -260,8 +260,72 @@ const Style = ({ attributes, setAttributes }) => {
 
       </PanelBody>
 
+      {/* card  */}
+      <PanelBody
+        className='bPlPanelBody'
+        title={__('card', 'b-blocks')}
+        initialOpen={false}
+      >
+
+        {/* width  */}
+        <Label>{__('width', 'b-blocks')} </Label>
+        <UnitControl
+          value={card.width}
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'card', 'width')
+            })
+          }
+
+        />
+        {/* height  */}
+        <Label>{__('height', 'b-blocks')} </Label>
+        <UnitControl
+          value={card.height}
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'card', 'height')
+            })
+          }
+
+        />
+        <Label>{__('padding', 'b-blocks')} </Label>
+
+        <BoxControl
+          values={card?.padding}
+          resetValues={{
+            "top": "24px",
+            "right": "24px",
+            "bottom": "24px",
+            "left": "24px"
+          }}
+          onChange={(v) => {
+            setAttributes({
+              styles: updateData(styles, v, 'card', 'padding')
+            })
+          }}
+
+        />
+        <Label>{__('margin', 'b-blocks')} </Label>
+        <BoxControl
+          values={card?.margin}
+          resetValues={{
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          }}
+          onChange={(v) => {
+            setAttributes({
+              styles: updateData(styles, v, 'card', 'margin')
+            })
+          }}
+
+        />
 
 
+
+      </PanelBody>
     </>
   )
 }
