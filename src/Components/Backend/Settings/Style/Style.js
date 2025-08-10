@@ -2,12 +2,12 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { Background, BButtonGroup, BoxControl, ColorControl, ColorsControl, Label, Typography } from "../../../../../../bpl-tools-main/Components";
-import { __experimentalUnitControl as UnitControl } from "@wordpress/components"
+import { __experimentalUnitControl as UnitControl, __experimentalBorderControl as BorderControl } from "@wordpress/components"
 import { updateData } from '../../../../utils/functions';
 const Style = ({ attributes, setAttributes }) => {
   const { styles } = attributes;
   const { section, header = {}, title, subTitle, card, img, cardContent } = styles || {}
-  const { name, role, bio } = cardContent
+  const { name, role, bio, button } = cardContent
   const { textAlign } = header
   console.log(subTitle)
   return (
@@ -352,7 +352,7 @@ const Style = ({ attributes, setAttributes }) => {
           />
         </div>
 
-        {/* card text  */}
+
         <div className='btms-nested-control'>
           {/* name  */}
 
@@ -492,7 +492,89 @@ const Style = ({ attributes, setAttributes }) => {
           />
 
         </div>
+        {/* social */}
+        <div className='btms-nested-control'>
 
+          <span className='btms-nested-label'>
+            {__('social', 'b-blocks')}
+          </span>
+
+          {/* width  */}
+          <Label>{__('width', 'b-blocks')} </Label>
+          <UnitControl
+            value={button.width}
+            onChange={(v) =>
+              setAttributes({
+                styles: updateData(styles, v, 'cardContent', 'button', "width")
+              })
+            }
+
+          />
+          {/* height  */}
+          <Label>{__('height', 'b-blocks')} </Label>
+          <UnitControl
+            value={button.height}
+            onChange={(v) =>
+              setAttributes({
+                styles: updateData(styles, v, 'cardContent', 'button', "height")
+              })
+            }
+
+          />
+          <Background
+            value={cardContent.button?.bg}
+            onChange={(v) =>
+              setAttributes({
+                styles: updateData(styles, v, 'cardContent', "button", 'bg')
+              })
+            }
+          />
+
+          <BorderControl
+            className='mt10'
+            label={__('Border', 'b-blocks')}
+            value={button.border}
+            onChange={(v) =>
+              setAttributes({
+                styles: updateData(styles, v, 'cardContent', "button", 'border')
+              })
+            }
+          />
+
+          <Label>{__('radius', 'b-blocks')} </Label>
+          <RangeControl
+            value={button.radius}
+            onChange={(v) =>
+              setAttributes({
+                styles: updateData(styles, v, 'cardContent', "button", 'radius')
+              })
+            }
+          />
+          <ColorControl
+            label={__('fill color', 'b-blocks')}
+            value={cardContent.button.icon.fill}
+
+            onChange={(v) =>
+              setAttributes({
+                styles: updateData(styles, v, 'cardContent',
+                  "button", "icon", 'fill')
+              }
+              )}
+            defaults={cardContent.button.icon.fill}
+
+          />
+
+          <RangeControl
+            label='icon size'
+            value={cardContent.button.icon.size}
+            onChange={(v) =>
+              setAttributes({
+                styles: updateData(styles, v, 'cardContent', "button", 'icon', "size")
+              })
+            }
+          />
+
+        </div>
 
 
 
@@ -542,6 +624,12 @@ const Style = ({ attributes, setAttributes }) => {
             })
           }
         />
+
+
+
+
+
+
       </PanelBody>
 
 

@@ -1,4 +1,4 @@
-import { getBackgroundCSS, getBoxCSS, getTypoCSS, isValidCSS } from "../../../../bpl-tools-main/utils/getCSS"
+import { getBackgroundCSS, getBorderCSS, getBoxCSS, getTypoCSS, isValidCSS } from "../../../../bpl-tools-main/utils/getCSS"
 
 const Style = ({ attributes, id }) => {
 	const { styles = {} } = attributes;
@@ -20,6 +20,9 @@ const Style = ({ attributes, id }) => {
 	const cardNameSL = `${cardTextSL} .btms-card-name`
 	const cardRoleSL = `${cardTextSL} .btms-card-role`
 	const cardBioSL = `${cardTextSL} .btms-card-bio`
+	const socialContainerSL = `${cardTextSL} .btms-card-icons`
+	const socialButtonSL = `${socialContainerSL} .btms-card-icon`
+	const socialIconSL = `${socialContainerSL} svg`
 
 
 
@@ -41,6 +44,20 @@ const Style = ({ attributes, id }) => {
 		    margin:${getBoxCSS(subTitle.margin)};
             color:${subTitle?.color};
 		  }
+           ${socialButtonSL}{
+		  	 	${isValidCSS('width', cardContent.button?.width)}
+		 		${isValidCSS('height', cardContent?.button.height)}
+				${getBackgroundCSS(cardContent.button.bg)}
+				${getBorderCSS(cardContent.button.border)}
+				border-radius:${cardContent.button.radius}%;
+		  }
+           ${socialIconSL}{
+		  	 	fill:${cardContent.button.icon.fill};
+				width:${cardContent.button?.icon.size}px;
+				height:${cardContent.button?.icon.size}px;
+				
+		  }
+
 
 		  ${cardSL} {
 		 		 ${isValidCSS('width', card?.width)}
