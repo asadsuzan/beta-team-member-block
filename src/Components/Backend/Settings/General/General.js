@@ -1,12 +1,12 @@
 import { __ } from "@wordpress/i18n";
-import { PanelBody, SelectControl, TextControl, ToggleControl } from "@wordpress/components";
+import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
 import { generateId, themeSwitch, updateData } from "../../../../utils/functions";
 import { ItemsPanel } from '../../../../../../bpl-tools-main/Components';
 import TeamMembersItemPanel from '../../itemPanel/TeamMemberItemPanel';
 
 const General = ({ attributes, setAttributes }) => {
   const { section, teamMembers, theme, styles } = attributes;
-  console.log(styles);
+
 
   return (
     <>

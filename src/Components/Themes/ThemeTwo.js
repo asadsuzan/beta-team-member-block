@@ -2,8 +2,7 @@
 
 import React from 'react'
 
-const ThemeTwo = ({ attributes }) => {
-    const { teamMembers, section } = attributes
+const ThemeTwo = ({ section = {}, teamMembers = [] }) => {
 
     return (
         <section className="btms-team-section">

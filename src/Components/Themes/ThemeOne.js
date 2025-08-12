@@ -1,7 +1,4 @@
-import teamMembers from '../../lib/data';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
-
-const Theme2 = ({ section = {}, teamMembers = [] }) => {
+const ThemeOne = ({ section = {}, teamMembers = [] }) => {
 
     return <>
 
@@ -68,4 +65,4 @@ const Theme2 = ({ section = {}, teamMembers = [] }) => {
     </>
 }
 
-export default Theme2;
+export default ThemeOne;

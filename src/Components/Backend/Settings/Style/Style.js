@@ -1,7 +1,7 @@
 
 import { __ } from '@wordpress/i18n';
 import { PanelBody, RangeControl } from '@wordpress/components';
-import { Background, BButtonGroup, BoxControl, ColorControl, ColorsControl, Label, Typography } from "../../../../../../bpl-tools-main/Components";
+import { Background, BButtonGroup, BoxControl, ColorControl, Label, Typography } from "../../../../../../bpl-tools-main/Components";
 import { __experimentalUnitControl as UnitControl, __experimentalBorderControl as BorderControl } from "@wordpress/components"
 import { updateData } from '../../../../utils/functions';
 const Style = ({ attributes, setAttributes }) => {
@@ -9,7 +9,7 @@ const Style = ({ attributes, setAttributes }) => {
   const { section, header = {}, title, subTitle, card, img, cardContent } = styles || {}
   const { name, role, bio, button } = cardContent
   const { textAlign } = header
-  console.log(subTitle)
+
   return (
 
 

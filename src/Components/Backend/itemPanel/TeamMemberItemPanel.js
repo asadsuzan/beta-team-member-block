@@ -1,13 +1,12 @@
 import { __ } from "@wordpress/i18n";
-import { CheckboxControl, Flex, FlexItem, PanelRow, TextareaControl, TextControl, ToggleControl, Tooltip } from "@wordpress/components";
-import { URLInput } from "@wordpress/block-editor";
+import { CheckboxControl, Flex, FlexItem, TextareaControl, TextControl, ToggleControl } from "@wordpress/components";
 import { IconLibrary, InlineMediaUpload, Label } from '../../../../../bpl-tools-main/Components';
 import { updateData } from '../../../utils/functions';
 
 const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
 
     const { teamMembers } = attributes;
-    const { name, role, bio, image, social, isShowSocial } = teamMembers[index];
+    const { name, role, bio, isShowSocial } = teamMembers[index];
 
     return (
         <>
