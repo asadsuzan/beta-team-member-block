@@ -24,3 +24,662 @@ export const generateId = (itemArray) => {
   const maxId = Math.max(...ids);
   return maxId + 1;
 };
+
+
+export const themeSwitch = (theme = "default", attributes) => produce(attributes, (draft) => {
+  draft["theme"] = theme;
+
+  switch (theme) {
+    case "default":
+      draft["styles"] = {
+        "section": {
+          "width": "100%",
+          "height": "100%",
+          "padding": {
+            "top": "80px",
+            "right": "0px",
+            "bottom": "80px",
+            "left": "0px"
+          },
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "bg": {
+            "color": "linear-gradient(to bottom right, #9333ea, #db2777, #f97316)"
+          }
+        },
+        "header": {
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "64px",
+            "left": "0px"
+          },
+          "padding": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "textAlign": "center",
+          "bg": {
+            "color": ""
+          }
+        },
+        "title": {
+          "typo": {
+            "fontWeight": 700,
+            "fontSize": {
+              "desktop": 32,
+              "tablet": 20,
+              "mobile": 18
+            },
+            "lineHeight": 1.2,
+            "fontFamily": ""
+          },
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "24px",
+            "left": "0px"
+          },
+          "color": "#ffffff"
+        },
+        "subTitle": {
+          "typo": {
+            "fontSize": {
+              "desktop": 16,
+              "tablet": 14,
+              "mobile": 12
+            },
+            "lineHeight": 1.6,
+            "fontFamily": ""
+          },
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "24px",
+            "left": "0px"
+          },
+          "color": "rgba(#ffffff, 0.9)"
+        },
+        "card": {
+          "width": "100%",
+          "height": "100%",
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "padding": {
+            "top": "24px",
+            "right": "24px",
+            "bottom": "24px",
+            "left": "24px"
+          },
+          "border": {
+            "width": "1px",
+            "style": "solid",
+            "color": " rgba(255, 255, 255, 0.2)",
+            "radius": 24
+          }
+        },
+        "img": {
+          "width": "100%",
+          "height": "256px",
+          "radius": 16
+        },
+        "cardContent": {
+          "textAlign": "center",
+          "name": {
+            "typo": {
+              "fontSize": {
+                "desktop": 24,
+                "tablet": 20,
+                "mobile": 18
+              },
+              "fontWeight": 700,
+              "lineHeight": 1.3
+            },
+            "color": "#ffffff",
+            "margin": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "8px",
+              "left": "0px"
+            }
+          },
+          "role": {
+            "typo": {
+              "fontSize": {
+                "desktop": 15,
+                "tablet": 14,
+                "mobile": 12
+              },
+              "fontWeight": 600,
+              "lineHeight": 1.3,
+              "letterSpacing": "0.05em",
+              "textTransform": "uppercase"
+            },
+            "color": "#facc15",
+            "margin": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "10px",
+              "left": "0px"
+            }
+          },
+          "bio": {
+            "typo": {
+              "fontSize": {
+                "desktop": 14,
+                "tablet": 12,
+                "mobile": 12
+              },
+              "lineHeight": 1.6,
+              "letterSpacing": "0.05em",
+              "textTransform": ""
+            },
+            "color": "rgba(255, 255, 255, 0.8)",
+            "margin": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "24px",
+              "left": "0px"
+            }
+          },
+          "button": {
+            "width": "40px",
+            "height": "40px",
+            "bg": {
+              "color": "rgba(255, 255, 255, 0.2)"
+            },
+            "border": {
+              "width": "0px",
+              "style": "solid",
+              "color": "#ffffff",
+              "radius": 24
+            },
+            "radius": 50,
+            "icon": {
+              "size": 20,
+              "fill": "#fff"
+            }
+          }
+        }
+      }
+      draft["section"] = {
+        "headline": "Creative Minds",
+        "slogan": " Bold thinkers, creative doers, and passionate innovators"
+      }
+      draft["teamMembers"] = [
+        {
+          "id": 1,
+          "name": "Sarah Chen",
+          "role": "Creative Director",
+          "bio": "Visionary leader with 10+ years in brand strategy and creative direction.",
+          "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "social": [
+            {
+              "name": "linkedin",
+              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "twitter",
+              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "email",
+              "url": "saarah@example.com",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            }
+          ],
+          "isShowSocial": true
+        },
+        {
+          "id": 2,
+          "name": "Marcus Rodriguez",
+          "role": "Lead Designer",
+          "bio": "Award-winning designer specializing in digital experiences and brand identity.",
+          "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "social": [
+            {
+              "name": "linkedin",
+              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "twitter",
+              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "email",
+              "url": "saarah@example.com",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            }
+          ],
+          "isShowSocial": true
+        },
+        {
+          "id": 3,
+          "name": "Emily Thompson",
+          "role": "Senior Developer",
+          "bio": "Full-stack developer passionate about creating seamless user experiences.",
+          "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "social": [
+            {
+              "name": "linkedin",
+              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "twitter",
+              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "email",
+              "url": "saarah@example.com",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            }
+          ],
+          "isShowSocial": true
+        },
+        {
+          "id": 4,
+          "name": "James Kim",
+          "role": "Brand Strategist",
+          "bio": "Strategic thinker who transforms brands through compelling storytelling.",
+          "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "social": [
+            {
+              "name": "linkedin",
+              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "twitter",
+              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "email",
+              "url": "saarah@example.com",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            }
+          ],
+          "isShowSocial": true
+        }
+      ]
+
+      break;
+
+    case "theme2":
+      draft["styles"] = {
+        "section": {
+          "width": "100%",
+          "height": "100%",
+          "padding": {
+            "top": "80px",
+            "right": "0px",
+            "bottom": "80px",
+            "left": "0px"
+          },
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "bg": {
+            "color": "#ffffff"
+          }
+        },
+        "header": {
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "64px",
+            "left": "0px"
+          },
+          "padding": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "textAlign": "center",
+          "bg": {
+            "color": ""
+          }
+        },
+        "title": {
+          "typo": {
+            "fontWeight": 700,
+            "fontSize": {
+              "desktop": 36,
+              "tablet": 20,
+              "mobile": 18
+            }
+          },
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "16px",
+            "left": "0px"
+          },
+          "color": "#111827"
+        },
+        "subTitle": {
+          "typo": {
+            "fontSize": {
+              "desktop": 24,
+              "tablet": 20,
+              "mobile": 14
+            },
+            "lineHeight": 1.6,
+            "fontFamily": ""
+          },
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "24px",
+            "left": "0px"
+          },
+          "color": "#6b7280"
+        },
+        "card": {
+          "width": "100%",
+          "height": "100%",
+          "margin": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "padding": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "border": {
+            "width": "0px",
+            "style": "solid",
+            "color": "#fff"
+          },
+          "radius": 0
+        },
+        "img": {
+          "width": "100%",
+          "height": "256px",
+          "radius": 16
+        },
+        "cardContent": {
+          "textAlign": "center",
+          "name": {
+            "typo": {
+              "fontSize": {
+                "desktop": 24,
+                "tablet": 20,
+                "mobile": 18
+              },
+              "fontWeight": 600,
+              "lineHeight": 1.3
+            },
+            "color": "#111827",
+            "margin": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "8px",
+              "left": "0px"
+            }
+          },
+          "role": {
+            "typo": {
+              "fontSize": {
+                "desktop": 16,
+                "tablet": 14,
+                "mobile": 12
+              },
+              "fontWeight": 500,
+              "lineHeight": 1.5,
+              "letterSpacing": "0.05em"
+            },
+            "color": "#6b7280",
+            "margin": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "10px",
+              "left": "0px"
+            }
+          },
+          "bio": {
+            "typo": {
+              "fontSize": {
+                "desktop": 14,
+                "tablet": 12,
+                "mobile": 12
+              },
+              "lineHeight": 1.5,
+              "letterSpacing": "0.05em",
+              "textTransform": ""
+            },
+            "color": "#6b7280",
+            "margin": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "16px",
+              "left": "0px"
+            }
+          },
+          "button": {
+            "width": "40px",
+            "height": "40px",
+            "bg": {
+              "color": "rgba(255, 255, 255, 0.2)"
+            },
+            "border": {
+              "width": "0px",
+              "style": "solid",
+              "color": "#ffffff"
+            },
+            "radius": 0,
+            "icon": {
+              "size": 20,
+              "fill": "#babbbf"
+            }
+          }
+        }
+      }
+      draft["section"] = {
+        "headline": "Meet Our Team",
+        "slogan": "Tal eptional creative work"
+      }
+      draft["teamMembers"] = [
+        {
+          "id": 1,
+          "name": "Sarah Chen",
+          "role": "Creative Director",
+          "bio": "Visionary leader with 10+ years in brand strategy and creative direction.",
+          "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "social": [
+            {
+              "name": "linkedin",
+              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "twitter",
+              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "email",
+              "url": "saarah@example.com",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            }
+          ],
+          "isShowSocial": true
+        },
+        {
+          "id": 2,
+          "name": "Marcus Rodriguez",
+          "role": "Lead Designer",
+          "bio": "Award-winning designer specializing in digital experiences and brand identity.",
+          "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "social": [
+            {
+              "name": "linkedin",
+              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "twitter",
+              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "email",
+              "url": "saarah@example.com",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            }
+          ],
+          "isShowSocial": true
+        },
+        {
+          "id": 3,
+          "name": "Emily Thompson",
+          "role": "Senior Developer",
+          "bio": "Full-stack developer passionate about creating seamless user experiences.",
+          "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "social": [
+            {
+              "name": "linkedin",
+              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "twitter",
+              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "email",
+              "url": "saarah@example.com",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            }
+          ],
+          "isShowSocial": true
+        },
+        {
+          "id": 4,
+          "name": "James Kim",
+          "role": "Brand Strategist",
+          "bio": "Strategic thinker who transforms brands through compelling storytelling.",
+          "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+          "social": [
+            {
+              "name": "linkedin",
+              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "twitter",
+              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            },
+            {
+              "name": "email",
+              "url": "saarah@example.com",
+              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
+              "isShow": true,
+              "isOpenNewTab": true
+            }
+          ],
+          "isShowSocial": true
+        }
+      ]
+
+      break;
+
+
+  }
+
+
+})
+
+
+export const themePresets = {
+  theme1: {
+    backgroundColor: '#00283a',
+    color: '#fff',
+    padding: '20px',
+    borderRadius: '8px'
+  },
+  theme2: {
+    backgroundColor: '#f5f5f5',
+    color: '#222',
+    padding: '25px',
+    borderRadius: '0'
+  },
+  theme3: {
+    background: 'linear-gradient(to right, #ff7e5f, #feb47b)',
+    color: '#fff',
+    padding: '30px',
+    borderRadius: '12px'
+  }
+};

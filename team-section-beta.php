@@ -14,12 +14,12 @@
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
 // Constant
-define( 'PREFIX_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
-define( 'PREFIX_DIR_URL', plugin_dir_url( __FILE__ ) );
-define( 'PREFIX_DIR_PATH', plugin_dir_path( __FILE__ ) );
+define( 'BTMS_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
+define( 'BTMS_DIR_URL', plugin_dir_url( __FILE__ ) );
+define( 'BTMS_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
-if( !class_exists( 'PREFIXPlugin' ) ){
-	class PREFIXPlugin{
+if( !class_exists( 'BTMSPlugin' ) ){
+	class BTMSPlugin{
 		function __construct(){
 			add_action( 'init', [ $this, 'onInit' ] );
 		}
@@ -29,5 +29,5 @@ if( !class_exists( 'PREFIXPlugin' ) ){
 
 		}
 	}
-	new PREFIXPlugin();
+	new BTMSPlugin();
 }

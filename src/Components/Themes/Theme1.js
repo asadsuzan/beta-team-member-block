@@ -1,7 +1,7 @@
 import teamMembers from '../../lib/data';
 import { Github, Linkedin, Twitter, Mail, MapPin, Award, Users, Palette, Code, Camera, Lightbulb } from 'lucide-react';
 // Variation 1: Clean Minimal Cards
-import "./theme1.css"
+// import "./theme1.css"
 const Theme1 = () => (
     <section className="team-section">
         <div className="container">
