@@ -1,0 +1,178 @@
+/* ====== SECTION WRAPPER ====== */
+.btms-team-variation2 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background: linear-gradient(to bottom right, #9333ea, #ec4899, #f97316);
+}
+
+/* ====== CONTAINER ====== */
+.btms-container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .btms-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .btms-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* ====== HEADER ====== */
+.btms-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.btms-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.btms-header p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ====== GRID LAYOUT ====== */
+.btms-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .btms-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .btms-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* ====== CARD HOVER GROUP ====== */
+.btms-card-group {
+    position: relative;
+}
+
+/* ====== OUTER GLOW BORDER ====== */
+.btms-gradient-border {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    background: linear-gradient(to right, #facc15, #ef4444, #ec4899);
+    border-radius: 1.5rem;
+    filter: blur(8px);
+    opacity: 0.25;
+    transition: opacity 1s ease;
+}
+
+.btms-card-group:hover .btms-gradient-border {
+    opacity: 0.75;
+    transition-duration: 0.2s;
+}
+
+/* ====== CARD CONTENT ====== */
+.btms-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ====== IMAGE WRAPPER ====== */
+.btms-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btms-image-wrapper img {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.btms-card-group:hover .btms-image-wrapper img {
+    transform: scale(1.1);
+}
+
+.btms-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(88, 28, 135, 0.4), transparent);
+}
+
+/* ====== TEXT ====== */
+.btms-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.btms-role {
+    color: #fde047;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.btms-bio {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* ====== SOCIAL ICONS ====== */
+.btms-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btms-social-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.btms-social-icon:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btms-social-icon svg {
+    color: white;
+}

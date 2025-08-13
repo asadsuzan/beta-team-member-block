@@ -1,3 +1,5 @@
+import { Linkedin, Mail, Twitter } from 'lucide-react';
+
 const ThemeOne = ({ section = {}, teamMembers = [] }) => {
 
     return <>
@@ -27,6 +29,7 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
                                     <p className="btms-card-bio">{member.bio}</p>
                                     {
                                         member?.isShowSocial && <div className="btms-card-icons">
+
                                             {
                                                 member.social.map((item, idx) => {
                                                     return <>
@@ -38,7 +41,21 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
                                                                 rel={item?.isOpenNewTab ? "noreferrer" : undefined}
                                                                 key={idx}
                                                                 className="btms-card-icon"
-                                                                dangerouslySetInnerHTML={{ __html: item.icon }}>
+                                                            >
+
+
+
+                                                                {
+                                                                    item.icon ? <span dangerouslySetInnerHTML={{ __html: item.icon }}></span> : <span className='btms-custom-svg'>
+                                                                        {item?.name === "linkedin" && <Linkedin color='#fff' />}
+                                                                        {item?.name === "twitter" && <Twitter color='#fff' />}
+                                                                        {item?.name === "email" && <Mail color='#fff' />}
+                                                                    </span>
+                                                                }
+
+
+
+
                                                             </a>
 
 
@@ -47,8 +64,6 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
                                                     </>
                                                 })
                                             }
-
-
 
                                         </div>
                                     }
@@ -60,7 +75,7 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
                     )}
                 </div>
             </div>
-        </section>
+        </section >
 
     </>
 }
