@@ -33,52 +33,31 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
     case "default":
       draft["styles"] = {
         "section": {
-          "width": "100%",
-          "height": "100%",
-          "padding": {
-            "top": "80px",
-            "right": "0px",
-            "bottom": "80px",
-            "left": "0px"
-          },
-          "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "0px",
-            "left": "0px"
-          },
+          "padding": draft.styles.section.padding,
+          "margin": draft.styles.section.margin,
+          "radius": draft.styles.section.radius,
           "bg": {
             "color": "linear-gradient(to bottom right, #9333ea, #db2777, #f97316)"
           }
         },
         "header": {
-          "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "64px",
-            "left": "0px"
-          },
-          "padding": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "0px",
-            "left": "0px"
-          },
-          "textAlign": "center",
+          "margin": draft.styles.header.margin,
+          "padding": draft.styles.header.padding,
+          "textAlign": draft.styles.header.textAlign,
           "bg": {
             "color": ""
           }
         },
         "title": {
           "typo": {
-            "fontWeight": 700,
+            "fontWeight": 600,
             "fontSize": {
-              "desktop": 32,
+              "desktop": 48,
               "tablet": 20,
               "mobile": 18
             },
-            "lineHeight": 1.2,
-            "fontFamily": ""
+            "lineHeight": 1,
+            "fontFamily": "ui-sans-serif, system-ui"
           },
           "margin": {
             "top": "0px",
@@ -91,20 +70,21 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
         "subTitle": {
           "typo": {
             "fontSize": {
-              "desktop": 16,
+              "desktop": 18,
               "tablet": 14,
               "mobile": 12
             },
-            "lineHeight": 1.6,
-            "fontFamily": ""
+            "fontFamily": "ui-sans-serif, system-ui",
+            "fontWeight": 400,
+            "letterSpace": "1px"
           },
           "margin": {
             "top": "0px",
             "right": "0px",
-            "bottom": "24px",
+            "bottom": "0px",
             "left": "0px"
           },
-          "color": "rgba(#ffffff, 0.9)"
+          "color": "rgba(249, 249, 249, 0.95)"
         },
         "card": {
           "width": "100%",
@@ -130,20 +110,21 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
         },
         "img": {
           "width": "100%",
-          "height": "256px",
-          "radius": 16
+          "height": "100%",
+          "radius": 15
         },
         "cardContent": {
           "textAlign": "center",
           "name": {
             "typo": {
               "fontSize": {
-                "desktop": 24,
-                "tablet": 20,
-                "mobile": 18
+                "desktop": 20,
+                "tablet": 18,
+                "mobile": 214
               },
               "fontWeight": 700,
-              "lineHeight": 1.3
+              "lineHeight": 1.3,
+              "fontFamily": "ui-sans-serif, system-ui"
             },
             "color": "#ffffff",
             "margin": {
@@ -156,14 +137,15 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "role": {
             "typo": {
               "fontSize": {
-                "desktop": 15,
+                "desktop": 14,
                 "tablet": 14,
                 "mobile": 12
               },
               "fontWeight": 600,
               "lineHeight": 1.3,
-              "letterSpacing": "0.05em",
-              "textTransform": "uppercase"
+              "letterSpace": "0.5px",
+              "textTransform": "uppercase",
+              "fontFamily": "ui-sans-serif, system-ui"
             },
             "color": "#facc15",
             "margin": {
@@ -181,14 +163,14 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "mobile": 12
               },
               "lineHeight": 1.6,
-              "letterSpacing": "0.05em",
-              "textTransform": ""
+              "textTransform": "",
+              "fontFamily": "ui-sans-serif, system-ui"
             },
             "color": "rgba(255, 255, 255, 0.8)",
             "margin": {
               "top": "0px",
               "right": "0px",
-              "bottom": "24px",
+              "bottom": "16px",
               "left": "0px"
             }
           },
@@ -206,180 +188,34 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             },
             "radius": 50,
             "icon": {
-              "size": 20,
-              "fill": "#fff"
+              "size": 18,
+              "fill": "none"
             }
           }
         }
       }
       draft["section"] = {
-        "headline": "Creative Minds",
-        "slogan": " Bold thinkers, creative doers, and passionate innovators"
+        "headline": draft.section.headline,
+        "slogan": draft.section.slogan
       }
-      draft["teamMembers"] = [
-        {
-          "id": 1,
-          "name": "Sarah Chen",
-          "role": "Creative Director",
-          "bio": "Visionary leader with 10+ years in brand strategy and creative direction.",
-          "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-          "social": [
-            {
-              "name": "linkedin",
-              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "twitter",
-              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "email",
-              "url": "saarah@example.com",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            }
-          ],
-          "isShowSocial": true
-        },
-        {
-          "id": 2,
-          "name": "Marcus Rodriguez",
-          "role": "Lead Designer",
-          "bio": "Award-winning designer specializing in digital experiences and brand identity.",
-          "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-          "social": [
-            {
-              "name": "linkedin",
-              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "twitter",
-              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "email",
-              "url": "saarah@example.com",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            }
-          ],
-          "isShowSocial": true
-        },
-        {
-          "id": 3,
-          "name": "Emily Thompson",
-          "role": "Senior Developer",
-          "bio": "Full-stack developer passionate about creating seamless user experiences.",
-          "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-          "social": [
-            {
-              "name": "linkedin",
-              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "twitter",
-              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "email",
-              "url": "saarah@example.com",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            }
-          ],
-          "isShowSocial": true
-        },
-        {
-          "id": 4,
-          "name": "James Kim",
-          "role": "Brand Strategist",
-          "bio": "Strategic thinker who transforms brands through compelling storytelling.",
-          "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-          "social": [
-            {
-              "name": "linkedin",
-              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "twitter",
-              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "email",
-              "url": "saarah@example.com",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            }
-          ],
-          "isShowSocial": true
-        }
-      ]
-
+      draft["teamMembers"] = [...draft.teamMembers]
       break;
 
     case "theme2":
       draft["styles"] = {
         "section": {
-          "width": "100%",
-          "height": "100%",
-          "padding": {
-            "top": "80px",
-            "right": "0px",
-            "bottom": "80px",
-            "left": "0px"
-          },
-          "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "0px",
-            "left": "0px"
-          },
+
+          "padding": draft.styles.section.padding,
+          "margin": draft.styles.section.margin,
           "bg": {
             "color": "#ffffff"
-          }
+          },
+          "radius": draft.styles.section.radius
         },
         "header": {
-          "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "64px",
-            "left": "0px"
-          },
-          "padding": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "0px",
-            "left": "0px"
-          },
-          "textAlign": "center",
+          "margin": draft.styles.header.margin,
+          "padding": draft.styles.header.padding,
+          "textAlign": draft.styles.header.textAlign,
           "bg": {
             "color": ""
           }
@@ -391,7 +227,8 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "desktop": 36,
               "tablet": 20,
               "mobile": 18
-            }
+            },
+            "fontFamily": "ui-sans-serif, system-ui"
           },
           "margin": {
             "top": "0px",
@@ -404,17 +241,17 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
         "subTitle": {
           "typo": {
             "fontSize": {
-              "desktop": 24,
+              "desktop": 18,
               "tablet": 20,
               "mobile": 14
             },
             "lineHeight": 1.6,
-            "fontFamily": ""
+            "fontFamily": "ui-sans-serif, system-ui"
           },
           "margin": {
             "top": "0px",
             "right": "0px",
-            "bottom": "24px",
+            "bottom": "0px",
             "left": "0px"
           },
           "color": "#6b7280"
@@ -524,136 +361,10 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
         }
       }
       draft["section"] = {
-        "headline": "Meet Our Team",
-        "slogan": "Tal eptional creative work"
+        "headline": draft.section.headline,
+        "slogan": draft.section.slogan
       }
-      draft["teamMembers"] = [
-        {
-          "id": 1,
-          "name": "Sarah Chen",
-          "role": "Creative Director",
-          "bio": "Visionary leader with 10+ years in brand strategy and creative direction.",
-          "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-          "social": [
-            {
-              "name": "linkedin",
-              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "twitter",
-              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "email",
-              "url": "saarah@example.com",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            }
-          ],
-          "isShowSocial": true
-        },
-        {
-          "id": 2,
-          "name": "Marcus Rodriguez",
-          "role": "Lead Designer",
-          "bio": "Award-winning designer specializing in digital experiences and brand identity.",
-          "image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-          "social": [
-            {
-              "name": "linkedin",
-              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "twitter",
-              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "email",
-              "url": "saarah@example.com",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            }
-          ],
-          "isShowSocial": true
-        },
-        {
-          "id": 3,
-          "name": "Emily Thompson",
-          "role": "Senior Developer",
-          "bio": "Full-stack developer passionate about creating seamless user experiences.",
-          "image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-          "social": [
-            {
-              "name": "linkedin",
-              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "twitter",
-              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "email",
-              "url": "saarah@example.com",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            }
-          ],
-          "isShowSocial": true
-        },
-        {
-          "id": 4,
-          "name": "James Kim",
-          "role": "Brand Strategist",
-          "bio": "Strategic thinker who transforms brands through compelling storytelling.",
-          "image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
-          "social": [
-            {
-              "name": "linkedin",
-              "url": "https://www.linkedin.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z\"/><rect width=\"4\" height=\"12\" x=\"2\" y=\"9\"/><circle cx=\"4\" cy=\"4\" r=\"2\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "twitter",
-              "url": "https://www.twitter.com/in/sarah-chen-1234567890 ",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            },
-            {
-              "name": "email",
-              "url": "saarah@example.com",
-              "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path d=\"M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4z\"/></svg>",
-              "isShow": true,
-              "isOpenNewTab": true
-            }
-          ],
-          "isShowSocial": true
-        }
-      ]
-
+      draft["teamMembers"] = [...draft.teamMembers]
       break;
 
 
@@ -663,23 +374,3 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
 })
 
 
-export const themePresets = {
-  theme1: {
-    backgroundColor: '#00283a',
-    color: '#fff',
-    padding: '20px',
-    borderRadius: '8px'
-  },
-  theme2: {
-    backgroundColor: '#f5f5f5',
-    color: '#222',
-    padding: '25px',
-    borderRadius: '0'
-  },
-  theme3: {
-    background: 'linear-gradient(to right, #ff7e5f, #feb47b)',
-    color: '#fff',
-    padding: '30px',
-    borderRadius: '12px'
-  }
-};

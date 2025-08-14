@@ -53,7 +53,7 @@ const Style = ({ attributes, id }) => {
 		   ${getTypoCSS("", cardContent.role.typo).googleFontLink} 
 		   ${getTypoCSS("", cardContent.bio.typo).googleFontLink} 
 
-		   ${getTypoCSS("", title.typo).googleFontLink} 
+		 ${getTypoCSS("", title.typo).googleFontLink} 
 		 ${getTypoCSS("", subTitle.typo).googleFontLink} 
 		 ${getTypoCSS("", name.typo).googleFontLink} 
 		 ${getTypoCSS("", role.typo).googleFontLink} 
@@ -129,13 +129,11 @@ const Style = ({ attributes, id }) => {
 
 
 		${blockSl} .btms-variation2-section {
-		
-		${isValidCSS('width', section?.width)}
-		height:${section?.height};
-		padding:${getBoxCSS(section.padding)};
-	    margin:${getBoxCSS(section.margin)};
-		${getBackgroundCSS(section.bg)}
-
+		padding:${getBoxCSS(section?.padding)};
+	    margin:${getBoxCSS(section?.margin)};
+		${getBackgroundCSS(section?.bg)}
+		border-radius:${getBoxCSS(section?.radius)};
+          
 
 		
         .btms-container {
@@ -166,12 +164,10 @@ const Style = ({ attributes, id }) => {
 
 
 		${themeTwoSectionSL} {
-		
-		${isValidCSS('width', section?.width)}
-		height:${section?.height};
-		padding:${getBoxCSS(section.padding)};
-	    margin:${getBoxCSS(section.margin)};
-		${getBackgroundCSS(section.bg)}
+		padding:${getBoxCSS(section?.padding)};
+	    margin:${getBoxCSS(section?.margin)};
+		${getBackgroundCSS(section?.bg)}
+		border-radius:${getBoxCSS(section?.radius)}
 		
 		}
 
