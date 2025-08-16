@@ -7,7 +7,7 @@ import { generalStyleTabs } from '../../../utils/options';
 import General from './General/General';
 import Style from './Style/Style';
 
-const Settings = ({ attributes, setAttributes }) => {
+const Settings = ({ attributes, setAttributes, device }) => {
 	const { alignment } = attributes;
 	return <>
 		<InspectorControls>
@@ -18,9 +18,9 @@ const Settings = ({ attributes, setAttributes }) => {
 			<TabPanel className='bPlTabPanel wp-block-b-blocks-team-section-beta' activeClass='activeTab' tabs={generalStyleTabs} onSelect={tabController}>
 				{
 					tab => <>
-						{'general' === tab.name && <General attributes={attributes} setAttributes={setAttributes} />}
+						{'general' === tab.name && <General device={device} attributes={attributes} setAttributes={setAttributes} />}
 
-						{'style' === tab.name && <Style attributes={attributes} setAttributes={setAttributes} />}
+						{'style' === tab.name && <Style device={device} attributes={attributes} setAttributes={setAttributes} />}
 					</>
 				}
 			</TabPanel>

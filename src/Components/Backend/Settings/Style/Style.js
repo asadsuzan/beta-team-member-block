@@ -1,19 +1,37 @@
 
 import { __ } from '@wordpress/i18n';
-import { PanelBody, RangeControl } from '@wordpress/components';
-import { Background, BButtonGroup, BoxControl, ColorControl, Label, Typography } from "../../../../../../bpl-tools-main/Components";
+import { PanelBody, PanelRow, RangeControl } from '@wordpress/components';
+import { Background, BButtonGroup, BoxControl, ColorControl, Device, Label, Typography } from "../../../../../../bpl-tools-main/Components";
 import { __experimentalUnitControl as UnitControl, __experimentalBorderControl as BorderControl } from "@wordpress/components"
 import { updateData } from '../../../../utils/functions';
-const Style = ({ attributes, setAttributes }) => {
-  const { styles, theme } = attributes;
+const Style = ({ attributes, setAttributes, device }) => {
+  const { styles, theme, columns } = attributes;
   const { section, header = {}, title, subTitle, card, img, cardContent } = styles || {}
   const { name, role, bio, button } = cardContent
   const { textAlign } = header
-  console.log(theme, 'from style js');
+
   return (
 
 
     <>
+      {/* <PanelBody className='bPlPanelBody' title={__('Testing', 'b-blocks')}
+        initialOpen={false}>
+        <PanelRow><Label className='' >Padding</Label> <Device /> </PanelRow>
+        <BoxControl values={padding[device]} onChange={v => setAttributes({ padding: updateData(padding, v, device,) })} />
+      </PanelBody> */}
+
+
+      {/* grid settings  */}
+      <PanelBody
+        className='bPlPanelBody'
+        title='grid'
+        initialOpen={false}
+      >
+
+        <PanelRow><Label className=''>columns</Label> <Device /> </PanelRow>
+        <RangeControl value={columns[device]} onChange={v => setAttributes({ columns: updateData(columns, v, device) })} />
+
+      </PanelBody>
 
 
       {/* common styles  */}
@@ -29,6 +47,7 @@ const Style = ({ attributes, setAttributes }) => {
 
           {/* section background  */}
           <Background
+            className="mt10"
             value={section?.bg}
             onChange={(v) =>
               setAttributes({
@@ -40,10 +59,10 @@ const Style = ({ attributes, setAttributes }) => {
 
 
           {/* section padding  */}
-
+          <PanelRow><Label className=''>padding</Label> <Device /> </PanelRow>
           <BoxControl
-            label='padding'
-            values={section?.padding}
+            className="mt10"
+            values={section?.padding?.[device]}
             resetValues={{
               "top": "2rem",
               "right": "2rem",
@@ -52,7 +71,7 @@ const Style = ({ attributes, setAttributes }) => {
             }}
             onChange={(v) => {
               setAttributes({
-                styles: updateData(styles, v, 'section', 'padding')
+                styles: updateData(styles, v, 'section', 'padding', device)
               })
             }}
 
@@ -60,9 +79,10 @@ const Style = ({ attributes, setAttributes }) => {
 
 
           {/* section margin  */}
+          <PanelRow><Label className=''>margin</Label> <Device /> </PanelRow>
           <BoxControl
-            label='margin'
-            values={section?.margin}
+            className="mt10"
+            values={section?.margin?.[device]}
             resetValues={{
               "top": "0px",
               "right": "0px",
@@ -71,7 +91,7 @@ const Style = ({ attributes, setAttributes }) => {
             }}
             onChange={(v) => {
               setAttributes({
-                styles: updateData(styles, v, 'section', 'margin')
+                styles: updateData(styles, v, 'section', 'margin', device)
               })
             }}
 
@@ -80,6 +100,7 @@ const Style = ({ attributes, setAttributes }) => {
 
           {/* section border radius  */}
           <BoxControl
+            className="mt10"
             label='radius'
             values={section?.radius}
             resetValues={{
@@ -303,28 +324,7 @@ const Style = ({ attributes, setAttributes }) => {
                 fontWeight={500}
               />
 
-              {/* width  */}
-              <Label>{__('width', 'b-blocks')} </Label>
-              <UnitControl
-                value={card.width}
-                onChange={(v) =>
-                  setAttributes({
-                    styles: updateData(styles, v, 'card', 'width')
-                  })
-                }
 
-              />
-              {/* height  */}
-              <Label>{__('height', 'b-blocks')} </Label>
-              <UnitControl
-                value={card.height}
-                onChange={(v) =>
-                  setAttributes({
-                    styles: updateData(styles, v, 'card', 'height')
-                  })
-                }
-
-              />
               <Label>{__('padding', 'b-blocks')} </Label>
 
               <BoxControl
@@ -500,31 +500,28 @@ const Style = ({ attributes, setAttributes }) => {
               />
 
             </div>
+
             {/* social */}
             <div className='btms-nested-control'>
 
               <span className='btms-nested-label'>
                 {__('social', 'b-blocks')}
               </span>
+              {/* padding  */}
 
-              {/* width  */}
-              <Label>{__('width', 'b-blocks')} </Label>
-              <UnitControl
-                value={button.width}
+
+              <BoxControl
+                label="padding"
+                values={cardContent.button?.padding}
+                resetValues={{
+                  "top": "0px",
+                  "right": "0px",
+                  "bottom": "0px",
+                  "left": "0px"
+                }}
                 onChange={(v) =>
                   setAttributes({
-                    styles: updateData(styles, v, 'cardContent', 'button', "width")
-                  })
-                }
-
-              />
-              {/* height  */}
-              <Label>{__('height', 'b-blocks')} </Label>
-              <UnitControl
-                value={button.height}
-                onChange={(v) =>
-                  setAttributes({
-                    styles: updateData(styles, v, 'cardContent', 'button', "height")
+                    styles: updateData(styles, v, 'cardContent', 'button', "padding")
                   })
                 }
 
@@ -682,28 +679,7 @@ const Style = ({ attributes, setAttributes }) => {
                 fontWeight={500}
               />
 
-              {/* width  */}
-              <Label>{__('width', 'b-blocks')} </Label>
-              <UnitControl
-                value={card.width}
-                onChange={(v) =>
-                  setAttributes({
-                    styles: updateData(styles, v, 'card', 'width')
-                  })
-                }
 
-              />
-              {/* height  */}
-              <Label>{__('height', 'b-blocks')} </Label>
-              <UnitControl
-                value={card.height}
-                onChange={(v) =>
-                  setAttributes({
-                    styles: updateData(styles, v, 'card', 'height')
-                  })
-                }
-
-              />
               <Label>{__('padding', 'b-blocks')} </Label>
 
               <BoxControl

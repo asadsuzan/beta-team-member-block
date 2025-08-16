@@ -29,12 +29,13 @@ $primaryColor: #4527a4;
 
 			.btms-grid {
 				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 2rem;
+				gap: 1.5rem;
+				align-content: center;
 
 				.btms-card-group {
 					position: relative;
 					transition: $transition;
+
 
 					&:hover .btms-card-blur-bg {
 						opacity: .70;
@@ -68,9 +69,11 @@ $primaryColor: #4527a4;
 						border: 1px solid $glass-border;
 						border-radius: $border-radius;
 						display: flex;
-						width: 100%;
 						transform: none;
 						flex-direction: column;
+						width: 100%;
+						max-width: 100%;
+						height: 100%;
 
 						// Image wrapper
 						.btms-card-img-wrapper {
@@ -79,10 +82,16 @@ $primaryColor: #4527a4;
 							border-radius: 1rem;
 							margin-bottom: 1.5rem;
 							flex-shrink: 0;
+							display: flex;
+							justify-content: center;
+							align-items: center;
 
 							.btms-card-img {
 								object-fit: cover;
 								transition: transform 0.8s ease;
+								min-height: 256px;
+								height: 100%;
+								width: 100%;
 							}
 
 							.btms-card-overlay {
@@ -100,11 +109,18 @@ $primaryColor: #4527a4;
 
 						// Text content
 						.btms-card-text {
+							.btms-card-bio {
+								word-wrap: break-word;
+								overflow-wrap: break-word;
+								max-width: 100%;
+							}
+
 							.btms-card-icons {
 								display: flex;
 								justify-content: center;
 								gap: 0.75rem;
-								margin-top: auto;
+
+
 
 								.btms-card-icon {
 									display: flex;
@@ -112,6 +128,8 @@ $primaryColor: #4527a4;
 									justify-content: center;
 									transition: $transition;
 									cursor: pointer;
+									height: 40px;
+									width: 40px;
 
 									&:hover {
 										background: rgba(255, 255, 255, .3) !important;
@@ -140,12 +158,16 @@ $primaryColor: #4527a4;
 		@media (min-width: 576px) {
 			.btms-container {
 				max-width: 540px;
+
 			}
 		}
+
 
 		@media (min-width: 768px) {
 			.btms-container {
 				max-width: 720px;
+
+
 			}
 		}
 
@@ -155,150 +177,140 @@ $primaryColor: #4527a4;
 			}
 		}
 
-		@media (min-width: 1200px) {
+		@media (min-width: 1280px) {
 			.btms-container {
-				max-width: 1140px;
+				max-width: 1200px;
 			}
 		}
-
-
-		@media (min-width: 1400px) {
-			.btms-container {
-				max-width: 1320px;
-			}
-		}
-
 	}
 
 	// theme two css 
 
 
-	.btms-container {
-		max-width: 80rem;
-		margin: 0 auto;
-		padding: 0 1rem;
-	}
+
+	.bBlocksBetaTeamSectionV2 {
+		.btms-container {
+			max-width: 80rem;
+			margin: 0 auto;
+			padding: 0 1rem;
+		}
 
 
 
 
-	.btms-wrapper {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 2rem;
-	}
-
-	@media (min-width: 768px) {
 		.btms-wrapper {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-
-	@media (min-width: 1024px) {
-		.btms-wrapper {
-			grid-template-columns: repeat(4, 1fr);
-		}
-	}
-
-
-	.btms-card {
-		cursor: pointer;
-		transition: all 0.3s ease;
-	}
-
-	.btms-card:hover {
-		transform: translateY(-2px);
-	}
-
-
-	.btms-card-image {
-		position: relative;
-		overflow: hidden;
-		border-radius: 1rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.btms-image {
-		width: 100%;
-		height: 20rem;
-		object-fit: cover;
-		transition: transform 0.5s ease;
-	}
-
-	.btms-card:hover .btms-image {
-		transform: scale(1.05);
-	}
-
-
-	.btms-overlay {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
-		opacity: 0;
-		transition: opacity 0.3s ease;
-	}
-
-	.btms-card:hover .btms-overlay {
-		opacity: 1;
-	}
-
-
-
-
-	.btms-social {
-		display: flex;
-		justify-content: center;
-		gap: 0.75rem;
-	}
-
-	.btms-link {
-		// color: #9ca3af;
-		transition: color 0.3s ease;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-
-		svg {
-			height: 20px;
-			width: 20px;
-			// fill: #babbbf;
-			transition: all .3s ease;
-
-
-		}
-
-		&:hover svg {
-			// fill: #6b7280;
-		}
-	}
-
-	@media (max-width: 767px) {
-		.btms-wrapper {
+			display: grid;
 			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		@media (min-width: 768px) {
+			.btms-wrapper {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media (min-width: 1024px) {
+			.btms-wrapper {
+				grid-template-columns: repeat(4, 1fr);
+			}
+		}
+
+
+		.btms-card {
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.btms-card:hover {
+			transform: translateY(-2px);
+		}
+
+
+		.btms-card-image {
+			position: relative;
+			overflow: hidden;
+			border-radius: 1rem;
+			margin-bottom: 1.5rem;
 		}
 
 		.btms-image {
-			height: 18rem;
-		}
-	}
-
-	@media (max-width: 639px) {
-		.btms-title {
-			font-size: 2rem;
+			width: 100%;
+			height: 20rem;
+			object-fit: cover;
+			transition: transform 0.5s ease;
 		}
 
-		.btms-subtitle {
-			font-size: 1.125rem;
+		.btms-card:hover .btms-image {
+			transform: scale(1.05);
 		}
+
+
+		.btms-overlay {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		.btms-card:hover .btms-overlay {
+			opacity: 1;
+		}
+
+
+
+
+		.btms-social {
+			display: flex;
+			justify-content: center;
+			gap: 0.75rem;
+		}
+
+		.btms-link {
+			// color: #9ca3af;
+			transition: color 0.3s ease;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+
+			svg {
+				height: 20px;
+				width: 20px;
+				// fill: #babbbf;
+				transition: all .3s ease;
+
+
+			}
+
+			&:hover svg {
+				// fill: #6b7280;
+			}
+		}
+
+		@media (max-width: 767px) {
+			.btms-wrapper {
+				grid-template-columns: 1fr;
+			}
+
+			.btms-image {
+				height: 18rem;
+			}
+		}
+
+		@media (max-width: 639px) {
+			.btms-title {
+				font-size: 2rem;
+			}
+
+			.btms-subtitle {
+				font-size: 1.125rem;
+			}
+		}
+
+
 	}
 
 
 }
-
-
-
-
-// .btms-card-group:hover .btms-card-img {
-// 	transform: scale(1.1);
-// }

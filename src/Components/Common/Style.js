@@ -1,7 +1,9 @@
+
+import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools-main/utils/data';
 import { getBackgroundCSS, getBorderCSS, getBoxCSS, getTypoCSS, isValidCSS } from "../../../../bpl-tools-main/utils/getCSS"
 
-const Style = ({ attributes, id }) => {
-	const { styles = {} } = attributes;
+const Style = ({ attributes, id, device }) => {
+	const { styles = {}, align, columns } = attributes;
 	const { section, header, title, subTitle, card, img, cardContent } = styles
 
 	const { name, role, bio, button } = cardContent
@@ -73,16 +75,27 @@ const Style = ({ attributes, id }) => {
          ${getTypoCSS(themeTwoRoleSL, role.typo).styles} 
          ${getTypoCSS(themeTwoBioSL, bio.typo).styles} 
 
+
+		 ${gridSL}{
+		  grid-template-columns: repeat(${align ? columns?.desktop : 2}, 1fr);
+		  ${tabBreakpoint}{
+		  grid-template-columns: repeat(${align ? columns?.tablet : 2}, 1fr);
+          }
+		  ${mobileBreakpoint}{
+		   grid-template-columns: repeat(${align ? columns?.mobile : 2}, 1fr);
+		  }	 
+		}
+		 
+
            ${subTitleSL}{
 		    margin:${getBoxCSS(subTitle.margin)};
             color:${subTitle?.color};
 		  }
            ${socialButtonSL}{
-		  	 	${isValidCSS('width', cardContent.button?.width)}
-		 		${isValidCSS('height', cardContent?.button.height)}
-				${getBackgroundCSS(cardContent.button.bg)}
-				${getBorderCSS(cardContent.button.border)}
-				border-radius:${cardContent.button.radius}%;
+		        padding:${getBoxCSS(cardContent?.button?.padding)};
+				${getBackgroundCSS(cardContent?.button?.bg)}
+				${getBorderCSS(cardContent?.button?.border)}
+				border-radius:${cardContent?.button?.radius}%;
 		  }
            ${socialIconSL}{
 		  	 	fill:${cardContent.button.icon.fill};
@@ -93,16 +106,13 @@ const Style = ({ attributes, id }) => {
 
 
 		  ${cardSL} {
-		 		 ${isValidCSS('width', card?.width)}
-		 		 ${isValidCSS('height', card?.height)}
 				  padding:${getBoxCSS(card?.padding)};
 				  margin:${getBoxCSS(card?.margin)};
 
 				 }
 	      
              ${cardImgSL}{
-			   ${isValidCSS('width', img?.width)}
-		 	   ${isValidCSS('height', img?.height)}
+			
 			   border-radius:${img.radius}px;
 			   
 			 
@@ -122,17 +132,41 @@ const Style = ({ attributes, id }) => {
 			 }
              ${cardBioSL}{
 			   margin:${getBoxCSS(cardContent?.bio?.margin)};
-			   color:${cardContent?.bio?.color}
+			   color:${cardContent?.bio?.color};
 			 }
+
+
+         ${sectionSL}{
+		   padding:${getBoxCSS(section?.padding?.desktop)};
+	       margin:${getBoxCSS(section?.margin?.desktop)};
+		   ${getBackgroundCSS(section?.bg)}
+		   border-radius:${getBoxCSS(section?.radius)};
+		 }
+
+
+         ${tabBreakpoint} {
+           ${sectionSL}{
+		   padding:${getBoxCSS(section?.padding?.tablet)};
+	       margin:${getBoxCSS(section?.margin?.tablet)};
+		   }
+	 }
+
+
+
+         ${mobileBreakpoint}{
+             ${sectionSL} {
+		      padding:${getBoxCSS(section?.padding?.mobile)};
+	          margin:${getBoxCSS(section?.margin?.mobile)};
+		     }
+	  }
+
+
 
 
 
 
 		${blockSl} .btms-variation2-section {
-		padding:${getBoxCSS(section?.padding)};
-	    margin:${getBoxCSS(section?.margin)};
-		${getBackgroundCSS(section?.bg)}
-		border-radius:${getBoxCSS(section?.radius)};
+	
           
 
 		
@@ -160,8 +194,7 @@ const Style = ({ attributes, id }) => {
 
 
 
-
-
+ 
 
 		${themeTwoSectionSL} {
 		padding:${getBoxCSS(section?.padding)};
@@ -189,8 +222,7 @@ const Style = ({ attributes, id }) => {
 		}
 
 		${themeTwoCardSL}{
-		 ${isValidCSS('width', card?.width)}
-		 ${isValidCSS('height', card?.height)}
+		
 		 padding:${getBoxCSS(card?.padding)};
 		 margin:${getBoxCSS(card?.margin)};
 		 ${getBorderCSS(card.border)};

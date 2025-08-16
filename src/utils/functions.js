@@ -53,8 +53,8 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "fontWeight": 600,
             "fontSize": {
               "desktop": 48,
-              "tablet": 20,
-              "mobile": 18
+              "tablet": 32,
+              "mobile": 22
             },
             "lineHeight": 1,
             "fontFamily": "ui-sans-serif, system-ui"
@@ -71,8 +71,8 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "typo": {
             "fontSize": {
               "desktop": 18,
-              "tablet": 14,
-              "mobile": 12
+              "tablet": 16,
+              "mobile": 14
             },
             "fontFamily": "ui-sans-serif, system-ui",
             "fontWeight": 400,
@@ -87,8 +87,6 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "color": "rgba(249, 249, 249, 0.95)"
         },
         "card": {
-          "width": "100%",
-          "height": "100%",
           "margin": {
             "top": "0px",
             "right": "0px",
@@ -109,8 +107,6 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           }
         },
         "img": {
-          "width": "100%",
-          "height": "100%",
           "radius": 15
         },
         "cardContent": {
@@ -120,7 +116,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "fontSize": {
                 "desktop": 20,
                 "tablet": 18,
-                "mobile": 214
+                "mobile": 16
               },
               "fontWeight": 700,
               "lineHeight": 1.3,
@@ -175,8 +171,12 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             }
           },
           "button": {
-            "width": "40px",
-            "height": "40px",
+            "padding": {
+              "top": "5px",
+              "right": "5px",
+              "bottom": "5px",
+              "left": "5px"
+            },
             "bg": {
               "color": "rgba(255, 255, 255, 0.2)"
             },
@@ -241,8 +241,8 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
         "subTitle": {
           "typo": {
             "fontSize": {
-              "desktop": 18,
-              "tablet": 20,
+              "desktop": 20,
+              "tablet": 16,
               "mobile": 14
             },
             "lineHeight": 1.6,
@@ -257,8 +257,6 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "color": "#6b7280"
         },
         "card": {
-          "width": "100%",
-          "height": "100%",
           "margin": {
             "top": "0px",
             "right": "0px",
@@ -279,8 +277,6 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "radius": 0
         },
         "img": {
-          "width": "100%",
-          "height": "256px",
           "radius": 16
         },
         "cardContent": {
@@ -342,8 +338,12 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             }
           },
           "button": {
-            "width": "40px",
-            "height": "40px",
+            "padding": {
+              "top": "5px",
+              "right": "5px",
+              "bottom": "5px",
+              "left": "5px"
+            },
             "bg": {
               "color": "rgba(255, 255, 255, 0.2)"
             },
