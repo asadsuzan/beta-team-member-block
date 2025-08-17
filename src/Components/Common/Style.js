@@ -10,8 +10,8 @@ const Style = ({ attributes, id, device }) => {
 
 
 	const mainSl = `#${id}`;
-	const blockSl = `${mainSl} .bBlocksBetaTeamSection`;
-	const sectionSL = `${blockSl} .btms-variation2-section`;
+	const blockSl = `${mainSl} .btms-theme-one`;
+	const sectionSL = `${blockSl} .btms-section`;
 	const containerSL = `${sectionSL} .btms-container `;
 	const headerSL = `${containerSL} .btms-header`;
 	const titleSL = `${headerSL} .btms-title`;
@@ -29,7 +29,7 @@ const Style = ({ attributes, id, device }) => {
 	const socialContainerSL = `${cardTextSL} .btms-card-icons`
 	const socialButtonSL = `${socialContainerSL} .btms-card-icon`
 	const socialIconSL = `${socialContainerSL} svg`
-	const themeTwoBlockSl = `${mainSl} .bBlocksBetaTeamSectionV2`;
+	const themeTwoBlockSl = `${mainSl} .btms-theme-two`;
 	const themeTwoSectionSL = `${themeTwoBlockSl} .btms-team-section`;
 	const themeTwoContainerSL = `${themeTwoSectionSL} .btms-container`;
 	const themeTwoDeaderSL = `${themeTwoContainerSL} .btms-header`;

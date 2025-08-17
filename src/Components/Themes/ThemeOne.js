@@ -4,7 +4,7 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
 
     return <>
 
-        <section className="btms-variation2-section">
+        <section className="btms-section">
             <div className="btms-container">
                 <div className="btms-header">
                     <h2 className="btms-title">{section?.headline}</h2>
@@ -42,9 +42,6 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
                                                                 key={idx}
                                                                 className="btms-card-icon"
                                                             >
-
-
-
                                                                 {
                                                                     item.icon ? <span dangerouslySetInnerHTML={{ __html: item.icon }}></span> : <span className='btms-custom-svg'>
                                                                         {item?.name === "linkedin" && <Linkedin color='#fff' />}
@@ -52,9 +49,6 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
                                                                         {item?.name === "email" && <Mail color='#fff' />}
                                                                     </span>
                                                                 }
-
-
-
 
                                                             </a>
 

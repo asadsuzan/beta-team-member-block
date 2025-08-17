@@ -449,118 +449,343 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
     case "theme2":
       draft["styles"] = {
         "section": {
-
-          "padding": draft.styles.section.padding,
-          "margin": draft.styles.section.margin,
-          "bg": {
-            "color": "#ffffff"
+          "padding": {
+            "desktop": {
+              "top": "80px",
+              "right": "0px",
+              "bottom": "80px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "50px",
+              "right": "0px",
+              "bottom": "50px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "30px",
+              "right": "0px",
+              "bottom": "30px",
+              "left": "0px"
+            }
           },
-          "radius": draft.styles.section.radius
+          "margin": {
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            }
+          },
+          "radius": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
+          "bg": {
+            "color": "#fff"
+          }
         },
         "header": {
-          "margin": draft.styles.header.margin,
-          "padding": draft.styles.header.padding,
-          "textAlign": draft.styles.header.textAlign,
+          "margin": {
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "64px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "40px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "20px",
+              "left": "0px"
+            }
+          },
+          "padding": {
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            }
+          },
+          "textAlign": "center",
           "bg": {
             "color": ""
           }
         },
         "title": {
           "typo": {
-            "fontWeight": 700,
+            "fontWeight": 600,
             "fontSize": {
               "desktop": 36,
-              "tablet": 20,
+              "tablet": 24,
               "mobile": 18
             },
+            "lineHeight": 1,
             "fontFamily": "ui-sans-serif, system-ui"
           },
           "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "16px",
-            "left": "0px"
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "16px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "14px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "12px",
+              "left": "0px"
+            }
           },
-          "color": "#111827"
+          "color": "#282828"
         },
         "subTitle": {
           "typo": {
             "fontSize": {
               "desktop": 20,
-              "tablet": 16,
-              "mobile": 14
+              "tablet": 18,
+              "mobile": 16
             },
-            "lineHeight": 1.6,
-            "fontFamily": "ui-sans-serif, system-ui"
+            "fontFamily": "ui-sans-serif, system-ui",
+            "fontWeight": 300,
+            "letterSpace": "1px"
           },
           "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "0px",
-            "left": "0px"
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            }
           },
-          "color": "#6b7280"
+          "color": "#4b5563"
         },
         "card": {
           "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "0px",
-            "left": "0px"
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            }
           },
           "padding": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "0px",
-            "left": "0px"
+            "desktop": {
+              "top": "24px",
+              "right": "24px",
+              "bottom": "24px",
+              "left": "24px"
+            },
+            "tablet": {
+              "top": "24px",
+              "right": "24px",
+              "bottom": "24px",
+              "left": "24px"
+            },
+            "mobile": {
+              "top": "24px",
+              "right": "24px",
+              "bottom": "24px",
+              "left": "24px"
+            }
           },
           "border": {
-            "width": "0px",
+            "width": "1px",
             "style": "solid",
-            "color": "#fff"
-          },
-          "radius": 0
+            "color": " rgba(255, 255, 255, 0.2)",
+            "radius": 24
+          }
         },
         "img": {
-          "radius": 16
+          "wrapper": {
+            "margin": {
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "24px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "18px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "18px",
+                "left": "0px"
+              }
+            },
+            "padding": {
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "0px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "0px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "0px",
+                "left": "0px"
+              }
+            },
+            "radius": {
+              "top": "16px",
+              "right": "16px",
+              "bottom": "16px",
+              "left": "16px"
+            },
+            "border": {
+              "width": "0px",
+              "style": "",
+              "color": "#"
+            }
+          },
+          "avatar": {
+            "radius": 16,
+            "minHeight": "256px"
+          }
         },
         "cardContent": {
           "textAlign": "center",
           "name": {
             "typo": {
               "fontSize": {
-                "desktop": 24,
-                "tablet": 20,
-                "mobile": 18
+                "desktop": 20,
+                "tablet": 18,
+                "mobile": 16
               },
-              "fontWeight": 600,
-              "lineHeight": 1.3
+              "fontWeight": 700,
+              "lineHeight": 1.3,
+              "fontFamily": "ui-sans-serif, system-ui"
             },
             "color": "#111827",
             "margin": {
-              "top": "0px",
-              "right": "0px",
-              "bottom": "8px",
-              "left": "0px"
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "8px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "8px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "8px",
+                "left": "0px"
+              }
             }
           },
           "role": {
             "typo": {
               "fontSize": {
-                "desktop": 16,
+                "desktop": 14,
                 "tablet": 14,
                 "mobile": 12
               },
-              "fontWeight": 500,
-              "lineHeight": 1.5,
-              "letterSpacing": "0.05em"
+              "fontWeight": 600,
+              "lineHeight": 1.3,
+              "letterSpace": "0.5px",
+              "textTransform": "uppercase",
+              "fontFamily": "ui-sans-serif, system-ui"
             },
-            "color": "#6b7280",
+            "color": "#4b5563",
             "margin": {
-              "top": "0px",
-              "right": "0px",
-              "bottom": "10px",
-              "left": "0px"
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "12px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "12px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "12px",
+                "left": "0px"
+              }
             }
           },
           "bio": {
@@ -570,24 +795,38 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "tablet": 12,
                 "mobile": 12
               },
-              "lineHeight": 1.5,
-              "letterSpacing": "0.05em",
-              "textTransform": ""
+              "lineHeight": 1.6,
+              "textTransform": "",
+              "fontFamily": "ui-sans-serif, system-ui"
             },
             "color": "#6b7280",
             "margin": {
-              "top": "0px",
-              "right": "0px",
-              "bottom": "16px",
-              "left": "0px"
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "16px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "16px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "16px",
+                "left": "0px"
+              }
             }
           },
           "button": {
             "padding": {
-              "top": "5px",
-              "right": "5px",
-              "bottom": "5px",
-              "left": "5px"
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
             },
             "bg": {
               "color": "rgba(255, 255, 255, 0.2)"
@@ -595,12 +834,13 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "border": {
               "width": "0px",
               "style": "solid",
-              "color": "#ffffff"
+              "color": "#ffffff",
+              "radius": 24
             },
-            "radius": 0,
+            "radius": 50,
             "icon": {
-              "size": 20,
-              "fill": "#babbbf"
+              "size": 18,
+              "fill": "none"
             }
           }
         }

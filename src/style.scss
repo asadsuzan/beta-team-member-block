@@ -21,7 +21,174 @@ $primaryColor: #4527a4;
 	$transition: all 0.3s ease;
 	$blur-amount: 16px; // Main section styles
 
-	.btms-variation2-section {
+
+	// theme one css 
+	.btms-theme-one {
+		.btms-section {
+			.btms-container {
+				width: 100%;
+				margin: 0 auto;
+				padding: 0 1rem;
+
+				.btms-grid {
+					display: grid;
+					gap: 1.5rem;
+					align-content: center;
+
+					.btms-card-group {
+						position: relative;
+						transition: $transition;
+
+
+						&:hover .btms-card-blur-bg {
+							opacity: .70;
+							transition-duration: 0.2s;
+						}
+
+						&:hover .btms-card-img {
+							transform: scale(1.1);
+						}
+
+						.btms-card-blur-bg {
+							position: absolute;
+							top: -4px;
+							right: -4px;
+							bottom: -4px;
+							left: -4px;
+							background: linear-gradient(to right, #facc15, #ef4444, #ec4899);
+							border-radius: 1.5rem;
+							filter: blur(8px);
+							opacity: .20;
+							transition: opacity 1s ease;
+
+						}
+
+
+						.btms-card {
+							position: relative;
+							background-color: $glass-bg;
+							backdrop-filter: blur($blur-amount);
+							-webkit-backdrop-filter: blur($blur-amount);
+							border: 1px solid $glass-border;
+							border-radius: $border-radius;
+							display: flex;
+							transform: none;
+							flex-direction: column;
+							width: 100%;
+							max-width: 100%;
+							height: 100%;
+
+							// Image wrapper
+							.btms-card-img-wrapper {
+								position: relative;
+								overflow: hidden;
+								flex-shrink: 0;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+
+
+								.btms-card-img {
+									object-fit: cover;
+									transition: transform 0.8s ease;
+
+									height: 100%;
+									width: 100%;
+								}
+
+								.btms-card-overlay {
+									position: absolute;
+									inset: 1;
+									background: linear-gradient(to top,
+											rgba(88, 28, 135, 0.4),
+											transparent 50%);
+									border-radius: 1rem;
+									opacity: 1;
+									transition: opacity 0.3s ease;
+
+								}
+							}
+
+							// Text content
+							.btms-card-text {
+								.btms-card-bio {
+									word-wrap: break-word;
+									overflow-wrap: break-word;
+									max-width: 100%;
+								}
+
+								.btms-card-icons {
+									display: flex;
+									justify-content: center;
+									gap: 0.75rem;
+
+
+
+									.btms-card-icon {
+										display: flex;
+										align-items: center;
+										justify-content: center;
+										transition: $transition;
+										cursor: pointer;
+										height: 40px;
+										width: 40px;
+
+										&:hover {
+											background: rgba(255, 255, 255, .3) !important;
+										}
+
+										span {
+											display: flex;
+											justify-content: center;
+											align-items: center;
+
+											svg {
+												transition: $transition;
+											}
+										}
+									}
+								}
+							}
+
+						}
+					}
+
+				}
+
+			}
+
+			@media (min-width: 576px) {
+				.btms-container {
+					max-width: 540px;
+
+				}
+			}
+
+
+			@media (min-width: 768px) {
+				.btms-container {
+					max-width: 720px;
+
+
+				}
+			}
+
+			@media (min-width: 992px) {
+				.btms-container {
+					max-width: 960px;
+				}
+			}
+
+			@media (min-width: 1280px) {
+				.btms-container {
+					max-width: 1200px;
+				}
+			}
+		}
+	}
+
+	// theme two css
+	.btms-theme-two {
 		.btms-container {
 			width: 100%;
 			margin: 0 auto;
@@ -31,167 +198,7 @@ $primaryColor: #4527a4;
 				display: grid;
 				gap: 1.5rem;
 				align-content: center;
-
-				.btms-card-group {
-					position: relative;
-					transition: $transition;
-
-
-					&:hover .btms-card-blur-bg {
-						opacity: .70;
-						transition-duration: 0.2s;
-					}
-
-					&:hover .btms-card-img {
-						transform: scale(1.1);
-					}
-
-					.btms-card-blur-bg {
-						position: absolute;
-						top: -4px;
-						right: -4px;
-						bottom: -4px;
-						left: -4px;
-						background: linear-gradient(to right, #facc15, #ef4444, #ec4899);
-						border-radius: 1.5rem;
-						filter: blur(8px);
-						opacity: .20;
-						transition: opacity 1s ease;
-
-					}
-
-
-					.btms-card {
-						position: relative;
-						background-color: $glass-bg;
-						backdrop-filter: blur($blur-amount);
-						-webkit-backdrop-filter: blur($blur-amount);
-						border: 1px solid $glass-border;
-						border-radius: $border-radius;
-						display: flex;
-						transform: none;
-						flex-direction: column;
-						width: 100%;
-						max-width: 100%;
-						height: 100%;
-
-						// Image wrapper
-						.btms-card-img-wrapper {
-							position: relative;
-							overflow: hidden;
-							flex-shrink: 0;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-
-
-							.btms-card-img {
-								object-fit: cover;
-								transition: transform 0.8s ease;
-
-								height: 100%;
-								width: 100%;
-							}
-
-							.btms-card-overlay {
-								position: absolute;
-								inset: 1;
-								background: linear-gradient(to top,
-										rgba(88, 28, 135, 0.4),
-										transparent 50%);
-								border-radius: 1rem;
-								opacity: 1;
-								transition: opacity 0.3s ease;
-
-							}
-						}
-
-						// Text content
-						.btms-card-text {
-							.btms-card-bio {
-								word-wrap: break-word;
-								overflow-wrap: break-word;
-								max-width: 100%;
-							}
-
-							.btms-card-icons {
-								display: flex;
-								justify-content: center;
-								gap: 0.75rem;
-
-
-
-								.btms-card-icon {
-									display: flex;
-									align-items: center;
-									justify-content: center;
-									transition: $transition;
-									cursor: pointer;
-									height: 40px;
-									width: 40px;
-
-									&:hover {
-										background: rgba(255, 255, 255, .3) !important;
-									}
-
-									span {
-										display: flex;
-										justify-content: center;
-										align-items: center;
-
-										svg {
-											transition: $transition;
-										}
-									}
-								}
-							}
-						}
-
-					}
-				}
-
 			}
-
-		}
-
-		@media (min-width: 576px) {
-			.btms-container {
-				max-width: 540px;
-
-			}
-		}
-
-
-		@media (min-width: 768px) {
-			.btms-container {
-				max-width: 720px;
-
-
-			}
-		}
-
-		@media (min-width: 992px) {
-			.btms-container {
-				max-width: 960px;
-			}
-		}
-
-		@media (min-width: 1280px) {
-			.btms-container {
-				max-width: 1200px;
-			}
-		}
-	}
-
-	// theme two css 
-
-
-
-	.bBlocksBetaTeamSectionV2 {
-		.btms-container {
-			max-width: 80rem;
-			margin: 0 auto;
-			padding: 0 1rem;
 		}
 
 
