@@ -168,22 +168,22 @@
 				"section": {
 					"padding": {
 						"desktop": {
-							"top": "2rem",
-							"right": "2rem",
-							"bottom": "2rem",
-							"left": "2rem"
+							"top": "80px",
+							"right": "0px",
+							"bottom": "80px",
+							"left": "0px"
 						},
 						"tablet": {
-							"top": "1.5rem",
-							"right": "1.5rem",
-							"bottom": "1.5rem",
-							"left": "1.5rem"
+							"top": "50px",
+							"right": "0px",
+							"bottom": "50px",
+							"left": "0px"
 						},
 						"mobile": {
-							"top": "1rem",
-							"right": "1rem",
-							"bottom": "1rem",
-							"left": "1rem"
+							"top": "30px",
+							"right": "0px",
+							"bottom": "30px",
+							"left": "0px"
 						}
 					},
 					"margin": {
@@ -218,16 +218,44 @@
 				},
 				"header": {
 					"margin": {
-						"top": "0px",
-						"right": "0px",
-						"bottom": "64px",
-						"left": "0px"
+						"desktop": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "64px",
+							"left": "0px"
+						},
+						"tablet": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "40px",
+							"left": "0px"
+						},
+						"mobile": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "20px",
+							"left": "0px"
+						}
 					},
 					"padding": {
-						"top": "0px",
-						"right": "0px",
-						"bottom": "0px",
-						"left": "0px"
+						"desktop": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						},
+						"tablet": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						},
+						"mobile": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						}
 					},
 					"textAlign": "center",
 					"bg": {
@@ -246,44 +274,100 @@
 						"fontFamily": "ui-sans-serif, system-ui"
 					},
 					"margin": {
-						"top": "0px",
-						"right": "0px",
-						"bottom": "24px",
-						"left": "0px"
+						"desktop": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "24px",
+							"left": "0px"
+						},
+						"tablet": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "18px",
+							"left": "0px"
+						},
+						"mobile": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "15px",
+							"left": "0px"
+						}
 					},
 					"color": "#ffffff"
 				},
 				"subTitle": {
 					"typo": {
 						"fontSize": {
-							"desktop": 18,
-							"tablet": 14,
-							"mobile": 12
+							"desktop": 20,
+							"tablet": 18,
+							"mobile": 16
 						},
 						"fontFamily": "ui-sans-serif, system-ui",
-						"fontWeight": 400,
+						"fontWeight": 300,
 						"letterSpace": "1px"
 					},
 					"margin": {
-						"top": "0px",
-						"right": "0px",
-						"bottom": "0px",
-						"left": "0px"
+						"desktop": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0",
+							"left": "0px"
+						},
+						"tablet": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						},
+						"mobile": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						}
 					},
 					"color": "rgba(249, 249, 249, 0.95)"
 				},
 				"card": {
 					"margin": {
-						"top": "0px",
-						"right": "0px",
-						"bottom": "0px",
-						"left": "0px"
+						"desktop": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						},
+						"tablet": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						},
+						"mobile": {
+							"top": "0px",
+							"right": "0px",
+							"bottom": "0px",
+							"left": "0px"
+						}
 					},
 					"padding": {
-						"top": "24px",
-						"right": "24px",
-						"bottom": "24px",
-						"left": "24px"
+						"desktop": {
+							"top": "24px",
+							"right": "24px",
+							"bottom": "24px",
+							"left": "24px"
+						},
+						"tablet": {
+							"top": "24px",
+							"right": "24px",
+							"bottom": "24px",
+							"left": "24px"
+						},
+						"mobile": {
+							"top": "24px",
+							"right": "24px",
+							"bottom": "24px",
+							"left": "24px"
+						}
 					},
 					"border": {
 						"width": "1px",
@@ -293,9 +377,63 @@
 					}
 				},
 				"img": {
-					"width": "100%",
-					"height": "100%",
-					"radius": 15
+					"wrapper": {
+						"margin": {
+							"desktop": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "24px",
+								"left": "0px"
+							},
+							"tablet": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "18px",
+								"left": "0px"
+							},
+							"mobile": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "18px",
+								"left": "0px"
+							}
+						},
+						"padding": {
+							"desktop": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "0px",
+								"left": "0px"
+							},
+							"tablet": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "0px",
+								"left": "0px"
+							},
+							"mobile": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "0px",
+								"left": "0px"
+							}
+						},
+						"radius": {
+							"top": "16px",
+							"right": "16px",
+							"bottom": "16px",
+							"left": "16px"
+						},
+						"border": {
+							"width": "0px",
+							"style": "",
+							"color": "#"
+						}
+					},
+					"avatar": {
+						"radius": 16,
+						"minHeight": "256px"
+					}
 				},
 				"cardContent": {
 					"textAlign": "center",
@@ -312,10 +450,24 @@
 						},
 						"color": "#ffffff",
 						"margin": {
-							"top": "0px",
-							"right": "0px",
-							"bottom": "8px",
-							"left": "0px"
+							"desktop": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "8px",
+								"left": "0px"
+							},
+							"tablet": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "8px",
+								"left": "0px"
+							},
+							"mobile": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "8px",
+								"left": "0px"
+							}
 						}
 					},
 					"role": {
@@ -333,10 +485,24 @@
 						},
 						"color": "#facc15",
 						"margin": {
-							"top": "0px",
-							"right": "0px",
-							"bottom": "12px",
-							"left": "0px"
+							"desktop": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "12px",
+								"left": "0px"
+							},
+							"tablet": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "12px",
+								"left": "0px"
+							},
+							"mobile": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "12px",
+								"left": "0px"
+							}
 						}
 					},
 					"bio": {
@@ -352,10 +518,24 @@
 						},
 						"color": "rgba(255, 255, 255, 0.8)",
 						"margin": {
-							"top": "0px",
-							"right": "0px",
-							"bottom": "16px",
-							"left": "0px"
+							"desktop": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "16px",
+								"left": "0px"
+							},
+							"tablet": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "16px",
+								"left": "0px"
+							},
+							"mobile": {
+								"top": "0px",
+								"right": "0px",
+								"bottom": "16px",
+								"left": "0px"
+							}
 						}
 					},
 					"button": {
@@ -380,29 +560,6 @@
 							"fill": "none"
 						}
 					}
-				}
-			}
-		},
-		"padding": {
-			"type": "object",
-			"default": {
-				"desktop": {
-					"top": "0px",
-					"right": "0px",
-					"bottom": "0px",
-					"left": "0px"
-				},
-				"tablet": {
-					"top": "10px",
-					"right": "10px",
-					"bottom": "10px",
-					"left": "10px"
-				},
-				"mobile": {
-					"top": "20px",
-					"right": "20px",
-					"bottom": "20px",
-					"left": "20px"
 				}
 			}
 		},

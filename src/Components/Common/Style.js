@@ -76,6 +76,7 @@ const Style = ({ attributes, id, device }) => {
          ${getTypoCSS(themeTwoBioSL, bio.typo).styles} 
 
 
+
 		 ${gridSL}{
 		  grid-template-columns: repeat(${align ? columns?.desktop : 2}, 1fr);
 		  ${tabBreakpoint}{
@@ -88,11 +89,11 @@ const Style = ({ attributes, id, device }) => {
 		 
 
            ${subTitleSL}{
-		    margin:${getBoxCSS(subTitle.margin)};
+		    margin:${getBoxCSS(subTitle.margin?.desktop)};
             color:${subTitle?.color};
 		  }
            ${socialButtonSL}{
-		        padding:${getBoxCSS(cardContent?.button?.padding)};
+		        padding:${getBoxCSS(cardContent?.button?.padding.desktop)};
 				${getBackgroundCSS(cardContent?.button?.bg)}
 				${getBorderCSS(cardContent?.button?.border)}
 				border-radius:${cardContent?.button?.radius}%;
@@ -106,32 +107,34 @@ const Style = ({ attributes, id, device }) => {
 
 
 		  ${cardSL} {
-				  padding:${getBoxCSS(card?.padding)};
-				  margin:${getBoxCSS(card?.margin)};
+				  padding:${getBoxCSS(card?.padding?.desktop)};
+				  margin:${getBoxCSS(card?.margin?.desktop)};
+             }
 
-				 }
-	      
+	         ${cardImgWrapperSL}{
+		        padding:${getBoxCSS(img?.wrapper?.padding?.desktop)};
+		 	    margin:${getBoxCSS(img?.wrapper?.margin?.desktop)};
+		 	    ${getBorderCSS(img?.wrapper?.border)};	
+			    border-radius:${getBoxCSS(img?.wrapper.radius)};  
+			 }	      
              ${cardImgSL}{
-			
-			   border-radius:${img.radius}px;
-			   
-			 
+			   border-radius:${img?.avatar?.radius}px;	
+			   ${isValidCSS('min-height', img?.avatar?.minHeight)}
 			 }
              ${cardTextSL}{
 			  text-align:${cardContent.textAlign}
-			 
-			 }
+			}
 
              ${cardNameSL}{
-			   margin:${getBoxCSS(cardContent?.name?.margin)};
+			   margin:${getBoxCSS(cardContent?.name?.margin.desktop)};
 			   color:${cardContent?.name?.color}
 			 }
              ${cardRoleSL}{
-			   margin:${getBoxCSS(cardContent?.role?.margin)};
+			   margin:${getBoxCSS(cardContent?.role?.margin.desktop)};
 			   color:${cardContent?.role?.color}
 			 }
              ${cardBioSL}{
-			   margin:${getBoxCSS(cardContent?.bio?.margin)};
+			   margin:${getBoxCSS(cardContent?.bio?.margin.desktop)};
 			   color:${cardContent?.bio?.color};
 			 }
 
@@ -143,58 +146,111 @@ const Style = ({ attributes, id, device }) => {
 		   border-radius:${getBoxCSS(section?.radius)};
 		 }
 
+          ${headerSL}{
+		   padding:${getBoxCSS(header?.padding?.desktop)};
+		   margin:${getBoxCSS(header?.margin?.desktop)};
+		   text-align: ${header.textAlign};
+		  }
+
+
+        ${titleSL}{
+		    color:${title?.color};
+			margin:${getBoxCSS(title?.margin?.desktop)};
+		}
 
          ${tabBreakpoint} {
            ${sectionSL}{
 		   padding:${getBoxCSS(section?.padding?.tablet)};
 	       margin:${getBoxCSS(section?.margin?.tablet)};
 		   }
+
+		 ${headerSL}{
+		   padding:${getBoxCSS(header?.padding?.tablet)};
+		   margin:${getBoxCSS(header?.margin?.tablet)};
+	 	    }
+          ${titleSL}{
+		    margin:${getBoxCSS(title?.margin?.tablet)};
+		  }
+			
+           ${subTitleSL}{
+		    margin:${getBoxCSS(subTitle.margin?.tablet)};
+           
+		  }
+		${cardSL} {
+             padding:${getBoxCSS(card?.padding?.tablet)};
+              margin:${getBoxCSS(card?.margin?.tablet)};
+             }
+             ${cardNameSL}{
+			   margin:${getBoxCSS(cardContent?.name?.margin.tablet)};
+			   color:${cardContent?.name?.color}
+			 }
+             ${cardRoleSL}{
+			   margin:${getBoxCSS(cardContent?.role?.margin.tablet)};
+			   color:${cardContent?.role?.color}
+			 }
+             ${cardBioSL}{
+			   margin:${getBoxCSS(cardContent?.bio?.margin.tablet)};
+			   color:${cardContent?.bio?.color};
+			 }
+			   
+           ${socialButtonSL}{
+		        padding:${getBoxCSS(cardContent?.button?.padding.tablet)};
+              }
+		   
 	 }
 
 
 
-         ${mobileBreakpoint}{
-             ${sectionSL} {
-		      padding:${getBoxCSS(section?.padding?.mobile)};
-	          margin:${getBoxCSS(section?.margin?.mobile)};
-		     }
-	  }
+        ${mobileBreakpoint}{
 
+        ${sectionSL} {
+		padding:${getBoxCSS(section?.padding?.mobile)};
+	    margin:${getBoxCSS(section?.margin?.mobile)};
+	}
 
+		${headerSL}{
+		   padding:${getBoxCSS(header?.padding?.mobile)};
+		   margin:${getBoxCSS(header?.margin?.mobile)};
+		   }
 
+		${titleSL}{
+		    margin:${getBoxCSS(title?.margin?.mobile)};
+		  }
+			
+           ${subTitleSL}{
+		    margin:${getBoxCSS(subTitle.margin?.mobile)};
+           
+		  }
 
+		  ${cardSL} {
+            padding:${getBoxCSS(card?.padding?.mobile)};
+         	margin:${getBoxCSS(card?.margin?.mobile)};
+         }
+          ${cardNameSL}{
+			   margin:${getBoxCSS(cardContent?.name?.margin.mobile)};
+			   color:${cardContent?.name?.color}
+			 }
+             ${cardRoleSL}{
+			   margin:${getBoxCSS(cardContent?.role?.margin.mobile)};
+			   color:${cardContent?.role?.color}
+			 }
+             ${cardBioSL}{
+               margin:${getBoxCSS(cardContent?.bio?.margin.mobile)};
+			   color:${cardContent?.bio?.color};
+			 }
 
-
-		${blockSl} .btms-variation2-section {
-	
+      
           
-
-		
-        .btms-container {
-		.btms-header{
-					 padding:${getBoxCSS(header.padding)};
-					 margin:${getBoxCSS(header.margin)};
-					 text-align: ${header.textAlign};
-
-					 .btms-title{
-					    color:${title?.color};
-					    margin:${getBoxCSS(title.margin)};
-					  }
-				
-					
-					}
-	  
-                          
-				}
-
-
-		
-		}
-	
+           ${socialButtonSL}{
+		        padding:${getBoxCSS(cardContent?.button?.padding.mobile)};
+              }
 
 
 
- 
+ }
+
+
+
 
 		${themeTwoSectionSL} {
 		padding:${getBoxCSS(section?.padding)};

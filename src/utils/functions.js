@@ -33,17 +33,98 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
     case "default":
       draft["styles"] = {
         "section": {
-          "padding": draft.styles.section.padding,
-          "margin": draft.styles.section.margin,
-          "radius": draft.styles.section.radius,
+          "padding": {
+            "desktop": {
+              "top": "80px",
+              "right": "0px",
+              "bottom": "80px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "50px",
+              "right": "0px",
+              "bottom": "50px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "30px",
+              "right": "0px",
+              "bottom": "30px",
+              "left": "0px"
+            }
+          },
+          "margin": {
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            }
+          },
+          "radius": {
+            "top": "0px",
+            "right": "0px",
+            "bottom": "0px",
+            "left": "0px"
+          },
           "bg": {
             "color": "linear-gradient(to bottom right, #9333ea, #db2777, #f97316)"
           }
         },
         "header": {
-          "margin": draft.styles.header.margin,
-          "padding": draft.styles.header.padding,
-          "textAlign": draft.styles.header.textAlign,
+          "margin": {
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "64px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "40px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "20px",
+              "left": "0px"
+            }
+          },
+          "padding": {
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            }
+          },
+          "textAlign": "center",
           "bg": {
             "color": ""
           }
@@ -54,50 +135,106 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "fontSize": {
               "desktop": 48,
               "tablet": 32,
-              "mobile": 22
+              "mobile": 24
             },
             "lineHeight": 1,
             "fontFamily": "ui-sans-serif, system-ui"
           },
           "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "24px",
-            "left": "0px"
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "24px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "18px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "15px",
+              "left": "0px"
+            }
           },
           "color": "#ffffff"
         },
         "subTitle": {
           "typo": {
             "fontSize": {
-              "desktop": 18,
-              "tablet": 16,
-              "mobile": 14
+              "desktop": 20,
+              "tablet": 18,
+              "mobile": 16
             },
             "fontFamily": "ui-sans-serif, system-ui",
-            "fontWeight": 400,
+            "fontWeight": 300,
             "letterSpace": "1px"
           },
           "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "0px",
-            "left": "0px"
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            }
           },
           "color": "rgba(249, 249, 249, 0.95)"
         },
         "card": {
           "margin": {
-            "top": "0px",
-            "right": "0px",
-            "bottom": "0px",
-            "left": "0px"
+            "desktop": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "tablet": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            },
+            "mobile": {
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
+            }
           },
           "padding": {
-            "top": "24px",
-            "right": "24px",
-            "bottom": "24px",
-            "left": "24px"
+            "desktop": {
+              "top": "24px",
+              "right": "24px",
+              "bottom": "24px",
+              "left": "24px"
+            },
+            "tablet": {
+              "top": "24px",
+              "right": "24px",
+              "bottom": "24px",
+              "left": "24px"
+            },
+            "mobile": {
+              "top": "24px",
+              "right": "24px",
+              "bottom": "24px",
+              "left": "24px"
+            }
           },
           "border": {
             "width": "1px",
@@ -107,7 +244,63 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           }
         },
         "img": {
-          "radius": 15
+          "wrapper": {
+            "margin": {
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "24px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "18px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "18px",
+                "left": "0px"
+              }
+            },
+            "padding": {
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "0px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "0px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "0px",
+                "left": "0px"
+              }
+            },
+            "radius": {
+              "top": "16px",
+              "right": "16px",
+              "bottom": "16px",
+              "left": "16px"
+            },
+            "border": {
+              "width": "0px",
+              "style": "",
+              "color": "#"
+            }
+          },
+          "avatar": {
+            "radius": 16,
+            "minHeight": "256px"
+          }
         },
         "cardContent": {
           "textAlign": "center",
@@ -124,10 +317,24 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             },
             "color": "#ffffff",
             "margin": {
-              "top": "0px",
-              "right": "0px",
-              "bottom": "8px",
-              "left": "0px"
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "8px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "8px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "8px",
+                "left": "0px"
+              }
             }
           },
           "role": {
@@ -145,10 +352,24 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             },
             "color": "#facc15",
             "margin": {
-              "top": "0px",
-              "right": "0px",
-              "bottom": "10px",
-              "left": "0px"
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "12px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "12px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "12px",
+                "left": "0px"
+              }
             }
           },
           "bio": {
@@ -164,18 +385,32 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             },
             "color": "rgba(255, 255, 255, 0.8)",
             "margin": {
-              "top": "0px",
-              "right": "0px",
-              "bottom": "16px",
-              "left": "0px"
+              "desktop": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "16px",
+                "left": "0px"
+              },
+              "tablet": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "16px",
+                "left": "0px"
+              },
+              "mobile": {
+                "top": "0px",
+                "right": "0px",
+                "bottom": "16px",
+                "left": "0px"
+              }
             }
           },
           "button": {
             "padding": {
-              "top": "5px",
-              "right": "5px",
-              "bottom": "5px",
-              "left": "5px"
+              "top": "0px",
+              "right": "0px",
+              "bottom": "0px",
+              "left": "0px"
             },
             "bg": {
               "color": "rgba(255, 255, 255, 0.2)"
@@ -198,8 +433,18 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
         "headline": draft.section.headline,
         "slogan": draft.section.slogan
       }
+
+
+
       draft["teamMembers"] = [...draft.teamMembers]
       break;
+
+
+
+
+
+
+
 
     case "theme2":
       draft["styles"] = {

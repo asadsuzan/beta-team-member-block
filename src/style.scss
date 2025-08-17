@@ -79,17 +79,16 @@ $primaryColor: #4527a4;
 						.btms-card-img-wrapper {
 							position: relative;
 							overflow: hidden;
-							border-radius: 1rem;
-							margin-bottom: 1.5rem;
 							flex-shrink: 0;
 							display: flex;
 							justify-content: center;
 							align-items: center;
 
+
 							.btms-card-img {
 								object-fit: cover;
 								transition: transform 0.8s ease;
-								min-height: 256px;
+
 								height: 100%;
 								width: 100%;
 							}
