@@ -5,7 +5,7 @@ import { ItemsPanel } from '../../../../../../bpl-tools-main/Components';
 import TeamMembersItemPanel from '../../itemPanel/TeamMemberItemPanel';
 
 const General = ({ attributes, setAttributes }) => {
-  const { section, teamMembers, theme, styles } = attributes;
+  const { section, teamMembers, theme } = attributes;
 
 
   return (

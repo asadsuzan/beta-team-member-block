@@ -10,37 +10,40 @@ const Style = ({ attributes, id }) => {
 
 
 	const mainSl = `#${id}`;
-	const blockSl = `${mainSl} .tmsTeamWrapper`;
-	const containerSL = `${blockSl} .container `;
-	const imgWrapperSl = `${containerSL} .img-wrapper`
-	const imgSl = `${imgWrapperSl} .image`
-	const nameSl = `${containerSL} .name`;
-	const roleSl = `${containerSL} .role`;
-	const bioSl = `${containerSL} .bio`;
-	const socialContainerSL = `${containerSL} .socials`
-	const linkSl = `${socialContainerSL} .link`
-	const iconSl = `${linkSl} .icon svg`
-	const themeOneSl = `${blockSl} .bBlocksBetaTeamSection`;
-	const themeTwoSl = `${blockSl} .bBlocksBetaTeamSectionV2`;
-	const sectionSL = `${containerSL} .btms-variation2-section`;
+	const blockSl = `${mainSl} .bBlocksBetaTeamSection`;
+	const sectionSL = `${blockSl} .btms-variation2-section`;
+	const containerSL = `${sectionSL} .container `;
 	const headerSL = `${containerSL} .btms-header`;
 	const titleSL = `${headerSL} .btms-title`;
 	const subTitleSL = `${headerSL} .btms-subtitle`;
-	const gridSL = `${containerSL} .grid`;
+	const gridSL = `${containerSL} .btms-grid`;
 	const cardGroupSL = `${containerSL} .btms-card-group`;
 	const cardSL = `${cardGroupSL} .btms-card`
-
+	const cardImgWrapperSL = `${cardSL} .img-wrapper`
+	const cardImgSL = `${cardImgWrapperSL} .image`
 
 	const cardTextSL = `${cardSL} .btms-card-text`
+	const cardNameSL = `${cardTextSL} .btms-card-name`
+	const cardRoleSL = `${cardTextSL} .btms-card-role`
+	const cardBioSL = `${cardTextSL} .btms-card-bio`
+	const socialContainerSL = `${cardTextSL} .btms-card-icons`
+	const socialButtonSL = `${socialContainerSL} .btms-card-icon`
+	const socialIconSL = `${socialContainerSL} svg`
 	const themeTwoBlockSl = `${mainSl} .bBlocksBetaTeamSectionV2`;
 	const themeTwoSectionSL = `${themeTwoBlockSl} .btms-team-section`;
 	const themeTwoContainerSL = `${themeTwoSectionSL} .container`;
 	const themeTwoHeaderSL = `${themeTwoContainerSL} .btms-header`;
 	const themeTwoTitleSL = `${themeTwoHeaderSL} .btms-title`;
 	const themeTwoSubTitleSL = `${themeTwoHeaderSL} .btms-subtitle`;
-	const themeTwoCardSL = `${gridSL} .btms-card`;
+	const themeTwoGridSL = `${themeTwoContainerSL} .btms-wrapper`;
+	const themeTwoCardSL = `${themeTwoGridSL} .btms-card`;
 	const themeTwoCardBodySL = `${themeTwoCardSL} .btms-card-body`;
-
+	const themeTwoNameSL = `${themeTwoCardBodySL} .btms-name`;
+	const themeTwoRoleSL = `${themeTwoCardBodySL} .btms-role`;
+	const themeTwoBioSL = `${themeTwoCardBodySL} .btms-bio`;
+	const themeTwoSocialWrapperSL = `${themeTwoCardBodySL} .btms-social`
+	const themeTwoSocialButtonSL = `${themeTwoSocialWrapperSL} .btms-link`
+	const themeTwoSocialIconSL = `${themeTwoSocialButtonSL}  svg`
 
 
 
@@ -52,23 +55,25 @@ const Style = ({ attributes, id }) => {
 		   ${getTypoCSS("", cardContent.role.typo).googleFontLink} 
 		   ${getTypoCSS("", cardContent.bio.typo).googleFontLink} 
 
-		   ${getTypoCSS("", title.typo).googleFontLink} 
-		   ${getTypoCSS("", subTitle.typo).googleFontLink} 
-		   ${getTypoCSS("", name.typo).googleFontLink} 
-		   ${getTypoCSS("", role.typo).googleFontLink} 
-		   ${getTypoCSS("", bio.typo).googleFontLink} 
+		 ${getTypoCSS("", title.typo).googleFontLink} 
+		 ${getTypoCSS("", subTitle.typo).googleFontLink} 
+		 ${getTypoCSS("", name.typo).googleFontLink} 
+		 ${getTypoCSS("", role.typo).googleFontLink} 
+		 ${getTypoCSS("", bio.typo).googleFontLink} 
 
            ${getTypoCSS(titleSL, title.typo).styles} 
            ${getTypoCSS(subTitleSL, subTitle.typo).styles} 
-           ${getTypoCSS(nameSl, cardContent.name.typo).styles} 
-           ${getTypoCSS(roleSl, cardContent.role.typo).styles} 
-           ${getTypoCSS(bioSl, cardContent.bio.typo).styles} 
+           ${getTypoCSS(cardNameSL, cardContent.name.typo).styles} 
+           ${getTypoCSS(cardRoleSL, cardContent.role.typo).styles} 
+           ${getTypoCSS(cardBioSL, cardContent.bio.typo).styles} 
 
-		   ${getTypoCSS(themeTwoTitleSL, title.typo).styles} 
-           ${getTypoCSS(themeTwoSubTitleSL, subTitle.typo).styles} 
+		    ${getTypoCSS(themeTwoTitleSL, title.typo).styles} 
+         ${getTypoCSS(themeTwoSubTitleSL, subTitle.typo).styles} 
 
- 
-       
+
+		 ${getTypoCSS(themeTwoNameSL, name.typo).styles} 
+         ${getTypoCSS(themeTwoRoleSL, role.typo).styles} 
+         ${getTypoCSS(themeTwoBioSL, bio.typo).styles} 
 
 
 
@@ -87,18 +92,16 @@ const Style = ({ attributes, id }) => {
 		    margin:${getBoxCSS(subTitle.margin?.desktop)};
             color:${subTitle?.color};
 		  }
-           ${linkSl}{
-		        padding:${getBoxCSS(cardContent?.button?.padding?.desktop)};
+           ${socialButtonSL}{
+		        padding:${getBoxCSS(cardContent?.button?.padding.desktop)};
 				${getBackgroundCSS(cardContent?.button?.bg)}
 				${getBorderCSS(cardContent?.button?.border)}
 				border-radius:${cardContent?.button?.radius}%;
-				${isValidCSS('width', cardContent?.button?.width)}
-				${isValidCSS('height', cardContent?.button?.height)}
 		  }
-           ${iconSl}{
-		  	 	fill:${cardContent?.button?.icon?.fill};
-				width:${cardContent.button?.icon?.size}px;
-				height:${cardContent.button?.icon?.size}px;
+           ${socialIconSL}{
+		  	 	fill:${cardContent.button.icon.fill};
+				width:${cardContent.button?.icon.size}px;
+				height:${cardContent.button?.icon.size}px;
 				
 		  }
 
@@ -108,13 +111,13 @@ const Style = ({ attributes, id }) => {
 				  margin:${getBoxCSS(card?.margin?.desktop)};
              }
 
-	         ${imgWrapperSl}{
+	         ${cardImgWrapperSL}{
 		        padding:${getBoxCSS(img?.wrapper?.padding?.desktop)};
 		 	    margin:${getBoxCSS(img?.wrapper?.margin?.desktop)};
 		 	    ${getBorderCSS(img?.wrapper?.border)};	
 			    border-radius:${getBoxCSS(img?.wrapper?.radius)};  
 			 }	      
-             ${imgSl}{
+             ${cardImgSL}{
 			   border-radius:${img?.avatar?.radius}px;	
 			   ${isValidCSS('min-height', img?.avatar?.minHeight)}
 			 }
@@ -122,16 +125,15 @@ const Style = ({ attributes, id }) => {
 			  text-align:${cardContent.textAlign}
 			}
 
-             ${nameSl}{
+             ${cardNameSL}{
 			   margin:${getBoxCSS(cardContent?.name?.margin.desktop)};
-			   color:${cardContent?.name?.color};
-
+			   color:${cardContent?.name?.color}
 			 }
-             ${roleSl}{
+             ${cardRoleSL}{
 			   margin:${getBoxCSS(cardContent?.role?.margin.desktop)};
 			   color:${cardContent?.role?.color}
 			 }
-             ${bioSl}{
+             ${cardBioSL}{
 			   margin:${getBoxCSS(cardContent?.bio?.margin.desktop)};
 			   color:${cardContent?.bio?.color};
 			 }
@@ -175,22 +177,23 @@ const Style = ({ attributes, id }) => {
            
 		  }
 		${cardSL} {
-          padding:${getBoxCSS(card?.padding?.tablet)};
-          margin:${getBoxCSS(card?.margin?.tablet)};
-        }
-             ${nameSl}{
+             padding:${getBoxCSS(card?.padding?.tablet)};
+              margin:${getBoxCSS(card?.margin?.tablet)};
+             }
+             ${cardNameSL}{
 			   margin:${getBoxCSS(cardContent?.name?.margin.tablet)};
+			   color:${cardContent?.name?.color}
 			 }
-             ${roleSl}{
+             ${cardRoleSL}{
 			   margin:${getBoxCSS(cardContent?.role?.margin.tablet)};
 			   color:${cardContent?.role?.color}
 			 }
-             ${bioSl}{
+             ${cardBioSL}{
 			   margin:${getBoxCSS(cardContent?.bio?.margin.tablet)};
 			   color:${cardContent?.bio?.color};
 			 }
 			   
-           ${linkSl}{
+           ${socialButtonSL}{
 		        padding:${getBoxCSS(cardContent?.button?.padding.tablet)};
               }
 		   
@@ -223,21 +226,22 @@ const Style = ({ attributes, id }) => {
             padding:${getBoxCSS(card?.padding?.mobile)};
          	margin:${getBoxCSS(card?.margin?.mobile)};
          }
-          ${nameSl}{
+          ${cardNameSL}{
 			   margin:${getBoxCSS(cardContent?.name?.margin.mobile)};
+			   color:${cardContent?.name?.color}
 			 }
-             ${roleSl}{
+             ${cardRoleSL}{
 			   margin:${getBoxCSS(cardContent?.role?.margin.mobile)};
 			   color:${cardContent?.role?.color}
 			 }
-             ${bioSl}{
+             ${cardBioSL}{
                margin:${getBoxCSS(cardContent?.bio?.margin.mobile)};
 			   color:${cardContent?.bio?.color};
 			 }
 
       
           
-           ${linkSl}{
+           ${socialButtonSL}{
 		        padding:${getBoxCSS(cardContent?.button?.padding.mobile)};
               }
 
@@ -251,7 +255,15 @@ const Style = ({ attributes, id }) => {
 
 
 
- 
+ 	 ${themeTwoGridSL}{
+		  grid-template-columns: repeat(${align ? columns?.desktop : 2}, 1fr);
+		  ${tabBreakpoint}{
+		  grid-template-columns: repeat(${align ? columns?.tablet : 2}, 1fr);
+          }
+		  ${mobileBreakpoint}{
+		   grid-template-columns: repeat(${align ? columns?.mobile : 2}, 1fr);
+		  }	 
+		}
 
 		${themeTwoSectionSL} {
 		padding:${getBoxCSS(section?.padding?.desktop)};
@@ -279,16 +291,50 @@ const Style = ({ attributes, id }) => {
 		}
 
 		${themeTwoCardSL}{
+		
 		 padding:${getBoxCSS(card?.padding?.desktop)};
 		 margin:${getBoxCSS(card?.margin?.desktop)};
 		 ${getBorderCSS(card.border)};
 		 border-radius:${card.radius}px;
-		 
-		 }
+
+		
+		}
 
 		  ${themeTwoCardBodySL}{
-		    text-align:${cardContent.textAlign}
-         }
+		       text-align:${cardContent.textAlign}
+            }
+
+		   ${themeTwoNameSL}{
+			   margin:${getBoxCSS(name?.margin?.desktop)};
+			   color:${name?.color}
+			}
+
+         ${themeTwoRoleSL}{
+			   margin:${getBoxCSS(role?.margin?.desktop)};
+			   color:${role?.color}
+			 }
+
+         ${themeTwoBioSL}{
+			   margin:${getBoxCSS(bio?.margin?.desktop)};
+			   color:${bio?.color}
+			 }
+
+
+
+			${themeTwoSocialButtonSL}{
+                ${getBackgroundCSS(button.bg)}
+				${getBorderCSS(button.border)}
+				border-radius:${button.radius}px;
+		  }
+
+            
+
+		    ${themeTwoSocialIconSL}{
+				fill:${cardContent?.button?.icon?.fill};
+				width:${cardContent?.button?.icon?.size}px;
+				height:${cardContent?.button?.icon?.size}px;
+				
+		  }
 
 
 		

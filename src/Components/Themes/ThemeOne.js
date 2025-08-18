@@ -1,72 +1,24 @@
-import { Linkedin, Mail, Twitter } from 'lucide-react';
+import Header from '../Common/team/Header';
+import Image from '../Common/team/Image';
+import Social from '../Common/team/Social';
+import Text from '../Common/team/Text';
 
 const ThemeOne = ({ section = {}, teamMembers = [] }) => {
 
-    return <>
+    return <div className='bBlocksBetaTeamSection'>
 
         <section className="btms-variation2-section">
-            <div className="btms-container">
-                <div className="btms-header">
-                    <h2 className="btms-title">{section?.headline}</h2>
-                    <p className="btms-subtitle">
-                        {section?.slogan}
-                    </p>
-                </div>
-
-                <div className="btms-grid">
+            <div className="container">
+                <Header {...{ section }} />
+                <div className="grid">
                     {teamMembers?.map((member) => {
-
                         return <div key={member?.id} className="btms-card-group">
                             <div className="btms-card-blur-bg" />
                             <div className="btms-card">
-                                <div className="btms-card-img-wrapper">
-                                    <img src={member.image} alt={member.name} className="btms-card-img" />
-                                    <div className="btms-card-overlay" />
-                                </div>
+                                <Image {...{ member }} />
                                 <div className="btms-card-text">
-                                    <h3 className="btms-card-name">{member.name}</h3>
-                                    <p className="btms-card-role">{member.role}</p>
-                                    <p className="btms-card-bio">{member.bio}</p>
-                                    {
-                                        member?.isShowSocial && <div className="btms-card-icons">
-
-                                            {
-                                                member.social.map((item, idx) => {
-                                                    return <>
-                                                        {
-
-                                                            item?.isShow && <a
-                                                                href={item.url}
-                                                                target={item?.isOpenNewTab ? "_blank" : "_self"}
-                                                                rel={item?.isOpenNewTab ? "noreferrer" : undefined}
-                                                                key={idx}
-                                                                className="btms-card-icon"
-                                                            >
-
-
-
-                                                                {
-                                                                    item.icon ? <span dangerouslySetInnerHTML={{ __html: item.icon }}></span> : <span className='btms-custom-svg'>
-                                                                        {item?.name === "linkedin" && <Linkedin color='#fff' />}
-                                                                        {item?.name === "twitter" && <Twitter color='#fff' />}
-                                                                        {item?.name === "email" && <Mail color='#fff' />}
-                                                                    </span>
-                                                                }
-
-
-
-
-                                                            </a>
-
-
-                                                        }
-
-                                                    </>
-                                                })
-                                            }
-
-                                        </div>
-                                    }
+                                    <Text {...{ member }} />
+                                    <Social {...{ member }} />
                                 </div>
                             </div>
                         </div>
@@ -77,7 +29,7 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
             </div>
         </section >
 
-    </>
+    </div>
 }
 
 export default ThemeOne;
