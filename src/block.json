@@ -376,8 +376,7 @@
 					"border": {
 						"width": "1px",
 						"style": "solid",
-						"color": " rgba(255, 255, 255, 0.2)",
-						"radius": 24
+						"color": " rgba(255, 255, 255, 0.2)"
 					}
 				},
 				"img": {

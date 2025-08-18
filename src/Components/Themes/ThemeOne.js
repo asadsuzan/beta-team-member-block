@@ -16,7 +16,7 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
                             <div className="btms-card-blur-bg" />
                             <div className="btms-card">
                                 <Image {...{ member }} />
-                                <div className="btms-card-text">
+                                <div className="card-body">
                                     <Text {...{ member }} />
                                     <Social {...{ member }} />
                                 </div>

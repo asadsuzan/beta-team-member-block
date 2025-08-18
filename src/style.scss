@@ -157,7 +157,6 @@ $blur-amount: 16px; // Main section styles
 				position: relative;
 				background-color: $glass-bg;
 				backdrop-filter: blur($blur-amount);
-				-webkit-backdrop-filter: blur($blur-amount);
 				border: 1px solid $glass-border;
 				border-radius: $border-radius;
 				display: flex;

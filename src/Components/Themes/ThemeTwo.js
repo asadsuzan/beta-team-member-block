@@ -14,7 +14,7 @@ const ThemeTwo = ({ section = {}, teamMembers = [] }) => {
                         {teamMembers.map((member, index) => (
                             <div key={index} className="btms-card">
                                 <Image {...{ member }} />
-                                <div className="btms-card-body">
+                                <div className="card-body">
                                     <Text {...{ member }} />
                                     <Social {...{ member }} />
 

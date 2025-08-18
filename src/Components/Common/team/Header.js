@@ -2,9 +2,9 @@ import React from 'react'
 
 const Header = ({ section }) => {
     return (
-        <div className="btms-header">
-            <h2 className="btms-title">{section.headline}</h2>
-            <p className="btms-subtitle">
+        <div className="header">
+            <h2 className="title">{section.headline}</h2>
+            <p className="subtitle">
                 {section.slogan}
             </p>
         </div>

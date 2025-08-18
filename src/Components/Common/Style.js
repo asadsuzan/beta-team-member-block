@@ -11,7 +11,12 @@ const Style = ({ attributes, id }) => {
 
 	const mainSl = `#${id}`;
 	const blockSl = `${mainSl} .tmsTeamWrapper`;
+	const sectionSL = `${blockSl} section`;
 	const containerSL = `${blockSl} .container `;
+	const headerSL = `${containerSL} .header`;
+	const titleSL = `${headerSL} .title`;
+	const subTitleSL = `${headerSL} .subtitle`;
+	const cardBodySl = `${containerSL} .card-body`
 	const imgWrapperSl = `${containerSL} .img-wrapper`
 	const imgSl = `${imgWrapperSl} .image`
 	const nameSl = `${containerSL} .name`;
@@ -22,24 +27,20 @@ const Style = ({ attributes, id }) => {
 	const iconSl = `${linkSl} .icon svg`
 	const themeOneSl = `${blockSl} .bBlocksBetaTeamSection`;
 	const themeTwoSl = `${blockSl} .bBlocksBetaTeamSectionV2`;
-	const sectionSL = `${containerSL} .btms-variation2-section`;
-	const headerSL = `${containerSL} .btms-header`;
-	const titleSL = `${headerSL} .btms-title`;
-	const subTitleSL = `${headerSL} .btms-subtitle`;
 	const gridSL = `${containerSL} .grid`;
 	const cardGroupSL = `${containerSL} .btms-card-group`;
 	const cardSL = `${cardGroupSL} .btms-card`
 
 
-	const cardTextSL = `${cardSL} .btms-card-text`
+
 	const themeTwoBlockSl = `${mainSl} .bBlocksBetaTeamSectionV2`;
 	const themeTwoSectionSL = `${themeTwoBlockSl} .btms-team-section`;
 	const themeTwoContainerSL = `${themeTwoSectionSL} .container`;
 	const themeTwoHeaderSL = `${themeTwoContainerSL} .btms-header`;
 	const themeTwoTitleSL = `${themeTwoHeaderSL} .btms-title`;
 	const themeTwoSubTitleSL = `${themeTwoHeaderSL} .btms-subtitle`;
-	const themeTwoCardSL = `${gridSL} .btms-card`;
-	const themeTwoCardBodySL = `${themeTwoCardSL} .btms-card-body`;
+
+
 
 
 
@@ -82,12 +83,31 @@ const Style = ({ attributes, id }) => {
 		  }	 
 		}
 		 
+      ${sectionSL}{
+		   padding:${getBoxCSS(section?.padding?.desktop)};
+	       margin:${getBoxCSS(section?.margin?.desktop)};
+		   ${getBackgroundCSS(section?.bg)}
+		   border-radius:${getBoxCSS(section?.radius)};
+		 }
 
-           ${subTitleSL}{
+          ${headerSL}{
+		   padding:${getBoxCSS(header?.padding?.desktop)};
+		   margin:${getBoxCSS(header?.margin?.desktop)};
+		   text-align: ${header.textAlign};
+		  }
+
+
+        ${titleSL}{
+		    color:${title?.color};
+			margin:${getBoxCSS(title?.margin?.desktop)};
+		}
+        
+		${subTitleSL}{
 		    margin:${getBoxCSS(subTitle.margin?.desktop)};
             color:${subTitle?.color};
 		  }
-           ${linkSl}{
+
+        ${linkSl}{
 		        padding:${getBoxCSS(cardContent?.button?.padding?.desktop)};
 				${getBackgroundCSS(cardContent?.button?.bg)}
 				${getBorderCSS(cardContent?.button?.border)}
@@ -118,7 +138,7 @@ const Style = ({ attributes, id }) => {
 			   border-radius:${img?.avatar?.radius}px;	
 			   ${isValidCSS('min-height', img?.avatar?.minHeight)}
 			 }
-             ${cardTextSL}{
+             ${cardBodySl}{
 			  text-align:${cardContent.textAlign}
 			}
 
@@ -137,24 +157,7 @@ const Style = ({ attributes, id }) => {
 			 }
 
 
-         ${sectionSL}{
-		   padding:${getBoxCSS(section?.padding?.desktop)};
-	       margin:${getBoxCSS(section?.margin?.desktop)};
-		   ${getBackgroundCSS(section?.bg)}
-		   border-radius:${getBoxCSS(section?.radius)};
-		 }
-
-          ${headerSL}{
-		   padding:${getBoxCSS(header?.padding?.desktop)};
-		   margin:${getBoxCSS(header?.margin?.desktop)};
-		   text-align: ${header.textAlign};
-		  }
-
-
-        ${titleSL}{
-		    color:${title?.color};
-			margin:${getBoxCSS(title?.margin?.desktop)};
-		}
+      
 
          ${tabBreakpoint} {
            ${sectionSL}{
@@ -222,6 +225,9 @@ const Style = ({ attributes, id }) => {
 		  ${cardSL} {
             padding:${getBoxCSS(card?.padding?.mobile)};
          	margin:${getBoxCSS(card?.margin?.mobile)};
+			${getBorderCSS(card.border)};
+		    border-radius:${card.radius}px;
+
          }
           ${nameSl}{
 			   margin:${getBoxCSS(cardContent?.name?.margin.mobile)};
@@ -241,56 +247,7 @@ const Style = ({ attributes, id }) => {
 		        padding:${getBoxCSS(cardContent?.button?.padding.mobile)};
               }
 
-
-
  }
-
-
-
-
-
-
-
- 
-
-		${themeTwoSectionSL} {
-		padding:${getBoxCSS(section?.padding?.desktop)};
-	    margin:${getBoxCSS(section?.margin?.desktop)};
-		${getBackgroundCSS(section?.bg)}
-		border-radius:${getBoxCSS(section?.radius)}
-		
-		}
-
-
-		${themeTwoHeaderSL}{
-		 padding:${getBoxCSS(header.padding?.desktop)};
-		 margin:${getBoxCSS(header.margin?.desktop)};
-		 text-align: ${header.textAlign};
-		
-		}
-		  
-		${themeTwoTitleSL}{
-	  	color:${title?.color};
-	 	margin:${getBoxCSS(title.margin?.desktop)};
-		}
-		${themeTwoSubTitleSL}{
-	  	color:${subTitle?.color};
-	 	margin:${getBoxCSS(subTitle.margin?.desktop)};
-		}
-
-		${themeTwoCardSL}{
-		 padding:${getBoxCSS(card?.padding?.desktop)};
-		 margin:${getBoxCSS(card?.margin?.desktop)};
-		 ${getBorderCSS(card.border)};
-		 border-radius:${card.radius}px;
-		 
-		 }
-
-		  ${themeTwoCardBodySL}{
-		    text-align:${cardContent.textAlign}
-         }
-
-
 		
 	`}} />;
 }
