@@ -12,7 +12,7 @@ const General = ({ attributes, setAttributes }) => {
     <>
 
       {
-        (theme === 'default' || theme === "theme2") && (
+        (theme === 'default' || theme === "theme2" || theme === "theme3") && (
           <>
             {/* theme switcher  */}
             <PanelBody className="bPlPanelBody"
@@ -22,6 +22,7 @@ const General = ({ attributes, setAttributes }) => {
                 value={theme} options={[
                   { value: 'default', label: __('Default', 'b-blocks') },
                   { value: 'theme2', label: __('Theme-2', 'b-blocks') },
+                  { value: 'theme3', label: __('Theme-3', 'b-blocks') },
                 ]}
                 onChange={(value) => setAttributes(themeSwitch(value, attributes))}
               />

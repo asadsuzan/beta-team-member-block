@@ -39,7 +39,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
 
       {/* common styles  */}
-      {(theme === "default" || theme === "theme2") && <>
+      {(theme === "default" || theme === "theme2" || theme === "theme3") && <>
 
         {/* section  */}
         <PanelBody
