@@ -28,7 +28,7 @@ export const generateId = (itemArray) => {
 
 export const themeSwitch = (theme = "default", attributes) => produce(attributes, (draft) => {
   draft["theme"] = theme;
-  console.log(draft?.teamMembers);
+
   switch (theme) {
     case "default":
       draft["styles"] = {
@@ -239,8 +239,13 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "border": {
             "width": "1px",
             "style": "solid",
-            "color": " rgba(255, 255, 255, 0.2)",
-            "radius": 24
+            "color": "#ffffff33"
+          },
+          "radius": {
+            "top": "24px",
+            "right": "24px",
+            "bottom": "24px",
+            "left": "24px"
           }
         },
         "img": {
@@ -299,7 +304,8 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           },
           "avatar": {
             "radius": 16,
-            "minHeight": "256px"
+            "height": "256px",
+            "width": "100%"
           }
         },
         "cardContent": {
@@ -434,7 +440,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "border": {
               "width": "0px",
               "style": "solid",
-              "color": "transparent",
+              "color": "#fff",
             },
             "radius": 50,
             "icon": {
@@ -670,7 +676,12 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "color": "#fff",
 
           },
-          "radius": 0
+          "radius": {
+            "top": "8px",
+            "right": "8px",
+            "bottom": "8px",
+            "left": "8px"
+          }
         },
         "img": {
           "wrapper": {
@@ -728,7 +739,8 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           },
           "avatar": {
             "radius": 16,
-            "minHeight": "256px"
+            "height": "320px",
+            "width": "100%"
           }
         },
         "cardContent": {
@@ -863,7 +875,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "border": {
               "width": "0px",
               "style": "solid",
-              "color": "transparent",
+              "color": "#fff",
 
             },
             "radius": 50,
@@ -1047,7 +1059,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "left": "0px"
             }
           },
-          "color": "#6b7280"
+          "color": "#d1d5db"
         },
         "card": {
           "margin": {
@@ -1096,7 +1108,12 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "color": "#fff",
 
           },
-          "radius": 0
+          "radius": {
+            "top": "8px",
+            "right": "8px",
+            "bottom": "8px",
+            "left": "8px"
+          }
         },
         "img": {
           "wrapper": {
@@ -1154,23 +1171,24 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           },
           "avatar": {
             "radius": 16,
-            "minHeight": "256px"
+            "height": "320px",
+            "width": "100%"
           }
         },
         "cardContent": {
-          "textAlign": "center",
+          "textAlign": "left",
           "name": {
             "typo": {
               "fontSize": {
-                "desktop": 20,
+                "desktop": 24,
                 "tablet": 18,
                 "mobile": 16
               },
-              "fontWeight": 600,
+              "fontWeight": 700,
               "lineHeight": 1.3,
               "fontFamily": "ui-sans-serif, system-ui"
             },
-            "color": "#111827",
+            "color": "#ffffff",
             "margin": {
               "desktop": {
                 "top": "0px",
@@ -1195,16 +1213,17 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "role": {
             "typo": {
               "fontSize": {
-                "desktop": 20,
-                "tablet": 16,
-                "mobile": 14
+                "desktop": 14,
+                "tablet": 14,
+                "mobile": 12
               },
-              "fontWeight": 500,
+              "fontWeight": 600,
               "lineHeight": 1.5,
               "letterSpace": "0.05em",
-              "fontFamily": "ui-sans-serif, system-ui"
+              "fontFamily": "ui-sans-serif, system-ui",
+              "textTransform": "uppercase"
             },
-            "color": "#6b7280",
+            "color": "#facc15",
             "margin": {
               "desktop": {
                 "top": "0px",
@@ -1238,7 +1257,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "textTransform": "",
               "fontFamily": "ui-sans-serif, system-ui"
             },
-            "color": "#6b7280",
+            "color": "#9ca3af",
             "margin": {
               "desktop": {
                 "top": "0px",
@@ -1289,7 +1308,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "border": {
               "width": "0px",
               "style": "solid",
-              "color": "transparent",
+              "color": "#fff",
 
             },
             "radius": 50,
@@ -1304,6 +1323,14 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
         "headline": draft.section.headline,
         "slogan": draft.section.slogan
       }
+
+      draft['columns'] = {
+        "desktop": 2,
+        "tablet": 2,
+        "mobile": 1
+
+      }
+
       draft["teamMembers"] = [...draft?.teamMembers]
       break;
   }

@@ -23,7 +23,7 @@ const ThemeThree = ({ section, teamMembers }) => {
                             const isEven = index % 2 === 0;
 
                             return (
-                                <div key={index} className={`team-member`}>
+                                <div key={index} className={`team-member btms-card`}>
 
 
                                     <div className={`team-card ${isEven ? 'offset-top' : ''}`}>
@@ -36,7 +36,7 @@ const ThemeThree = ({ section, teamMembers }) => {
 
                                             <div className="gradient-overlay" />
 
-                                            <div className="member-info">
+                                            <div className="member-info card-body">
                                                 <div className="info-content">
                                                     <div className="text-content">
                                                         <h3 className="name">{member.name}</h3>
@@ -48,17 +48,6 @@ const ThemeThree = ({ section, teamMembers }) => {
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            {/* <div className="social-links">
-                                                <div className="social-container">
-                                                    <div className="social-icon">
-                                                        <Linkedin size={14} />
-                                                    </div>
-                                                    <div className="social-icon">
-                                                        <Mail size={14} />
-                                                    </div>
-                                                </div>
-                                            </div> */}
 
                                             <Social {...{ member }} />
                                         </div>

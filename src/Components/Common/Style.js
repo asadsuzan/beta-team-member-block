@@ -17,8 +17,9 @@ const Style = ({ attributes, id }) => {
 	const titleSL = `${headerSL} .title`;
 	const subTitleSL = `${headerSL} .subtitle`;
 	const cardBodySl = `${containerSL} .card-body`
+	const cardSL = `${containerSL} .btms-card`
 	const imgWrapperSl = `${containerSL} .img-wrapper`
-	const imgSl = `${imgWrapperSl} .image`
+	const imgSl = `${cardSL} .image`
 	const nameSl = `${containerSL} .name`;
 	const roleSl = `${containerSL} .role`;
 	const bioSl = `${containerSL} .bio`;
@@ -29,7 +30,6 @@ const Style = ({ attributes, id }) => {
 	const themeTwoSl = `${blockSl} .bBlocksBetaTeamSectionV2`;
 	const gridSL = `${containerSL} .grid`;
 	const cardGroupSL = `${containerSL} .btms-card-group`;
-	const cardSL = `${cardGroupSL} .btms-card`
 
 
 
@@ -74,15 +74,12 @@ const Style = ({ attributes, id }) => {
 
 
 		 ${gridSL}{
-		  grid-template-columns: repeat(${align ? columns?.desktop : 2}, 1fr);
-		  ${tabBreakpoint}{
-		  grid-template-columns: repeat(${align ? columns?.tablet : 2}, 1fr);
-          }
-		  ${mobileBreakpoint}{
-		   grid-template-columns: repeat(${align ? columns?.mobile : 2}, 1fr);
-		  }	 
+		  grid-template-columns: repeat(${columns?.desktop}, 1fr);
+		
 		}
-		 
+		  
+
+
       ${sectionSL}{
 		   padding:${getBoxCSS(section?.padding?.desktop)};
 	       margin:${getBoxCSS(section?.margin?.desktop)};
@@ -126,6 +123,9 @@ const Style = ({ attributes, id }) => {
 		  ${cardSL} {
 				  padding:${getBoxCSS(card?.padding?.desktop)};
 				  margin:${getBoxCSS(card?.margin?.desktop)};
+				  ${getBorderCSS(card?.border)}
+				  border-radius:${getBoxCSS(card?.radius)};
+
              }
 
 	         ${imgWrapperSl}{
@@ -136,7 +136,8 @@ const Style = ({ attributes, id }) => {
 			 }	      
              ${imgSl}{
 			   border-radius:${img?.avatar?.radius}px;	
-			   ${isValidCSS('min-height', img?.avatar?.minHeight)}
+			   ${isValidCSS('width', img?.avatar?.width)}
+			   ${isValidCSS('height', img?.avatar?.height)}
 			 }
              ${cardBodySl}{
 			  text-align:${cardContent.textAlign}
@@ -249,6 +250,22 @@ const Style = ({ attributes, id }) => {
 
  }
 		
-	`}} />;
+	
+ 
+   ${tabBreakpoint}{
+		   ${gridSL}{
+		    grid-template-columns: repeat(${columns?.tablet}, 1fr);
+           }
+ }
+		  ${mobileBreakpoint} {
+		  ${gridSL}{
+		   grid-template-columns: repeat(${columns?.mobile}, 1fr);
+		   }
+		}
+
+
+
+
+ `}} />;
 }
 export default Style;

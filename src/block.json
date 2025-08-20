@@ -392,7 +392,13 @@
 					"border": {
 						"width": "1px",
 						"style": "solid",
-						"color": " rgba(255, 255, 255, 0.2)"
+						"color": "#ffffff33"
+					},
+					"radius": {
+						"top": "24px",
+						"right": "24px",
+						"bottom": "24px",
+						"left": "24px"
 					}
 				},
 				"img": {
@@ -451,7 +457,8 @@
 					},
 					"avatar": {
 						"radius": 16,
-						"minHeight": "256px"
+						"height": "256px",
+						"width": "100%"
 					}
 				},
 				"cardContent": {

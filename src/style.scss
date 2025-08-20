@@ -1,7 +1,7 @@
 $primaryColor: #4527a4;
 $primary-gradient: linear-gradient(to bottom right, #9333ea, #db2777, #f97316);
 $glass-bg: rgba(255, 255, 255, 0.06);
-$glass-border: rgba(255, 255, 255, 0.2);
+$glass-border: #ffffff33;
 $text-white: #ffffff;
 $text-muted: rgba(255, 255, 255, 0.8);
 $accent-color: #facc15;
@@ -207,9 +207,6 @@ $blur-amount: 16px; // Main section styles
 		}
 
 
-		.image {
-			height: 20rem
-		}
 
 		/* Hover effects for image */
 		.team-member:hover .image {
@@ -282,6 +279,8 @@ $blur-amount: 16px; // Main section styles
 			opacity: 1;
 
 		}
+
+
 
 	}
 }
