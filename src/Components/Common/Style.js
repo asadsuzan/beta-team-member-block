@@ -135,7 +135,7 @@ const Style = ({ attributes, id }) => {
 			    border-radius:${getBoxCSS(img?.wrapper?.radius)};  
 			 }	      
              ${imgSl}{
-			   border-radius:${img?.avatar?.radius}px;	
+			   border-radius:${getBoxCSS(img?.avatar?.radius)};  
 			   ${isValidCSS('width', img?.avatar?.width)}
 			   ${isValidCSS('height', img?.avatar?.height)}
 			 }

@@ -39,6 +39,12 @@
 					"role": "Creative Director",
 					"bio": "Visionary leader with 10+ years in brand strategy and creative direction.",
 					"image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+					"location": {
+						"city": "San Francisco",
+						"country": "USA",
+						"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 480c-123.5 0-224-100.5-224-224S132.5 32 256 32s224 100.5 224 224-100.5 224-224 224z\"></path></svg>",
+						"isShowLocation": true
+					},
 					"social": [
 						{
 							"name": "linkedin",
@@ -74,6 +80,12 @@
 					"role": "Lead Designer",
 					"bio": "Award-winning designer specializing in digital experiences and brand identity.",
 					"image": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+					"location": {
+						"city": "San Francisco",
+						"country": "USA",
+						"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 480c-123.5 0-224-100.5-224-224S132.5 32 256 32s224 100.5 224 224-100.5 224-224 224z\"></path></svg>",
+						"isShowLocation": true
+					},
 					"social": [
 						{
 							"name": "linkedin",
@@ -109,6 +121,12 @@
 					"role": "Senior Developer",
 					"bio": "Full-stack developer passionate about creating seamless user experiences.",
 					"image": "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+					"location": {
+						"city": "San Francisco",
+						"country": "USA",
+						"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 480c-123.5 0-224-100.5-224-224S132.5 32 256 32s224 100.5 224 224-100.5 224-224 224z\"></path></svg>",
+						"isShowLocation": true
+					},
 					"social": [
 						{
 							"name": "linkedin",
@@ -144,6 +162,12 @@
 					"role": "Brand Strategist",
 					"bio": "Strategic thinker who transforms brands through compelling storytelling.",
 					"image": "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+					"location": {
+						"city": "San Francisco",
+						"country": "USA",
+						"icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 480c-123.5 0-224-100.5-224-224S132.5 32 256 32s224 100.5 224 224-100.5 224-224 224z\"></path></svg>",
+						"isShowLocation": true
+					},
 					"social": [
 						{
 							"name": "linkedin",
@@ -456,7 +480,12 @@
 						}
 					},
 					"avatar": {
-						"radius": 16,
+						"radius": {
+							"top": "16px",
+							"right": "16px",
+							"bottom": "16px",
+							"left": "16px"
+						},
 						"height": "256px",
 						"width": "100%"
 					}

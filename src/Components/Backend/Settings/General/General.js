@@ -12,7 +12,7 @@ const General = ({ attributes, setAttributes }) => {
     <>
 
       {
-        (theme === 'default' || theme === "theme2" || theme === "theme3") && (
+        (theme === 'default' || theme === "theme2" || theme === "theme3" || theme === "theme4") && (
           <>
             {/* theme switcher  */}
             <PanelBody className="bPlPanelBody"
@@ -23,6 +23,7 @@ const General = ({ attributes, setAttributes }) => {
                   { value: 'default', label: __('Default', 'b-blocks') },
                   { value: 'theme2', label: __('Theme-2', 'b-blocks') },
                   { value: 'theme3', label: __('Theme-3', 'b-blocks') },
+                  { value: 'theme4', label: __('Theme-4', 'b-blocks') },
                 ]}
                 onChange={(value) => setAttributes(themeSwitch(value, attributes))}
               />
@@ -64,11 +65,17 @@ const General = ({ attributes, setAttributes }) => {
                 {...{ attributes, setAttributes }}
                 arrKey="teamMembers"
                 newItem={{
-                  "id": generateId(attributes.teamMembers),
-                  "name": `Sarah Chen ${generateId(attributes.teamMembers)}`,
+                  "id": generateId(teamMembers),
+                  "name": `Sarah Chen ${generateId(teamMembers)}`,
                   "role": "Creative Director",
                   "bio": "Visionary leader with 10+ years in brand strategy and creative direction.",
                   "image": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+                  "location": {
+                    "city": "San Francisco",
+                    "country": "USA",
+                    "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path d=\"M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 480c-123.5 0-224-100.5-224-224S132.5 32 256 32s224 100.5 224 224-100.5 224-224 224z\"></path></svg>",
+                    "isShowLocation": true
+                  },
                   "social": [
                     {
                       "name": "linkedin",

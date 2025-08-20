@@ -311,13 +311,13 @@ const Style = ({ attributes, setAttributes, device }) => {
         {
           theme !== 'theme3' && (
             <BButtonGroup
-              label={__('text align', 'b-blocks')}
+              label={__('Text align', 'b-blocks')}
               options={[
                 { label: __('Left', 'b-blocks'), value: 'left' },
                 { label: __('Center', 'b-blocks'), value: 'center' },
                 { label: __('Right', 'b-blocks'), value: 'right' },
               ]}
-              value={cardContent.textAlign}
+              value={cardContent?.textAlign}
               onChange={(v) =>
                 setAttributes({
                   styles: updateData(styles, v, 'cardContent', 'textAlign'),
@@ -340,7 +340,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <BorderControl
           className='mt10'
-          label={__('border', 'b-blocks')}
+          label={__('Border', 'b-blocks')}
           value={card?.border}
           onChange={(v) =>
             setAttributes({
@@ -351,7 +351,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <BoxControl
           className="mt10"
-          label='radius'
+          label='Radius'
           values={card?.radius}
           resetValues={{
             "top": "0px",
@@ -369,11 +369,11 @@ const Style = ({ attributes, setAttributes, device }) => {
 
 
 
-        <PanelRow><Label>padding</Label><Device /></PanelRow>
+        <PanelRow><Label>Padding</Label><Device /></PanelRow>
 
 
         <BoxControl
-          className='mt10'
+
           values={card?.padding?.[device]}
           resetValues={{
             "top": "24px",
@@ -388,9 +388,9 @@ const Style = ({ attributes, setAttributes, device }) => {
           }}
 
         />
-        <PanelRow><Label>margin</Label><Device /></PanelRow>
+        {/* <PanelRow><Label>Margin</Label><Device /></PanelRow>
         <BoxControl
-          className='mt10'
+
           values={card?.margin?.[device]}
           resetValues={{
             "top": "0px",
@@ -404,19 +404,15 @@ const Style = ({ attributes, setAttributes, device }) => {
             })
           }}
 
-        />
+        /> */}
 
 
 
 
         {/* name  */}
-
-
-
-
         <Typography
           className='mt10'
-          label={__('name typo', 'b-blocks')}
+          label={__('Name Typo', 'b-blocks')}
           value={name?.typo}
           onChange={(v) =>
             setAttributes({
@@ -426,7 +422,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
         <ColorControl
           className='mt10'
-          label={__('name color', 'b-blocks')}
+          label={__('Name Color', 'b-blocks')}
           value={name?.color}
 
           onChange={(v) =>
@@ -434,12 +430,11 @@ const Style = ({ attributes, setAttributes, device }) => {
               styles: updateData(styles, v, 'cardContent', 'name', 'color')
             }
             )}
-          defaults={title.color}
+          defaults={name?.color}
 
         />
-        <PanelRow><Label>name margin</Label><Device /></PanelRow>
+        <PanelRow><Label>Name Margin</Label><Device /></PanelRow>
         <BoxControl
-          className='mt10'
           values={name?.margin?.[device]}
           resetValues={{
             "top": "8px",
@@ -463,7 +458,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <Typography
           className="mt10"
-          label={__('role typo', 'b-blocks')}
+          label={__('Role Typo', 'b-blocks')}
           value={role?.typo}
           onChange={(v) =>
             setAttributes({
@@ -473,7 +468,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
         <ColorControl
           className='mt10'
-          label={__('role color', 'b-blocks')}
+          label={__('Role Color', 'b-blocks')}
           value={role?.color}
 
           onChange={(v) =>
@@ -481,10 +476,10 @@ const Style = ({ attributes, setAttributes, device }) => {
               styles: updateData(styles, v, 'cardContent', 'role', 'color')
             }
             )}
-          defaults={title.color}
+          defaults={role?.color}
 
         />
-        <PanelRow><Label>role margin</Label><Device /></PanelRow>
+        <PanelRow><Label>Role Margin</Label><Device /></PanelRow>
         <BoxControl
           className='mt10'
           values={role?.margin?.[device]}
@@ -511,7 +506,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <Typography
           className="mt10"
-          label={__('bio typo', 'b-blocks')}
+          label={__('Bio Typo', 'b-blocks')}
           value={bio?.typo}
           onChange={(v) =>
             setAttributes({
@@ -521,7 +516,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
         <ColorControl
           className='mt10'
-          label={__('bio color', 'b-blocks')}
+          label={__('Bio Color', 'b-blocks')}
           value={bio.color}
 
           onChange={(v) =>
@@ -529,12 +524,11 @@ const Style = ({ attributes, setAttributes, device }) => {
               styles: updateData(styles, v, 'cardContent', 'bio', 'color')
             }
             )}
-          defaults={bio.color}
+          defaults={bio?.color}
 
         />
-        <PanelRow><Label>bio margin</Label><Device /></PanelRow>
+        <PanelRow><Label>Bio Margin</Label><Device /></PanelRow>
         <BoxControl
-          className='mt10'
           values={bio?.margin?.[device]}
           resetValues={{
             "top": "8px",
@@ -554,8 +548,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         {/* social */}
         <Background
-          label="social background"
-          className="mt10"
+          label="Social Background"
           onChange={(v) =>
             setAttributes({
               styles: updateData(styles, v, 'cardContent', "button", 'bg')
@@ -567,7 +560,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <UnitControl
           className="mt10"
-          label={__('social width', 'b-blocks')}
+          label={__('Social Width', 'b-blocks')}
           value={button?.width}
           onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "button", 'width') }) }}
 
@@ -576,16 +569,16 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <UnitControl
           className="mt10"
-          label={__('social height', 'b-blocks')}
+          label={__('Social Height', 'b-blocks')}
           value={button?.height}
           onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "button", 'height') }) }}
 
         />
         {/* padding  */}
 
-        <PanelRow><Label>social padding</Label><Device /></PanelRow>
+        <PanelRow><Label>Social Padding</Label><Device /></PanelRow>
         <BoxControl
-          className='mt10'
+
           values={cardContent.button?.padding?.[device]}
           resetValues={{
             "top": "0px",
@@ -604,8 +597,8 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <BorderControl
           className='mt10'
-          label={__('social border', 'b-blocks')}
-          value={button.border}
+          label={__('Social Border', 'b-blocks')}
+          value={button?.border}
           onChange={(v) =>
             setAttributes({
               styles: updateData(styles, v, 'cardContent', "button", 'border')
@@ -616,8 +609,8 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <RangeControl
           className='mt10'
-          label='social radius'
-          value={button.radius}
+          label='Social Radius'
+          value={button?.radius}
           onChange={(v) =>
             setAttributes({
               styles: updateData(styles, v, 'cardContent', "button", 'radius')
@@ -626,8 +619,8 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
         <ColorControl
           className='mt10'
-          label={__('icon color', 'b-blocks')}
-          value={cardContent.button.icon.fill}
+          label={__('Icon Color', 'b-blocks')}
+          value={cardContent?.button?.icon?.fill}
 
           onChange={(v) =>
             setAttributes({
@@ -635,14 +628,14 @@ const Style = ({ attributes, setAttributes, device }) => {
                 "button", "icon", 'fill')
             }
             )}
-          defaults={cardContent.button.icon.fill}
+          defaults={cardContent?.button?.icon?.fill}
 
         />
 
         <RangeControl
           className='mt10'
-          label='icon size'
-          value={cardContent.button.icon.size}
+          label='Icon Size'
+          value={cardContent?.button?.icon?.size}
           onChange={(v) =>
             setAttributes({
               styles: updateData(styles, v, 'cardContent', "button", 'icon', "size")
@@ -660,12 +653,41 @@ const Style = ({ attributes, setAttributes, device }) => {
         initialOpen={false}
 
       >
+
+        <BorderControl
+          label={__('Wrapper Border', 'b-blocks')}
+          value={img?.wrapper?.border}
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'img', 'wrapper', 'border')
+            })
+          }
+        />
+
+
+        <BoxControl
+          label={__('Wrapper Radius', 'b-blocks')}
+          className='mt10'
+          values={img?.wrapper?.radius}
+          resetValues={{
+            "top": "16px",
+            "right": "16px",
+            "bottom": "16px",
+            "left": "16px"
+          }}
+          onChange={(v) => {
+            setAttributes({
+              styles: updateData(styles, v, 'img', 'wrapper', 'radius')
+            })
+          }}
+
+        />
         <PanelRow>
-          <Label>{__('wrapper padding', 'b-blocks')} <Device /> </Label>
+          <Label>{__('Wrapper Padding', 'b-blocks')} <Device /> </Label>
         </PanelRow>
 
         <BoxControl
-          className='mt10'
+
           values={img?.wrapper?.padding?.[device]}
           resetValues={{
             "top": "0px",
@@ -680,10 +702,10 @@ const Style = ({ attributes, setAttributes, device }) => {
           }}
 
         />
-        <Label>{__('wrapper margin', 'b-blocks')} <Device /> </Label>
+        <Label>{__('Wrapper Margin', 'b-blocks')} <Device /> </Label>
 
         <BoxControl
-          className='mt10'
+
           values={img?.wrapper?.margin?.[device]}
           resetValues={{
             "top": "0px",
@@ -700,43 +722,17 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
 
 
-        <BorderControl
-          className='mt10'
-          label={__('wrapper border', 'b-blocks')}
-          value={img?.wrapper?.border}
-          onChange={(v) =>
-            setAttributes({
-              styles: updateData(styles, v, 'img', 'wrapper', 'border')
-            })
-          }
-        />
-        <Label>{__('wrapper radius', 'b-blocks')} </Label>
-
-        <BoxControl
-          className='mt10'
-          values={img?.wrapper?.radius}
-          resetValues={{
-            "top": "16px",
-            "right": "16px",
-            "bottom": "16px",
-            "left": "16px"
-          }}
-          onChange={(v) => {
-            setAttributes({
-              styles: updateData(styles, v, 'img', 'wrapper', 'radius')
-            })
-          }}
-
-        />
 
 
 
 
 
-        <Label>{__('avatar width', 'b-blocks')} <Device /></Label>
+
+
+        <Label>{__('Avatar Width', 'b-blocks')} <Device /></Label>
 
         <UnitControl
-          className='mt10'
+
           value={img?.avatar?.width}
           onChange={(v) => {
             setAttributes({
@@ -745,10 +741,10 @@ const Style = ({ attributes, setAttributes, device }) => {
           }}
 
         />
-        <Label>{__('avatar height', 'b-blocks')} <Device /></Label>
+        <Label>{__('Avatar Height', 'b-blocks')} <Device /></Label>
 
         <UnitControl
-          className='mt10'
+
           value={img?.avatar?.height}
           onChange={(v) => {
             setAttributes({
@@ -763,22 +759,25 @@ const Style = ({ attributes, setAttributes, device }) => {
           }}
         />
 
-        <Label>{__('avatar radius', 'b-blocks')} </Label>
-        <RangeControl
-          className='mt10'
-          value={img.avatar.radius}
-          onChange={(v) =>
+        <Label>{__('Avatar Radius', 'b-blocks')} </Label>
+        <BoxControl
+
+          values={img?.avatar?.radius}
+          resetValues={{
+            "top": "16px",
+            "right": "16px",
+            "bottom": "16px",
+            "left": "16px"
+          }}
+          onChange={(v) => {
             setAttributes({
               styles: updateData(styles, v, 'img', 'avatar', 'radius')
             })
-          }
+          }}
+
         />
 
       </PanelBody>
-
-
-
-
 
     </>
   )

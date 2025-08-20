@@ -1,6 +1,7 @@
 import ThemeOne from '../Themes/ThemeOne';
 import ThemeThree from '../Themes/ThemeThree';
 import ThemeTwo from '../Themes/ThemeTwo';
+import ThemeFour from './team/ThemeFour';
 
 const TeamSection = ({ attributes }) => {
   const { theme = 'default', section = {}, teamMembers = [] } = attributes || {};
@@ -23,6 +24,8 @@ const TeamSection = ({ attributes }) => {
               return <ThemeTwo {...{ section, teamMembers }} />;
             case 'theme3':
               return <ThemeThree {...{ section, teamMembers }} />;
+            case 'theme4':
+              return <ThemeFour {...{ section, teamMembers }} />;
             default:
               return <ThemeOne {...{ section, teamMembers }} />;
           }
