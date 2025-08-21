@@ -3,7 +3,7 @@ import ThemeThree from '../Themes/ThemeThree';
 import ThemeTwo from '../Themes/ThemeTwo';
 import ThemeFour from './team/ThemeFour';
 
-const TeamSection = ({ attributes }) => {
+const TeamSection = ({ attributes, setAttributes }) => {
   const { theme = 'default', section = {}, teamMembers = [] } = attributes || {};
 
   return (
@@ -19,15 +19,15 @@ const TeamSection = ({ attributes }) => {
         (() => {
           switch (theme) {
             case 'default':
-              return <ThemeOne {...{ section, teamMembers }} />;
+              return <ThemeOne {...{ section, teamMembers, attributes, setAttributes }} />;
             case 'theme2':
-              return <ThemeTwo {...{ section, teamMembers }} />;
+              return <ThemeTwo {...{ section, teamMembers, attributes, setAttributes }} />;
             case 'theme3':
-              return <ThemeThree {...{ section, teamMembers }} />;
+              return <ThemeThree {...{ section, teamMembers, attributes, setAttributes }} />;
             case 'theme4':
-              return <ThemeFour {...{ section, teamMembers }} />;
+              return <ThemeFour {...{ section, teamMembers, attributes, setAttributes }} />;
             default:
-              return <ThemeOne {...{ section, teamMembers }} />;
+              return <ThemeOne {...{ section, teamMembers, attributes, setAttributes }} />;
           }
         })()
       }

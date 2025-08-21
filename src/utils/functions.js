@@ -452,14 +452,36 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "size": 18,
               "fill": "#ffffff"
             }
+          },
+          "badge": {
+            "height": "50px",
+            "width": "50px",
+            "bg": "#facc15",
+            "hover": {
+              "bg": "#facc15"
+            },
+            "radius": 50,
+            "icon": {
+              "size": 24,
+              "fill": "#000000",
+              "hover": {
+                "fill": "#000000"
+              }
+            }
           }
         }
       }
       draft["section"] = {
-        "headline": draft.section.headline,
-        "slogan": draft.section.slogan
+        "headline": "Creative Minds",
+        "slogan": "Bold thinkers, creative doers, and passionate innovators"
       }
 
+      draft['columns'] = {
+        "desktop": 4,
+        "tablet": 2,
+        "mobile": 1
+
+      }
 
 
       draft["teamMembers"] = [...draft?.teamMembers]
@@ -893,12 +915,31 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "size": 18,
               "fill": "#babbbf"
             }
+          },
+          "badge": {
+            "height": "57px",
+            "width": "57px",
+            "bg": "#facc15",
+            "radius": 50,
+            "icon": {
+              "size": 24,
+              "fill": "#000000",
+              "hover": {
+                "fill": "#000000"
+              }
+            }
           }
         }
       }
       draft["section"] = {
-        "headline": draft.section.headline,
-        "slogan": draft.section.slogan
+        "headline": "Meet Our Team",
+        "slogan": "Talented individuals united by passion for exceptional creative work"
+      }
+      draft['columns'] = {
+        "desktop": 4,
+        "tablet": 2,
+        "mobile": 1
+
       }
       draft["teamMembers"] = [...draft?.teamMembers]
       break;
@@ -1331,12 +1372,28 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "size": 18,
               "fill": "#fff"
             }
+          },
+          "badge": {
+            "height": "50px",
+            "width": "50px",
+            "bg": "#facc15",
+            "hover": {
+              "bg": "#facc15"
+            },
+            "radius": 50,
+            "icon": {
+              "size": 24,
+              "fill": "#000000",
+              "hover": {
+                "fill": "#000000"
+              }
+            }
           }
         }
       }
       draft["section"] = {
-        "headline": draft.section.headline,
-        "slogan": draft.section.slogan
+        "headline": "The Creatives",
+        "slogan": "Where art meets innovation"
       }
 
       draft['columns'] = {
@@ -1782,12 +1839,28 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "size": 15,
               "fill": "#000"
             }
+          },
+          "badge": {
+            "height": "48px",
+            "width": "48px",
+            "bg": "#f3f4f6",
+            "hover": {
+              "bg": "#dbeafe"
+            },
+            "radius": 50,
+            "icon": {
+              "size": 24,
+              "fill": "#000000",
+              "hover": {
+                "fill": "#2563eb"
+              }
+            }
           }
         }
       }
       draft["section"] = {
-        "headline": draft.section.headline,
-        "slogan": draft.section.slogan
+        "headline": "Leadership Team",
+        "slogan": "Experienced professionals driving innovation and excellence in creative solutions"
       }
 
       draft['columns'] = {

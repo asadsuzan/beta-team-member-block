@@ -3,7 +3,7 @@ import Image from '../Common/team/Image';
 import Social from '../Common/team/Social';
 import Text from '../Common/team/Text';
 
-const ThemeOne = ({ section = {}, teamMembers = [] }) => {
+const ThemeOne = ({ section = {}, teamMembers = [], setAttributes }) => {
 
     return <div className='bBlocksBetaTeamSection'>
 
@@ -11,8 +11,8 @@ const ThemeOne = ({ section = {}, teamMembers = [] }) => {
             <div className="container">
                 <Header {...{ section }} />
                 <div className="grid">
-                    {teamMembers?.map((member) => {
-                        return <div key={member?.id} className="btms-card-group">
+                    {teamMembers?.map((member, idx) => {
+                        return <div key={member?.id} className="btms-card-group" onClick={() => setAttributes({ activeCardIdx: idx })}>
                             <div className="btms-card-blur-bg" />
                             <div className="btms-card">
                                 <Image {...{ member }} />

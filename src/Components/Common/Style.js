@@ -6,7 +6,7 @@ const Style = ({ attributes, id }) => {
 	const { styles = {}, align, columns } = attributes;
 	const { section, header, title, subTitle, card, img, cardContent } = styles
 
-	const { name, role, bio, button } = cardContent
+	const { name, role, bio, button, badge } = cardContent
 
 
 	const mainSl = `#${id}`;
@@ -18,6 +18,9 @@ const Style = ({ attributes, id }) => {
 	const subTitleSL = `${headerSL} .subtitle`;
 	const cardBodySl = `${containerSL} .card-body`
 	const cardSL = `${containerSL} .btms-card`
+	const badgeSl = `${containerSL} .icon-badge`;
+	const badgeIconSl = `${badgeSl} span svg`;
+
 	const imgWrapperSl = `${containerSL} .img-wrapper`
 	const imgSl = `${cardSL} .image`
 	const nameSl = `${containerSL} .name`;
@@ -28,6 +31,8 @@ const Style = ({ attributes, id }) => {
 	const iconSl = `${linkSl} .icon svg`
 	const themeOneSl = `${blockSl} .bBlocksBetaTeamSection`;
 	const themeTwoSl = `${blockSl} .bBlocksBetaTeamSectionV2`;
+	const themeThreeSl = `${blockSl} .bBlocksBetaTeamSectionV3`;
+	const themeFourSl = `${blockSl} .bBlocksBetaTeamSectionV4`;
 	const gridSL = `${containerSL} .grid`;
 	const cardGroupSL = `${containerSL} .btms-card-group`;
 
@@ -158,7 +163,25 @@ const Style = ({ attributes, id }) => {
 			 }
 
 
-      
+      ${badgeSl}{
+	  ${isValidCSS('width', badge?.width)}
+	  ${isValidCSS('height', badge?.height)}
+	  background:${badge?.bg};
+	  border-radius:${badge?.radius}%;
+    }
+   
+	  ${badgeIconSl}{
+	  width:${badge?.icon?.size}px;
+	  height:${badge?.icon?.size}px;
+	  fill:${badge?.icon?.fill};
+	  }
+	${themeFourSl} .btms-card:hover .icon-badge  {
+	    background:${badge?.hover?.bg};
+	  }
+	${themeFourSl} .btms-card:hover .icon-badge svg {
+	  fill: ${badge?.icon?.hover?.fill};
+	  }
+	
 
          ${tabBreakpoint} {
            ${sectionSL}{

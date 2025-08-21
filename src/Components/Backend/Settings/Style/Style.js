@@ -20,15 +20,17 @@ const Style = ({ attributes, setAttributes, device }) => {
       {/* grid settings  */}
       <PanelBody
         className='bPlPanelBody'
-        title='grid'
+        title='Grid'
         initialOpen={false}
       >
 
-        <PanelRow><Label className=''>columns</Label> <Device /> </PanelRow>
+        <PanelRow><Label className=''>Row</Label> <Device /> </PanelRow>
 
 
 
         <RangeControl
+          max={12}
+          min={1}
           value={columns[device]}
           onChange={v => setAttributes({ columns: updateData(columns, v, device) })}
 
@@ -44,7 +46,7 @@ const Style = ({ attributes, setAttributes, device }) => {
       {/* section  */}
       <PanelBody
         className='bPlPanelBody'
-        title={__('section', 'b-blocks')}
+        title={__('Section', 'b-blocks')}
         initialOpen={false}
       >
 
@@ -63,7 +65,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
 
         {/* section padding  */}
-        <PanelRow><Label className=''>padding</Label> <Device /> </PanelRow>
+        <PanelRow><Label className=''>Padding</Label> <Device /> </PanelRow>
         <BoxControl
           className="mt10"
           values={section?.padding?.[device]}
@@ -83,7 +85,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
 
         {/* section margin  */}
-        <PanelRow><Label className=''>margin</Label> <Device /> </PanelRow>
+        <PanelRow><Label className=''>Margin</Label> <Device /> </PanelRow>
         <BoxControl
           className="mt10"
           values={section?.margin?.[device]}
@@ -105,7 +107,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         {/* section border radius  */}
         <BoxControl
           className="mt10"
-          label='radius'
+          label='Radius'
           values={section?.radius}
           resetValues={{
             "top": "0px",
@@ -126,7 +128,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
       <PanelBody
         className='bPlPanelBody'
-        title={__('header', 'b-blocks')}
+        title={__('Header', 'b-blocks')}
         initialOpen={false}
       >
 
@@ -158,7 +160,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
 
 
-        <PanelRow><Label className=''>margin</Label> <Device /> </PanelRow>
+        <PanelRow><Label className=''>Margin</Label> <Device /> </PanelRow>
         <BoxControl
           className='mt10'
           values={header?.margin?.[device]}
@@ -176,7 +178,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         />
 
-        <PanelRow><Label className=''>padding</Label> <Device /> </PanelRow>
+        <PanelRow><Label className=''>Padding</Label> <Device /> </PanelRow>
         <BoxControl
           className='mt10'
           values={header?.padding?.[device]}
@@ -198,7 +200,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <Typography
           className="mt10"
-          label={__('title typo', 'b-blocks')}
+          label={__('Title Typo', 'b-blocks')}
           value={title.typo}
           onChange={(v) =>
             setAttributes({
@@ -211,21 +213,21 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <ColorControl
           className='mt10'
-          label={__('title color', 'b-blocks')}
-          value={title.color}
+          label={__('Title Color', 'b-blocks')}
+          value={title?.color}
 
           onChange={(v) =>
             setAttributes({
               styles: updateData(styles, v, 'title', 'color')
             }
             )}
-          defaults={title.color}
+          defaults={title?.color}
 
         />
 
 
         {/* header title margin  */}
-        <PanelRow><Label className=''>title margin</Label> <Device /> </PanelRow>
+        <PanelRow><Label className=''>Title Margin</Label> <Device /> </PanelRow>
         <BoxControl
           className='mt10'
           values={title?.margin?.[device]}
@@ -246,8 +248,8 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         {/* header subtitle typo  */}
         <Typography
-          label={__('subtitle typography', 'b-blocks')}
-          value={subTitle.typo}
+          label={__('Subtitle Typography', 'b-blocks')}
+          value={subTitle?.typo}
           onChange={(v) =>
             setAttributes({
               styles: updateData(styles, v, 'subTitle', "typo")
@@ -258,7 +260,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         {/* header subtitle color  */}
 
         <ColorControl
-          label={__('subtitle color', 'b-blocks')}
+          label={__('Subtitle Color', 'b-blocks')}
           value={subTitle.color}
 
           onChange={(v) =>
@@ -266,13 +268,13 @@ const Style = ({ attributes, setAttributes, device }) => {
               styles: updateData(styles, v, 'subTitle', 'color')
             }
             )}
-          defaults={subTitle.color}
+          defaults={subTitle?.color}
 
         />
 
 
         {/* header subtitle margin  */}
-        <PanelRow><Label className=''>subtitle margin</Label> <Device /> </PanelRow>
+        <PanelRow><Label className=''>Subtitle Margin</Label> <Device /> </PanelRow>
         <BoxControl
           className='mt10'
           values={subTitle?.margin?.[device]}
@@ -301,7 +303,7 @@ const Style = ({ attributes, setAttributes, device }) => {
       {/* card /  theme member    styles*/}
       <PanelBody
         className='bPlPanelBody'
-        title={__('team member', 'b-blocks')}
+        title={__('Team Member', 'b-blocks')}
         initialOpen={false}
       >
 
@@ -309,7 +311,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
 
         {
-          theme !== 'theme3' && (
+          theme == 'default' | theme == 'theme2' ? (
             <BButtonGroup
               label={__('Text align', 'b-blocks')}
               options={[
@@ -333,7 +335,7 @@ const Style = ({ attributes, setAttributes, device }) => {
               fontWeight={500}
             />
 
-          )
+          ) : null
         }
 
         {/* border  */}

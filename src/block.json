@@ -199,6 +199,10 @@
 				}
 			]
 		},
+		"activeCardIdx": {
+			"type": "number",
+			"default": 0
+		},
 		"section": {
 			"type": "object",
 			"default": {
@@ -628,6 +632,22 @@
 						"icon": {
 							"size": 18,
 							"fill": "#ffffff"
+						}
+					},
+					"badge": {
+						"height": "50px",
+						"width": "50px",
+						"bg": "#facc15",
+						"hover": {
+							"bg": "#facc15"
+						},
+						"radius": 50,
+						"icon": {
+							"size": 24,
+							"fill": "#000000",
+							"hover": {
+								"fill": "#000000"
+							}
 						}
 					}
 				}

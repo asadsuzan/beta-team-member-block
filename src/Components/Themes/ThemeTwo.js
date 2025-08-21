@@ -3,7 +3,7 @@ import Image from '../Common/team/Image'
 import Social from '../Common/team/Social'
 import Text from '../Common/team/Text'
 
-const ThemeTwo = ({ section = {}, teamMembers = [] }) => {
+const ThemeTwo = ({ section = {}, teamMembers = [], setAttributes }) => {
 
     return (
         <div className="bBlocksBetaTeamSectionV2">
@@ -12,7 +12,7 @@ const ThemeTwo = ({ section = {}, teamMembers = [] }) => {
                     <Header {...{ section }} />
                     <div className="grid">
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="btms-card">
+                            <div key={index} className="btms-card" onClick={() => setAttributes({ activeCardIdx: index })}>
                                 <Image {...{ member }} />
                                 <div className="card-body">
                                     <Text {...{ member }} />

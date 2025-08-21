@@ -21,7 +21,7 @@ const Edit = (props) => {
       })}>
         <Style attributes={attributes} id={`block-${clientId}`} device={device} />
 
-        <TeamSection {...{ attributes }} />
+        <TeamSection {...{ attributes, setAttributes }} />
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import { Camera, Code, Lightbulb, Linkedin, Mail, Palette } from 'lucide-react';
 import Header from '../Common/team/Header';
 import Social from '../Common/team/Social';
 
-const ThemeThree = ({ section, teamMembers }) => {
+const ThemeThree = ({ section, teamMembers, setAttributes }) => {
     const icons = [Palette, Code, Camera, Lightbulb];
     console.log("ThemeThree", teamMembers?.length);
     return (
@@ -23,7 +23,7 @@ const ThemeThree = ({ section, teamMembers }) => {
                             const isEven = index % 2 === 0;
 
                             return (
-                                <div key={index} className={`team-member btms-card`}>
+                                <div key={index} className={`team-member btms-card`} onClick={() => setAttributes({ activeCardIdx: index })}>
 
 
                                     <div className={`team-card ${isEven ? 'offset-top' : ''}`}>
@@ -43,9 +43,17 @@ const ThemeThree = ({ section, teamMembers }) => {
                                                         <p className="role">{member.role}</p>
                                                     </div>
 
-                                                    <div className="icon-badge">
-                                                        <IconComponent className="badge-icon" />
-                                                    </div>
+                                                    {
+                                                        member?.badge?.isShowBadge && (
+                                                            <div className="icon-badge">
+                                                                <span
+                                                                    dangerouslySetInnerHTML={{ __html: member.badge?.icon }} >
+                                                                </span>
+                                                            </div>
+                                                        )
+                                                    }
+
+
                                                 </div>
                                             </div>
 

@@ -4,7 +4,7 @@ import Header from './Header'
 import Image from './Image'
 import Social from './Social'
 
-const ThemeFour = ({ teamMembers, section }) => {
+const ThemeFour = ({ teamMembers, section, setAttributes }) => {
     return (
         <div className='bBlocksBetaTeamSectionV4'>
             <section className="team-section">
@@ -22,7 +22,7 @@ const ThemeFour = ({ teamMembers, section }) => {
 
                     <div className="grid">
                         {teamMembers.map((member, index) => (
-                            <div key={index} className="team-card btms-card">
+                            <div key={index} className="team-card btms-card" onClick={() => setAttributes({ activeCardIdx: index })}>
                                 <div className="team-card-content">
                                     <div className="team-member-image-container">
                                         <img
@@ -39,9 +39,18 @@ const ThemeFour = ({ teamMembers, section }) => {
                                                 <h3 className="name">{member.name}</h3>
                                                 <p className="role">{member.role}</p>
                                             </div>
-                                            <div className="team-member-badge">
-                                                <Award className="team-member-badge-icon" />
-                                            </div>
+
+
+                                            {
+                                                member?.badge?.isShowBadge && (
+                                                    <div className="icon-badge">
+                                                        <span
+                                                            dangerouslySetInnerHTML={{ __html: member.badge?.icon }} >
+                                                        </span>
+                                                    </div>
+                                                )
+                                            }
+
                                         </div>
 
                                         <p className="bio">{member.bio}</p>
