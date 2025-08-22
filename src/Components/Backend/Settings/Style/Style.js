@@ -7,8 +7,12 @@ import { updateData } from '../../../../utils/functions';
 const Style = ({ attributes, setAttributes, device }) => {
   const { styles, theme, columns } = attributes;
   const { section, header = {}, title, subTitle, card, img, cardContent } = styles || {}
-  const { name, role, bio, button } = cardContent
+  const { name, role, bio, button, badge } = cardContent
   const { textAlign } = header
+  console.log('badge background', badge?.bg);
+  console.log('badge hover background', badge?.hover?.bg);
+
+
 
   return (
 
@@ -644,6 +648,95 @@ const Style = ({ attributes, setAttributes, device }) => {
             })
           }
         />
+
+        {
+          theme === 'theme3' || theme === 'theme4' ? (<>
+            {/* badge styles  */}
+
+            {/* badge height  */}
+
+            <UnitControl
+              className="mt10"
+              label={__('Badge Height', 'b-blocks')}
+              value={badge?.height}
+              onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "badge", 'height') }) }}
+
+            />
+            {/* badge width  */}
+
+            <UnitControl
+              className="mt10"
+              label={__('Badge Width', 'b-blocks')}
+              value={badge?.width}
+              onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "badge", 'width') }) }}
+            />
+
+            {/* badge background  */}
+
+            <Background
+              label="Badge Background"
+              onChange={(v) =>
+                setAttributes({
+                  styles: updateData(styles, v, 'cardContent', "badge", 'bg')
+                })
+              }
+              defaults={cardContent?.badge?.bg}
+            />
+
+            {/* badge hover bg  */}
+
+            <Background
+              label="Badge Hover Background"
+              onChange={(v) =>
+                setAttributes({
+                  styles: updateData(styles, v, 'cardContent', "badge", 'hover', 'bg')
+                })
+              }
+              defaults={cardContent?.badge?.hover?.bg}
+            />
+
+            {/* badge icon size  */}
+            <RangeControl
+              className='mt10'
+              label='Badge Icon Size'
+              value={cardContent?.badge?.icon?.size}
+              onChange={(v) =>
+                setAttributes({
+                  styles: updateData(styles, v, 'cardContent', "badge", 'icon', "size")
+                })
+              }
+            />
+
+
+            {/* badge icon color */}
+            <ColorControl
+              className='mt10'
+              label={__('Icon Color', 'b-blocks')}
+              value={cardContent?.badge?.icon?.fill}
+              onChange={(v) =>
+                setAttributes({
+                  styles: updateData(styles, v, 'cardContent', "badge", 'icon', 'fill')
+                })
+              }
+              defaults={cardContent?.badge?.icon?.fill}
+            />
+            {/* badge icon hover color */}
+            <ColorControl
+              className='mt10'
+              label={__('Icon Hover Color', 'b-blocks')}
+              value={cardContent?.badge?.icon?.hover?.fill}
+              onChange={(v) =>
+                setAttributes({
+                  styles: updateData(styles, v, 'cardContent', "badge", 'icon', 'hover', 'fill')
+                })
+              }
+              defaults={cardContent?.badge?.icon?.hover?.fill}
+            />
+
+          </>) : null
+        }
+
+
 
       </PanelBody>
 

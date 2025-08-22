@@ -637,9 +637,13 @@
 					"badge": {
 						"height": "50px",
 						"width": "50px",
-						"bg": "#facc15",
+						"bg": {
+							"color": ""
+						},
 						"hover": {
-							"bg": "#facc15"
+							"bg": {
+								"color": ""
+							}
 						},
 						"radius": 50,
 						"icon": {

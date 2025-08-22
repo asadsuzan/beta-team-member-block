@@ -456,9 +456,14 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "badge": {
             "height": "50px",
             "width": "50px",
-            "bg": "#facc15",
+
+            "bg": {
+              "color": ""
+            },
             "hover": {
-              "bg": "#facc15"
+              "bg": {
+                "color": ""
+              }
             },
             "radius": 50,
             "icon": {
@@ -919,7 +924,14 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "badge": {
             "height": "57px",
             "width": "57px",
-            "bg": "#facc15",
+            "bg": {
+              "color": ""
+            },
+            "hover": {
+              "bg": {
+                "color": ""
+              }
+            },
             "radius": 50,
             "icon": {
               "size": 24,
@@ -1376,9 +1388,13 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "badge": {
             "height": "50px",
             "width": "50px",
-            "bg": "#facc15",
+            "bg": {
+              "color": "#facc15"
+            },
             "hover": {
-              "bg": "#facc15"
+              "bg": {
+                "color": "#ddd"
+              }
             },
             "radius": 50,
             "icon": {
@@ -1843,9 +1859,14 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
           "badge": {
             "height": "48px",
             "width": "48px",
-            "bg": "#f3f4f6",
+
+            "bg": {
+              "color": "#f3f4f6"
+            },
             "hover": {
-              "bg": "#dbeafe"
+              "bg": {
+                "color": "#dbeafe"
+              }
             },
             "radius": 50,
             "icon": {

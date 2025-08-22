@@ -166,7 +166,7 @@ const Style = ({ attributes, id }) => {
       ${badgeSl}{
 	  ${isValidCSS('width', badge?.width)}
 	  ${isValidCSS('height', badge?.height)}
-	  background:${badge?.bg};
+	   ${getBackgroundCSS(badge?.bg)}
 	  border-radius:${badge?.radius}%;
     }
    
@@ -175,8 +175,20 @@ const Style = ({ attributes, id }) => {
 	  height:${badge?.icon?.size}px;
 	  fill:${badge?.icon?.fill};
 	  }
-	${themeFourSl} .btms-card:hover .icon-badge  {
-	    background:${badge?.hover?.bg};
+	${themeThreeSl} .btms-card:hover .icon-badge {
+	    ${getBackgroundCSS(badge?.hover?.bg)};
+	  }
+	${themeFourSl} .btms-card:hover .icon-badge {
+	    ${getBackgroundCSS(badge?.hover?.bg)};
+	  }
+	${themeThreeSl} .btms-card:hover .icon-badge span svg {
+	    ${getBackgroundCSS(badge?.hover?.bg)};
+	  }
+	${themeFourSl} .btms-card:hover .icon-badge span svg {
+	    ${getBackgroundCSS(badge?.hover?.bg)};
+	  }
+	${themeThreeSl} .btms-card:hover .icon-badge svg {
+	  fill: ${badge?.icon?.hover?.fill};
 	  }
 	${themeFourSl} .btms-card:hover .icon-badge svg {
 	  fill: ${badge?.icon?.hover?.fill};
