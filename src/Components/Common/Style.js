@@ -20,7 +20,7 @@ const Style = ({ attributes, id }) => {
 	const cardSL = `${containerSL} .btms-card`
 	const badgeSl = `${containerSL} .icon-badge`;
 	const badgeIconSl = `${badgeSl} span svg`;
-
+	const locationSl = `${containerSL} .team-member-location`;
 	const imgWrapperSl = `${containerSL} .img-wrapper`
 	const imgSl = `${cardSL} .image`
 	const nameSl = `${containerSL} .name`;
@@ -57,6 +57,7 @@ const Style = ({ attributes, id }) => {
 		   ${getTypoCSS("", cardContent.name.typo).googleFontLink} 
 		   ${getTypoCSS("", cardContent.role.typo).googleFontLink} 
 		   ${getTypoCSS("", cardContent.bio.typo).googleFontLink} 
+		   ${getTypoCSS("", cardContent.location.typo).googleFontLink} 
 
 		   ${getTypoCSS("", title.typo).googleFontLink} 
 		   ${getTypoCSS("", subTitle.typo).googleFontLink} 
@@ -69,6 +70,7 @@ const Style = ({ attributes, id }) => {
            ${getTypoCSS(nameSl, cardContent.name.typo).styles} 
            ${getTypoCSS(roleSl, cardContent.role.typo).styles} 
            ${getTypoCSS(bioSl, cardContent.bio.typo).styles} 
+           ${getTypoCSS(locationSl, cardContent.location.typo).styles} 
 
 		   ${getTypoCSS(themeTwoTitleSL, title.typo).styles} 
            ${getTypoCSS(themeTwoSubTitleSL, subTitle.typo).styles} 
@@ -175,6 +177,12 @@ const Style = ({ attributes, id }) => {
 	  height:${badge?.icon?.size}px;
 	  fill:${badge?.icon?.fill};
 	  }
+
+   ${locationSl}{
+   color:${cardContent?.location?.color};
+   }
+
+
 	${themeThreeSl} .btms-card:hover .icon-badge {
 	    ${getBackgroundCSS(badge?.hover?.bg)};
 	  }

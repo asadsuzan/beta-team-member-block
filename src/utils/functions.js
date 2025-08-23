@@ -473,6 +473,18 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "fill": "#000000"
               }
             }
+          },
+          "location": {
+            "typo": {
+              "fontSize": {
+                "desktop": 14,
+                "tablet": 12,
+                "mobile": 12
+              },
+              "lineHeight": 1.3,
+              "fontFamily": "ui-sans-serif, system-ui"
+            },
+            "color": "#6b7280"
           }
         }
       }
@@ -940,6 +952,18 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "fill": "#000000"
               }
             }
+          },
+          "location": {
+            "typo": {
+              "fontSize": {
+                "desktop": 14,
+                "tablet": 12,
+                "mobile": 12
+              },
+              "lineHeight": 1.3,
+              "fontFamily": "ui-sans-serif, system-ui"
+            },
+            "color": "#6b7280"
           }
         }
       }
@@ -1404,6 +1428,18 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "fill": "#000000"
               }
             }
+          },
+          "location": {
+            "typo": {
+              "fontSize": {
+                "desktop": 14,
+                "tablet": 12,
+                "mobile": 12
+              },
+              "lineHeight": 1.3,
+              "fontFamily": "ui-sans-serif, system-ui"
+            },
+            "color": "#6b7280"
           }
         }
       }
@@ -1876,6 +1912,18 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "fill": "#2563eb"
               }
             }
+          },
+          "location": {
+            "typo": {
+              "fontSize": {
+                "desktop": 14,
+                "tablet": 12,
+                "mobile": 12
+              },
+              "lineHeight": 1.3,
+              "fontFamily": "ui-sans-serif, system-ui"
+            },
+            "color": "#6b7280"
           }
         }
       }

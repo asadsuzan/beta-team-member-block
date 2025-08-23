@@ -9,8 +9,7 @@ const Style = ({ attributes, setAttributes, device }) => {
   const { section, header = {}, title, subTitle, card, img, cardContent } = styles || {}
   const { name, role, bio, button, badge } = cardContent
   const { textAlign } = header
-  console.log('badge background', badge?.bg);
-  console.log('badge hover background', badge?.hover?.bg);
+
 
 
 
@@ -737,6 +736,37 @@ const Style = ({ attributes, setAttributes, device }) => {
         }
 
 
+        {/* location settings */}
+        {theme === "theme4" && <>
+          {/* location typo  */}
+
+          <Typography
+            className="mt10"
+            label={__('Location Typo', 'b-blocks')}
+            value={cardContent?.location?.typo}
+            onChange={(v) =>
+              setAttributes({
+                styles: updateData(styles, v, 'cardContent', "location", "typo")
+              })
+            }
+          />
+          {/* location color  */}
+
+          <ColorControl
+            className='mt10'
+            label={__('Location Color', 'b-blocks')}
+            value={cardContent?.location?.color}
+
+            onChange={(v) =>
+              setAttributes({
+                styles: updateData(styles, v, 'cardContent', "location", 'color')
+              }
+              )}
+            defaults={cardContent?.location?.color}
+
+          />
+
+        </>}
 
       </PanelBody>
 

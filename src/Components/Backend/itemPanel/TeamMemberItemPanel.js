@@ -279,6 +279,78 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
             )}
 
 
+            {/* location settings  */}
+
+            {
+                theme === "theme4" && (<>
+
+                    <Flex className='mt10' align="center" justify="space-between" style={{ marginBottom: '12px' }}>
+                        <FlexItem>
+                            <Label className=" ">
+                                Location
+                            </Label>
+                        </FlexItem>
+                        <FlexItem>
+                            <ToggleControl
+                                label={teamMembers[index]?.location?.isShowLocation ? 'ON' : 'OFF'}
+                                checked={teamMembers[index]?.location?.isShowLocation || false}
+                                onChange={(value) => {
+                                    setAttributes({
+                                        teamMembers: updateData(
+                                            teamMembers,
+                                            value,
+                                            index,
+                                            "location",
+
+                                            "isShowLocation"
+                                        )
+                                    })
+                                }}
+                            />
+                        </FlexItem>
+                    </Flex>
+                    {
+                        teamMembers[index]?.location?.isShowLocation && (
+                            <>
+                                <TextControl
+                                    className='mb10'
+                                    label={__('City', 'b-blocks')}
+                                    value={teamMembers[index]?.location?.city || ''}
+                                    onChange={(v) => {
+                                        setAttributes({
+                                            teamMembers: updateData(
+                                                teamMembers,
+                                                v,
+                                                index,
+                                                "location",
+                                                "city"
+                                            )
+                                        });
+                                    }}
+                                />
+
+                                <TextControl
+                                    label={__('Country', 'b-blocks')}
+                                    value={teamMembers[index]?.location?.country || ''}
+                                    onChange={(v) => {
+                                        setAttributes({
+                                            teamMembers: updateData(
+                                                teamMembers,
+                                                v,
+                                                index,
+                                                "location",
+                                                "country"
+                                            )
+                                        });
+                                    }}
+                                />
+                            </>
+                        )
+                    }
+
+                </>)
+            }
+
 
 
 

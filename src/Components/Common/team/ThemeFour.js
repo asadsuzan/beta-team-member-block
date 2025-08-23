@@ -56,10 +56,16 @@ const ThemeFour = ({ teamMembers, section, setAttributes }) => {
                                         <p className="bio">{member.bio}</p>
 
                                         <div className="team-member-footer">
-                                            <div className="team-member-location">
-                                                <MapPin size={16} className="location-icon" />
-                                                New York, NY
-                                            </div>
+                                            {
+                                                member?.location?.isShowLocation && (
+                                                    <div className="team-member-location">
+                                                        <MapPin size={16} className="location-icon" />
+                                                        <span>{member?.location?.city}</span>
+                                                        ,
+                                                        <span>{member?.location?.country}</span>
+                                                    </div>
+                                                )
+                                            }
                                             <Social {...{ member }} />
                                         </div>
                                     </div>
