@@ -1,0 +1,220 @@
+/* Section */
+.team-variation4 {
+    padding: 5rem 0;
+    /* py-20 */
+    background-color: #000 !important;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Container */
+.team-variation4 .container {
+    max-width: 80rem;
+    /* max-w-7xl */
+    margin: 0 auto;
+    padding: 0 1rem;
+    /* px-4 */
+}
+
+@media (min-width: 640px) {
+    .team-variation4 .container {
+        padding: 0 1.5rem;
+        /* sm:px-6 */
+    }
+}
+
+@media (min-width: 1024px) {
+    .team-variation4 .container {
+        padding: 0 2rem;
+        /* lg:px-8 */
+    }
+}
+
+/* Header */
+.team-variation4 .header {
+    text-align: center;
+    margin-bottom: 4rem;
+    /* mb-16 */
+}
+
+.team-variation4 .header h2 {
+    font-size: 3.75rem;
+    /* text-6xl */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #facc15, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.team-variation4 .header p {
+    font-size: 1.25rem;
+    /* text-xl */
+    color: #d1d5db;
+    /* text-gray-300 */
+}
+
+/* Grid */
+.team-variation4 .team-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    /* gap-8 */
+}
+
+@media (min-width: 768px) {
+    .team-variation4 .team-grid {
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .team-variation4 .team-card {
+        grid-column: span 6 / span 6;
+        /* 2 per row */
+    }
+
+    .team-variation4 .team-card.even {
+        margin-top: 3rem;
+        /* stagger like Tailwind md:mt-12 */
+    }
+}
+
+/* Card Inner */
+.team-variation4 .card-inner {
+    position: relative;
+}
+
+/* Image Wrapper */
+.team-variation4 .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    /* rounded-3xl */
+}
+
+.team-variation4 .image-wrapper img {
+    width: 100%;
+    height: 20rem;
+    /* h-80 */
+    object-fit: cover;
+    transition: all 0.7s ease;
+}
+
+.team-variation4 .team-card:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+
+/* Overlay */
+.team-variation4 .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #000, rgba(0, 0, 0, 0.2), transparent);
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.team-variation4 .team-card:hover .overlay {
+    opacity: 0.4;
+}
+
+/* Card Content */
+.team-variation4 .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    /* p-6 */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.team-variation4 .info h3 {
+    font-size: 1.5rem;
+    /* text-2xl */
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.team-variation4 .info .role {
+    color: #facc15 !important;
+    /* text-yellow-400 */
+    font-weight: 600;
+    font-size: 0.875rem !important;
+    /* text-sm */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    /* tracking-wider */
+}
+
+/* Icon Box */
+.team-variation4 .icon-box {
+    width: 3rem;
+    height: 3rem;
+    background: #facc15;
+    /* yellow-400 */
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(12deg);
+    transition: transform 0.3s ease;
+}
+
+.team-variation4 .team-card:hover .icon-box {
+    transform: rotate(0deg);
+}
+
+.team-variation4 .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #000;
+}
+
+/* Socials */
+.team-variation4 .socials {
+    position: absolute;
+    top: 1rem;
+    /* top-4 */
+    right: 1rem;
+    /* right-4 */
+    opacity: 0;
+    display: flex;
+    gap: 0.5rem;
+    /* space-x-2 */
+    transition: opacity 0.3s ease;
+}
+
+.team-variation4 .team-card:hover .socials {
+    opacity: 1;
+}
+
+.team-variation4 .social {
+    width: 2rem;
+    /* w-8 */
+    height: 2rem;
+    /* h-8 */
+    background: rgba(255, 255, 255, 0.2);
+    /* bg-white/20 */
+    backdrop-filter: blur(4px);
+    /* backdrop-blur-sm */
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bio */
+.team-variation4 .bio {
+    margin-top: 1rem;
+    /* mt-4 */
+    padding: 0 0.5rem;
+    /* px-2 */
+}
+
+.team-variation4 .bio p {
+    color: #9ca3af;
+    /* text-gray-400 */
+    font-size: 0.875rem;
+    /* text-sm */
+}

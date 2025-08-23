@@ -1,11 +1,12 @@
 import { __ } from "@wordpress/i18n";
-import { CheckboxControl, Flex, FlexItem, TextareaControl, TextControl, ToggleControl } from "@wordpress/components";
+import { CheckboxControl, Flex, FlexItem, PanelRow, TextareaControl, TextControl, ToggleControl } from "@wordpress/components";
 import { IconLibrary, InlineMediaUpload, Label } from '../../../../../bpl-tools-main/Components';
 import { updateData } from '../../../utils/functions';
 
 const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
 
-    const { teamMembers } = attributes;
+
+    const { teamMembers, theme } = attributes;
     const { name, role, bio, isShowSocial } = teamMembers[index];
 
     return (
@@ -57,7 +58,7 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
             />
 
             <InlineMediaUpload
-                label="avatar"
+                label="Avatar"
                 className="m20"
                 value={teamMembers[index].image}
 
@@ -68,134 +69,100 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
                 }}
             />
 
+            {/* social media settings  */}
 
-            <Flex>
-                <FlexItem>
-                    <Label className="">
-                        {__('Socials', "bpl-tools")}
-                    </Label>
-                </FlexItem>
-                <FlexItem>
-                    <ToggleControl
-                        checked={isShowSocial}
+            <PanelRow>
+                <Label className=" ">
+                    {__('Socials', "bpl-tools")}
+                </Label>
+                <ToggleControl
+                    label={isShowSocial ? 'ON' : 'OFF'}
+                    checked={isShowSocial || false}
+                    onChange={(v) => {
+                        setAttributes({
+                            teamMembers: updateData(teamMembers, v, index, "isShowSocial")
+                        })
+                    }}
+                />
+            </PanelRow>
 
-                        onChange={(v) => {
-
-                            setAttributes({
-                                teamMembers: updateData(teamMembers, v, index, "isShowSocial")
-                            })
-                        }}
-
-
-
-                    />
-                </FlexItem>
-            </Flex>
 
 
             <div style={{
-                color: `${isShowSocial ? "inherit" : "#842029"}`,
-                borderWidth: "1px",
-                borderStyle: "solid",
-                borderColor: `${isShowSocial ? "#ddd" : "#f5c2c7"}`,
-                margin: "10px 0",
-                padding: "10px"
-            }}>
+                color: `${isShowSocial ? "inherit" : "#842029"}`
+            }}
+            >
                 {teamMembers[index]?.social?.map((item, idx) => (
                     <div key={idx}
                         style={{
-                            // border: `${!item?.isShow ? "1px solid red" : "1px solid green"}`,
-                            color: `${!item?.isShow ? "#842029" : "inherit"}`,
-
+                            color: `${!item?.isShow ? "#842029" : "inherit"}`
                         }}
-
                         className='btms-social-panel'
-
-
                     >
+
 
                         <Flex
 
                             align='center'
                             direction='row'
-                            style={{
-                                marginBottom: "5px"
-                            }}
-
+                            justify='space-between'
                         >
-
                             <FlexItem>
-
-
                                 <Flex>
+                                    {
+                                        item?.isShow && isShowSocial && (
+                                            <FlexItem>
+                                                <IconLibrary
+                                                    className='btms-icon-lib'
+                                                    label=""
+                                                    onChange={(v) =>
+                                                        setAttributes({
+                                                            teamMembers: updateData(
+                                                                teamMembers,
+                                                                v,
+                                                                index,
+                                                                "social",
+                                                                idx,
+                                                                "icon"
+                                                            )
+                                                        })
+                                                    }
+                                                />
+                                            </FlexItem>
+                                        )
+                                    }
 
                                     <FlexItem>
                                         <div className='btms-control-panel-svg'
                                             dangerouslySetInnerHTML={{ __html: item.icon }}
                                         ></div>
-
                                     </FlexItem>
-                                    <FlexItem><span>{
+                                    <FlexItem>
+                                        <span>{__(`${item.name}`, "bpl-tools")}</span>
+                                    </FlexItem>
 
-                                        __(`${item.name}`, "bpl-tools")
-                                    }</span></FlexItem>
-
-                                    {
-                                        item?.isShow && isShowSocial &&
-
-
-                                        <IconLibrary
-                                            className='btms-icon-lib'
-                                            label=""
-                                            onChange={(v) =>
-                                                setAttributes({
-                                                    teamMembers: updateData(
-                                                        teamMembers,
-                                                        v,
-                                                        index,
-                                                        "social",
-                                                        idx,
-                                                        "icon"
-                                                    )
-                                                })
-                                            }
-                                        />
-
-
-                                    }
                                 </Flex>
-
-
-
                             </FlexItem>
 
                             <FlexItem>
-
-
                                 <ToggleControl
-                                    checked={item.isShow}
+                                    checked={item?.isShow || false}
+                                    label={item?.isShow ? 'ON' : 'OFF'}
                                     disabled={!isShowSocial}
                                     onChange={(v) => {
-
                                         setAttributes({
                                             teamMembers: updateData(teamMembers, v, index, 'social', idx, "isShow")
                                         })
                                     }}
-
-
-
                                 />
-
                             </FlexItem>
-
-
-
-
                         </Flex>
 
 
-                        <span>{__('URL', 'b-blocks')}</span>
+
                         <TextControl
+                            className='mt10'
+                            label={__('URL', 'b-blocks')}
                             disabled={!item.isShow || !isShowSocial}
                             value={item?.url}
                             onChange={(v) => {
@@ -212,8 +179,9 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
                             }}
                         />
 
-                        <span>{__('Label', 'b-blocks')}</span>
+
                         <TextControl
+                            label={__('Name', 'b-blocks')}
                             disabled={!item.isShow || !isShowSocial}
                             value={item?.name}
                             onChange={(v) => {
@@ -230,16 +198,11 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
                             }}
                         />
 
-
-
-
-
                         <CheckboxControl
                             disabled={!item.isShow || !isShowSocial}
-                            checked={item.isOpenNewTab}
-                            label={` Open in new tab`}
+                            checked={item?.isOpenNewTab}
+                            label={`Open in new tab`}
                             onChange={(v) => {
-
                                 setAttributes({
                                     teamMembers: updateData(teamMembers, v, index, 'social', idx, "isOpenNewTab")
                                 })
@@ -248,9 +211,146 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
 
                     </div>
                 ))}
-
-
             </div >
+
+
+
+            {/* badge icon settings  */}
+
+
+            {(
+                (theme === "theme3" || theme === "theme4") && (
+                    <>
+                        <Flex className='mt10' align="center" justify="space-between" style={{ marginBottom: '12px' }}>
+                            <FlexItem>
+                                <Label className=" ">
+                                    Badge Icon
+                                </Label>
+                            </FlexItem>
+                            <FlexItem>
+                                <ToggleControl
+                                    label={teamMembers[index]?.badge?.isShowBadge ? 'ON' : 'OFF'}
+                                    checked={teamMembers[index]?.badge?.isShowBadge || false}
+                                    onChange={(value) => {
+                                        setAttributes({
+                                            teamMembers: updateData(
+                                                teamMembers,
+                                                value,
+                                                index,
+                                                "badge",
+                                                "isShowBadge"
+                                            )
+                                        })
+                                    }}
+                                />
+                            </FlexItem>
+                        </Flex>
+
+                        {teamMembers[index]?.badge?.isShowBadge && (
+                            <Flex align="center" justify="space-between">
+
+                                <FlexItem>
+                                    <div className='btms-control-panel-svg'
+                                        dangerouslySetInnerHTML={{ __html: teamMembers[index]?.badge?.icon || '' }}
+                                    ></div>
+                                </FlexItem>
+                                <FlexItem>
+                                    <IconLibrary
+                                        className='btms-icon-lib'
+                                        label=""
+                                        onChange={(v) =>
+                                            setAttributes({
+                                                teamMembers: updateData(
+                                                    teamMembers,
+                                                    v,
+                                                    index,
+                                                    "badge",
+                                                    "icon"
+
+                                                )
+                                            })
+                                        }
+                                    />
+                                </FlexItem>
+                            </Flex>
+                        )}
+                    </>
+                )
+            )}
+
+
+            {/* location settings  */}
+
+            {
+                theme === "theme4" && (<>
+
+                    <Flex className='mt10' align="center" justify="space-between" style={{ marginBottom: '12px' }}>
+                        <FlexItem>
+                            <Label className=" ">
+                                Location
+                            </Label>
+                        </FlexItem>
+                        <FlexItem>
+                            <ToggleControl
+                                label={teamMembers[index]?.location?.isShowLocation ? 'ON' : 'OFF'}
+                                checked={teamMembers[index]?.location?.isShowLocation || false}
+                                onChange={(value) => {
+                                    setAttributes({
+                                        teamMembers: updateData(
+                                            teamMembers,
+                                            value,
+                                            index,
+                                            "location",
+
+                                            "isShowLocation"
+                                        )
+                                    })
+                                }}
+                            />
+                        </FlexItem>
+                    </Flex>
+                    {
+                        teamMembers[index]?.location?.isShowLocation && (
+                            <>
+                                <TextControl
+                                    className='mb10'
+                                    label={__('City', 'b-blocks')}
+                                    value={teamMembers[index]?.location?.city || ''}
+                                    onChange={(v) => {
+                                        setAttributes({
+                                            teamMembers: updateData(
+                                                teamMembers,
+                                                v,
+                                                index,
+                                                "location",
+                                                "city"
+                                            )
+                                        });
+                                    }}
+                                />
+
+                                <TextControl
+                                    label={__('Country', 'b-blocks')}
+                                    value={teamMembers[index]?.location?.country || ''}
+                                    onChange={(v) => {
+                                        setAttributes({
+                                            teamMembers: updateData(
+                                                teamMembers,
+                                                v,
+                                                index,
+                                                "location",
+                                                "country"
+                                            )
+                                        });
+                                    }}
+                                />
+                            </>
+                        )
+                    }
+
+                </>)
+            }
+
 
 
 

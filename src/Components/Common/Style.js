@@ -2,48 +2,51 @@
 import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools-main/utils/data';
 import { getBackgroundCSS, getBorderCSS, getBoxCSS, getTypoCSS, isValidCSS } from "../../../../bpl-tools-main/utils/getCSS"
 
-const Style = ({ attributes, id, device }) => {
+const Style = ({ attributes, id }) => {
 	const { styles = {}, align, columns } = attributes;
 	const { section, header, title, subTitle, card, img, cardContent } = styles
 
-	const { name, role, bio, button } = cardContent
+	const { name, role, bio, button, badge } = cardContent
 
 
 	const mainSl = `#${id}`;
-	const blockSl = `${mainSl} .btms-theme-one`;
-	const sectionSL = `${blockSl} .btms-section`;
-	const containerSL = `${sectionSL} .btms-container `;
-	const headerSL = `${containerSL} .btms-header`;
-	const titleSL = `${headerSL} .btms-title`;
-	const subTitleSL = `${headerSL} .btms-subtitle`;
-	const gridSL = `${containerSL} .btms-grid`;
+	const blockSl = `${mainSl} .tmsTeamWrapper`;
+	const sectionSL = `${blockSl} section`;
+	const containerSL = `${blockSl} .container `;
+	const headerSL = `${containerSL} .header`;
+	const titleSL = `${headerSL} .title`;
+	const subTitleSL = `${headerSL} .subtitle`;
+	const cardBodySl = `${containerSL} .card-body`
+	const cardSL = `${containerSL} .btms-card`
+	const badgeSl = `${containerSL} .icon-badge`;
+	const badgeIconSl = `${badgeSl} span svg`;
+	const locationSl = `${containerSL} .team-member-location`;
+	const imgWrapperSl = `${containerSL} .img-wrapper`
+	const imgSl = `${cardSL} .image`
+	const nameSl = `${containerSL} .name`;
+	const roleSl = `${containerSL} .role`;
+	const bioSl = `${containerSL} .bio`;
+	const socialContainerSL = `${containerSL} .socials`
+	const linkSl = `${socialContainerSL} .link`
+	const iconSl = `${linkSl} .icon svg`
+	const themeOneSl = `${blockSl} .bBlocksBetaTeamSection`;
+	const themeTwoSl = `${blockSl} .bBlocksBetaTeamSectionV2`;
+	const themeThreeSl = `${blockSl} .bBlocksBetaTeamSectionV3`;
+	const themeFourSl = `${blockSl} .bBlocksBetaTeamSectionV4`;
+	const gridSL = `${containerSL} .grid`;
 	const cardGroupSL = `${containerSL} .btms-card-group`;
-	const cardSL = `${cardGroupSL} .btms-card`
-	const cardImgWrapperSL = `${cardSL} .btms-card-img-wrapper`
-	const cardImgSL = `${cardImgWrapperSL} .btms-card-img`
 
-	const cardTextSL = `${cardSL} .btms-card-text`
-	const cardNameSL = `${cardTextSL} .btms-card-name`
-	const cardRoleSL = `${cardTextSL} .btms-card-role`
-	const cardBioSL = `${cardTextSL} .btms-card-bio`
-	const socialContainerSL = `${cardTextSL} .btms-card-icons`
-	const socialButtonSL = `${socialContainerSL} .btms-card-icon`
-	const socialIconSL = `${socialContainerSL} svg`
-	const themeTwoBlockSl = `${mainSl} .btms-theme-two`;
+
+
+	const themeTwoBlockSl = `${mainSl} .bBlocksBetaTeamSectionV2`;
 	const themeTwoSectionSL = `${themeTwoBlockSl} .btms-team-section`;
-	const themeTwoContainerSL = `${themeTwoSectionSL} .btms-container`;
-	const themeTwoDeaderSL = `${themeTwoContainerSL} .btms-header`;
-	const themeTwoTitleSL = `${themeTwoDeaderSL} .btms-title`;
-	const themeTwoSubTitleSL = `${themeTwoDeaderSL} .btms-subtitle`;
-	const themeTwoGridSL = `${themeTwoContainerSL} .btms-wrapper`;
-	const themeTwoCardSL = `${themeTwoGridSL} .btms-card`;
-	const themeTwoCardBodySL = `${themeTwoCardSL} .btms-card-body`;
-	const themeTwoNameSL = `${themeTwoCardBodySL} .btms-name`;
-	const themeTwoRoleSL = `${themeTwoCardBodySL} .btms-role`;
-	const themeTwoBioSL = `${themeTwoCardBodySL} .btms-bio`;
-	const themeTwoSocialWrapperSL = `${themeTwoCardBodySL} .btms-social`
-	const themeTwoSocialButtonSL = `${themeTwoSocialWrapperSL} .btms-link`
-	const themeTwoSocialIconSL = `${themeTwoSocialButtonSL} svg`
+	const themeTwoContainerSL = `${themeTwoSectionSL} .container`;
+	const themeTwoHeaderSL = `${themeTwoContainerSL} .btms-header`;
+	const themeTwoTitleSL = `${themeTwoHeaderSL} .btms-title`;
+	const themeTwoSubTitleSL = `${themeTwoHeaderSL} .btms-subtitle`;
+
+
+
 
 
 
@@ -54,92 +57,40 @@ const Style = ({ attributes, id, device }) => {
 		   ${getTypoCSS("", cardContent.name.typo).googleFontLink} 
 		   ${getTypoCSS("", cardContent.role.typo).googleFontLink} 
 		   ${getTypoCSS("", cardContent.bio.typo).googleFontLink} 
+		   ${getTypoCSS("", cardContent.location.typo).googleFontLink} 
 
-		 ${getTypoCSS("", title.typo).googleFontLink} 
-		 ${getTypoCSS("", subTitle.typo).googleFontLink} 
-		 ${getTypoCSS("", name.typo).googleFontLink} 
-		 ${getTypoCSS("", role.typo).googleFontLink} 
-		 ${getTypoCSS("", bio.typo).googleFontLink} 
+		   ${getTypoCSS("", title.typo).googleFontLink} 
+		   ${getTypoCSS("", subTitle.typo).googleFontLink} 
+		   ${getTypoCSS("", name.typo).googleFontLink} 
+		   ${getTypoCSS("", role.typo).googleFontLink} 
+		   ${getTypoCSS("", bio.typo).googleFontLink} 
 
            ${getTypoCSS(titleSL, title.typo).styles} 
            ${getTypoCSS(subTitleSL, subTitle.typo).styles} 
-           ${getTypoCSS(cardNameSL, cardContent.name.typo).styles} 
-           ${getTypoCSS(cardRoleSL, cardContent.role.typo).styles} 
-           ${getTypoCSS(cardBioSL, cardContent.bio.typo).styles} 
+           ${getTypoCSS(nameSl, cardContent.name.typo).styles} 
+           ${getTypoCSS(roleSl, cardContent.role.typo).styles} 
+           ${getTypoCSS(bioSl, cardContent.bio.typo).styles} 
+           ${getTypoCSS(locationSl, cardContent.location.typo).styles} 
 
-		    ${getTypoCSS(themeTwoTitleSL, title.typo).styles} 
-         ${getTypoCSS(themeTwoSubTitleSL, subTitle.typo).styles} 
+		   ${getTypoCSS(themeTwoTitleSL, title.typo).styles} 
+           ${getTypoCSS(themeTwoSubTitleSL, subTitle.typo).styles} 
 
-
-		 ${getTypoCSS(themeTwoNameSL, name.typo).styles} 
-         ${getTypoCSS(themeTwoRoleSL, role.typo).styles} 
-         ${getTypoCSS(themeTwoBioSL, bio.typo).styles} 
+ 
+       
 
 
 
 		 ${gridSL}{
-		  grid-template-columns: repeat(${align ? columns?.desktop : 2}, 1fr);
-		  ${tabBreakpoint}{
-		  grid-template-columns: repeat(${align ? columns?.tablet : 2}, 1fr);
-          }
-		  ${mobileBreakpoint}{
-		   grid-template-columns: repeat(${align ? columns?.mobile : 2}, 1fr);
-		  }	 
+		  grid-template-columns: repeat(${columns?.desktop}, 1fr);
+		  row-gap: ${columns?.gapX};
+		  column-gap: ${columns?.gapY};
+
+		
 		}
-		 
-
-           ${subTitleSL}{
-		    margin:${getBoxCSS(subTitle.margin?.desktop)};
-            color:${subTitle?.color};
-		  }
-           ${socialButtonSL}{
-		        padding:${getBoxCSS(cardContent?.button?.padding.desktop)};
-				${getBackgroundCSS(cardContent?.button?.bg)}
-				${getBorderCSS(cardContent?.button?.border)}
-				border-radius:${cardContent?.button?.radius}%;
-		  }
-           ${socialIconSL}{
-		  	 	fill:${cardContent.button.icon.fill};
-				width:${cardContent.button?.icon.size}px;
-				height:${cardContent.button?.icon.size}px;
-				
-		  }
+		  
 
 
-		  ${cardSL} {
-				  padding:${getBoxCSS(card?.padding?.desktop)};
-				  margin:${getBoxCSS(card?.margin?.desktop)};
-             }
-
-	         ${cardImgWrapperSL}{
-		        padding:${getBoxCSS(img?.wrapper?.padding?.desktop)};
-		 	    margin:${getBoxCSS(img?.wrapper?.margin?.desktop)};
-		 	    ${getBorderCSS(img?.wrapper?.border)};	
-			    border-radius:${getBoxCSS(img?.wrapper.radius)};  
-			 }	      
-             ${cardImgSL}{
-			   border-radius:${img?.avatar?.radius}px;	
-			   ${isValidCSS('min-height', img?.avatar?.minHeight)}
-			 }
-             ${cardTextSL}{
-			  text-align:${cardContent.textAlign}
-			}
-
-             ${cardNameSL}{
-			   margin:${getBoxCSS(cardContent?.name?.margin.desktop)};
-			   color:${cardContent?.name?.color}
-			 }
-             ${cardRoleSL}{
-			   margin:${getBoxCSS(cardContent?.role?.margin.desktop)};
-			   color:${cardContent?.role?.color}
-			 }
-             ${cardBioSL}{
-			   margin:${getBoxCSS(cardContent?.bio?.margin.desktop)};
-			   color:${cardContent?.bio?.color};
-			 }
-
-
-         ${sectionSL}{
+      ${sectionSL}{
 		   padding:${getBoxCSS(section?.padding?.desktop)};
 	       margin:${getBoxCSS(section?.margin?.desktop)};
 		   ${getBackgroundCSS(section?.bg)}
@@ -157,6 +108,103 @@ const Style = ({ attributes, id, device }) => {
 		    color:${title?.color};
 			margin:${getBoxCSS(title?.margin?.desktop)};
 		}
+        
+		${subTitleSL}{
+		    margin:${getBoxCSS(subTitle.margin?.desktop)};
+            color:${subTitle?.color};
+		  }
+
+        ${linkSl}{
+		        padding:${getBoxCSS(cardContent?.button?.padding?.desktop)};
+				${getBackgroundCSS(cardContent?.button?.bg)}
+				${getBorderCSS(cardContent?.button?.border)}
+				border-radius:${cardContent?.button?.radius}%;
+				${isValidCSS('width', cardContent?.button?.width)}
+				${isValidCSS('height', cardContent?.button?.height)}
+		  }
+           ${iconSl}{
+		  	 	fill:${cardContent?.button?.icon?.fill};
+				width:${cardContent.button?.icon?.size}px;
+				height:${cardContent.button?.icon?.size}px;
+				
+		  }
+
+
+		  ${cardSL} {
+				  padding:${getBoxCSS(card?.padding?.desktop)};
+				  margin:${getBoxCSS(card?.margin?.desktop)};
+				  ${getBorderCSS(card?.border)}
+				  border-radius:${getBoxCSS(card?.radius)};
+
+             }
+
+	         ${imgWrapperSl}{
+		        padding:${getBoxCSS(img?.wrapper?.padding?.desktop)};
+		 	    margin:${getBoxCSS(img?.wrapper?.margin?.desktop)};
+		 	    ${getBorderCSS(img?.wrapper?.border)};	
+			    border-radius:${getBoxCSS(img?.wrapper?.radius)};  
+			 }	      
+             ${imgSl}{
+			   border-radius:${getBoxCSS(img?.avatar?.radius)};  
+			   ${isValidCSS('width', img?.avatar?.width)}
+			   ${isValidCSS('height', img?.avatar?.height)}
+			 }
+             ${cardBodySl}{
+			  text-align:${cardContent.textAlign}
+			}
+
+             ${nameSl}{
+			   margin:${getBoxCSS(cardContent?.name?.margin.desktop)};
+			   color:${cardContent?.name?.color};
+
+			 }
+             ${roleSl}{
+			   margin:${getBoxCSS(cardContent?.role?.margin.desktop)};
+			   color:${cardContent?.role?.color}
+			 }
+             ${bioSl}{
+			   margin:${getBoxCSS(cardContent?.bio?.margin.desktop)};
+			   color:${cardContent?.bio?.color};
+			 }
+
+
+      ${badgeSl}{
+	  ${isValidCSS('width', badge?.width)}
+	  ${isValidCSS('height', badge?.height)}
+	   ${getBackgroundCSS(badge?.bg)}
+	  border-radius:${badge?.radius}%;
+    }
+   
+	  ${badgeIconSl}{
+	  width:${badge?.icon?.size}px;
+	  height:${badge?.icon?.size}px;
+	  fill:${badge?.icon?.fill};
+	  }
+
+   ${locationSl}{
+   color:${cardContent?.location?.color};
+   }
+
+
+	${themeThreeSl} .btms-card:hover .icon-badge {
+	    ${getBackgroundCSS(badge?.hover?.bg)};
+	  }
+	${themeFourSl} .btms-card:hover .icon-badge {
+	    ${getBackgroundCSS(badge?.hover?.bg)};
+	  }
+	${themeThreeSl} .btms-card:hover .icon-badge span svg {
+	    ${getBackgroundCSS(badge?.hover?.bg)};
+	  }
+	${themeFourSl} .btms-card:hover .icon-badge span svg {
+	    ${getBackgroundCSS(badge?.hover?.bg)};
+	  }
+	${themeThreeSl} .btms-card:hover .icon-badge svg {
+	  fill: ${badge?.icon?.hover?.fill};
+	  }
+	${themeFourSl} .btms-card:hover .icon-badge svg {
+	  fill: ${badge?.icon?.hover?.fill};
+	  }
+	
 
          ${tabBreakpoint} {
            ${sectionSL}{
@@ -177,23 +225,22 @@ const Style = ({ attributes, id, device }) => {
            
 		  }
 		${cardSL} {
-             padding:${getBoxCSS(card?.padding?.tablet)};
-              margin:${getBoxCSS(card?.margin?.tablet)};
-             }
-             ${cardNameSL}{
+          padding:${getBoxCSS(card?.padding?.tablet)};
+          margin:${getBoxCSS(card?.margin?.tablet)};
+        }
+             ${nameSl}{
 			   margin:${getBoxCSS(cardContent?.name?.margin.tablet)};
-			   color:${cardContent?.name?.color}
 			 }
-             ${cardRoleSL}{
+             ${roleSl}{
 			   margin:${getBoxCSS(cardContent?.role?.margin.tablet)};
 			   color:${cardContent?.role?.color}
 			 }
-             ${cardBioSL}{
+             ${bioSl}{
 			   margin:${getBoxCSS(cardContent?.bio?.margin.tablet)};
 			   color:${cardContent?.bio?.color};
 			 }
 			   
-           ${socialButtonSL}{
+           ${linkSl}{
 		        padding:${getBoxCSS(cardContent?.button?.padding.tablet)};
               }
 		   
@@ -225,108 +272,46 @@ const Style = ({ attributes, id, device }) => {
 		  ${cardSL} {
             padding:${getBoxCSS(card?.padding?.mobile)};
          	margin:${getBoxCSS(card?.margin?.mobile)};
+			${getBorderCSS(card.border)};
+		    border-radius:${card.radius}px;
+
          }
-          ${cardNameSL}{
+          ${nameSl}{
 			   margin:${getBoxCSS(cardContent?.name?.margin.mobile)};
-			   color:${cardContent?.name?.color}
 			 }
-             ${cardRoleSL}{
+             ${roleSl}{
 			   margin:${getBoxCSS(cardContent?.role?.margin.mobile)};
 			   color:${cardContent?.role?.color}
 			 }
-             ${cardBioSL}{
+             ${bioSl}{
                margin:${getBoxCSS(cardContent?.bio?.margin.mobile)};
 			   color:${cardContent?.bio?.color};
 			 }
 
       
           
-           ${socialButtonSL}{
+           ${linkSl}{
 		        padding:${getBoxCSS(cardContent?.button?.padding.mobile)};
               }
 
-
-
  }
-
-
-
-
-		${themeTwoSectionSL} {
-		padding:${getBoxCSS(section?.padding)};
-	    margin:${getBoxCSS(section?.margin)};
-		${getBackgroundCSS(section?.bg)}
-		border-radius:${getBoxCSS(section?.radius)}
 		
+	
+ 
+   ${tabBreakpoint}{
+		   ${gridSL}{
+		    grid-template-columns: repeat(${columns?.tablet}, 1fr);
+           }
+ }
+		  ${mobileBreakpoint} {
+		  ${gridSL}{
+		   grid-template-columns: repeat(${columns?.mobile}, 1fr);
+		   }
 		}
 
 
-		${themeTwoDeaderSL}{
-		 padding:${getBoxCSS(header.padding)};
-		 margin:${getBoxCSS(header.margin)};
-		 text-align: ${header.textAlign};
-		
-		}
-		  
-		${themeTwoTitleSL}{
-	  	color:${title?.color};
-	 	margin:${getBoxCSS(title.margin)};
-		}
-		${themeTwoSubTitleSL}{
-	  	color:${subTitle?.color};
-	 	margin:${getBoxCSS(subTitle.margin)};
-		}
-
-		${themeTwoCardSL}{
-		
-		 padding:${getBoxCSS(card?.padding)};
-		 margin:${getBoxCSS(card?.margin)};
-		 ${getBorderCSS(card.border)};
-		 border-radius:${card.radius}px;
-
-		
-		}
-
-		  ${themeTwoCardBodySL}{
-		       text-align:${cardContent.textAlign}
-            }
-
-		   ${themeTwoNameSL}{
-			   margin:${getBoxCSS(name?.margin)};
-			   color:${name?.color}
-			}
-
-         ${themeTwoRoleSL}{
-			   margin:${getBoxCSS(role?.margin)};
-			   color:${role?.color}
-			 }
-
-         ${themeTwoBioSL}{
-			   margin:${getBoxCSS(bio?.margin)};
-			   color:${bio?.color}
-			 }
 
 
-
-			${themeTwoSocialButtonSL}{
-		  	 	${isValidCSS('width', button?.width)}
-		 		${isValidCSS('height', button.height)}
-				${getBackgroundCSS(button.bg)}
-				${getBorderCSS(button.border)}
-				border-radius:${button.radius}%;
-		  }
-
-            
-
-		    ${themeTwoSocialIconSL}{
-		  	 	fill:${button.icon.fill};
-				width:${button?.icon.size}px;
-				height:${button?.icon.size}px;
-				
-		  }
-
-
-		
-	`}} />;
+ `}} />;
 }
 export default Style;
