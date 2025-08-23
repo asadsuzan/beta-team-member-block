@@ -131,14 +131,15 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
         },
         "title": {
           "typo": {
-            "fontWeight": 600,
+            "fontWeight": 700,
             "fontSize": {
               "desktop": 48,
               "tablet": 32,
               "mobile": 24
             },
             "lineHeight": 1,
-            "fontFamily": "ui-sans-serif, system-ui"
+            "fontFamily": "ui-sans-serif, system-ui",
+            "textTransform": "capitalize"
           },
           "margin": {
             "desktop": {
@@ -170,8 +171,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "mobile": 16
             },
             "fontFamily": "ui-sans-serif, system-ui",
-            "fontWeight": 300,
-            "letterSpace": "1px"
+            "lineHeight": "1.75rem"
           },
           "margin": {
             "desktop": {
@@ -193,7 +193,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "left": "0px"
             }
           },
-          "color": "rgba(249, 249, 249, 0.95)"
+          "color": "#E6E6E6"
         },
         "card": {
           "margin": {
@@ -323,8 +323,9 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "mobile": 16
               },
               "fontWeight": 700,
-              "lineHeight": 1.3,
-              "fontFamily": "ui-sans-serif, system-ui"
+              "lineHeight": "1.75rem",
+              "fontFamily": "ui-sans-serif, system-ui",
+              "textTransform": "capitalize"
             },
             "color": "#ffffff",
             "margin": {
@@ -356,8 +357,8 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "mobile": 12
               },
               "fontWeight": 600,
-              "lineHeight": 1.3,
-              "letterSpace": "0.5px",
+              "lineHeight": "1.25rem",
+              "letterSpace": "0.05em",
               "textTransform": "uppercase",
               "fontFamily": "ui-sans-serif, system-ui"
             },
@@ -390,11 +391,11 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "tablet": 12,
                 "mobile": 12
               },
-              "lineHeight": 1.6,
-              "textTransform": "",
+              "lineHeight": "1.25rem",
+
               "fontFamily": "ui-sans-serif, system-ui"
             },
-            "color": "rgba(255, 255, 255, 0.8)",
+            "color": "#fffc",
             "margin": {
               "desktop": {
                 "top": "0px",
@@ -415,6 +416,10 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "left": "0px"
               }
             }
+          },
+          "social": {
+            "gapX": "0.75rem",
+            "justifyContent": "center"
           },
           "button": {
             "height": "40px",
@@ -440,17 +445,25 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               }
             },
             "bg": {
-              "color": "rgba(255, 255, 255, 0.2)"
+              "color": "#fff3"
+            },
+            "hover": {
+              "bg": {
+                "color": "#ffffff4d"
+              }
             },
             "border": {
               "width": "0px",
               "style": "solid",
-              "color": "#fff",
+              "color": "#ffffff"
             },
             "radius": 50,
             "icon": {
               "size": 18,
-              "fill": "#ffffff"
+              "fill": "#ffffff",
+              "hover": {
+                "fill": "#ffffff"
+              }
             }
           },
           "badge": {
@@ -610,13 +623,13 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
         },
         "title": {
           "typo": {
-            "fontWeight": 600,
+            "fontWeight": 700,
             "fontSize": {
-              "desktop": 38,
+              "desktop": 40,
               "tablet": 24,
               "mobile": 18
             },
-            "lineHeight": 1,
+            "textTransform": "capitalize",
             "fontFamily": "ui-sans-serif, system-ui"
           },
           "margin": {
@@ -650,26 +663,25 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             },
             "lineHeight": 1.6,
             "fontFamily": "ui-sans-serif, system-ui",
-            "fontWeight": 300,
-            "letterSpace": "1px"
+
           },
           "margin": {
             "desktop": {
               "top": "0px",
               "right": "0px",
-              "bottom": "24px",
+              "bottom": "0px",
               "left": "0px"
             },
             "tablet": {
               "top": "0px",
               "right": "0px",
-              "bottom": "18px",
+              "bottom": "0px",
               "left": "0px"
             },
             "mobile": {
               "top": "0px",
               "right": "0px",
-              "bottom": "14px",
+              "bottom": "0px",
               "left": "0px"
             }
           },
@@ -897,6 +909,10 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               }
             }
           },
+          "social": {
+            "gapX": "0.75rem",
+            "justifyContent": "center"
+          },
           "button": {
             "height": "20px",
             "width": "20px",
@@ -923,16 +939,23 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "bg": {
               "color": "transparent"
             },
+            "hover": {
+              "bg": {
+                "color": "transparent"
+              }
+            },
             "border": {
               "width": "0px",
               "style": "solid",
-              "color": "#fff",
-
+              "color": "#ffffff"
             },
             "radius": 50,
             "icon": {
               "size": 18,
-              "fill": "#babbbf"
+              "fill": "#9da0a7",
+              "hover": {
+                "fill": "rgb(37 99 235)"
+              }
             }
           },
           "badge": {
@@ -1093,7 +1116,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "tablet": 28,
               "mobile": 20
             },
-            "lineHeight": 1,
+            "textTransform": "capitalize",
             "fontFamily": "ui-sans-serif, system-ui"
           },
           "margin": {
@@ -1125,32 +1148,33 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "tablet": 18,
               "mobile": 16
             },
-            "lineHeight": 1.6,
+            "lineHeight": "1.75rem",
+
             "fontFamily": "ui-sans-serif, system-ui",
-            "fontWeight": 300,
-            "letterSpace": "1px"
+
+
           },
           "margin": {
             "desktop": {
               "top": "0px",
               "right": "0px",
-              "bottom": "24px",
+              "bottom": "0",
               "left": "0px"
             },
             "tablet": {
               "top": "0px",
               "right": "0px",
-              "bottom": "18px",
+              "bottom": "0px",
               "left": "0px"
             },
             "mobile": {
               "top": "0px",
               "right": "0px",
-              "bottom": "14px",
+              "bottom": "0px",
               "left": "0px"
             }
           },
-          "color": "#d1d5db"
+          "color": "#CCCCCC"
         },
         "card": {
           "margin": {
@@ -1375,6 +1399,10 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               }
             }
           },
+          "social": {
+            "gapX": "0.75rem",
+            "justifyContent": "center"
+          },
           "button": {
             "height": "30px",
             "width": "30px",
@@ -1399,18 +1427,25 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               }
             },
             "bg": {
-              "color": "rgba(255, 255, 255, 0.2)"
+              "color": "#fff3"
+            },
+            "hover": {
+              "bg": {
+                "color": "#ffffff4d"
+              }
             },
             "border": {
               "width": "0px",
               "style": "solid",
-              "color": "#fff",
-
+              "color": "#ffffff"
             },
             "radius": 50,
             "icon": {
               "size": 18,
-              "fill": "#fff"
+              "fill": "#ffffff",
+              "hover": {
+                "fill": "#ffffff"
+              }
             }
           },
           "badge": {
@@ -1575,7 +1610,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "tablet": 24,
               "mobile": 20
             },
-            "lineHeight": 2.25,
+            "lineHeight": "2.25rem",
             "fontFamily": "ui-sans-serif, system-ui"
           },
           "margin": {
@@ -1607,28 +1642,28 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               "tablet": 16,
               "mobile": 14
             },
-            "lineHeight": 1.75,
+            "lineHeight": "1.75rem",
             "fontFamily": "ui-sans-serif, system-ui",
-            "fontWeight": 300,
-            "letterSpace": "1px"
+
+
           },
           "margin": {
             "desktop": {
               "top": "0px",
               "right": "0px",
-              "bottom": "24px",
+              "bottom": "0px",
               "left": "0px"
             },
             "tablet": {
               "top": "0px",
               "right": "0px",
-              "bottom": "18px",
+              "bottom": "0px",
               "left": "0px"
             },
             "mobile": {
               "top": "0px",
               "right": "0px",
-              "bottom": "14px",
+              "bottom": "0px",
               "left": "0px"
             }
           },
@@ -1763,7 +1798,7 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
                 "mobile": 16
               },
               "fontWeight": 700,
-              "lineHeight": 1.5,
+              "lineHeight": "1.5rem",
               "fontFamily": "ui-sans-serif, system-ui",
               "textTransform": "capitalize"
             },
@@ -1860,6 +1895,10 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
               }
             }
           },
+          "social": {
+            "gapX": "0.75rem",
+            "justifyContent": "center"
+          },
           "button": {
             "height": "30px",
             "width": "30px",
@@ -1886,16 +1925,23 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
             "bg": {
               "color": "#f3f4f6"
             },
+            "hover": {
+              "bg": {
+                "color": "#dbeafe"
+              }
+            },
             "border": {
               "width": "0px",
               "style": "solid",
-              "color": "#fff",
-
+              "color": "#ffffff"
             },
             "radius": 50,
             "icon": {
               "size": 15,
-              "fill": "#000"
+              "fill": "#9da0a7",
+              "hover": {
+                "fill": "#2563eb"
+              }
             }
           },
           "badge": {

@@ -3,10 +3,10 @@ import { mobileBreakpoint, tabBreakpoint } from '../../../../bpl-tools-main/util
 import { getBackgroundCSS, getBorderCSS, getBoxCSS, getTypoCSS, isValidCSS } from "../../../../bpl-tools-main/utils/getCSS"
 
 const Style = ({ attributes, id }) => {
-	const { styles = {}, align, columns } = attributes;
+	const { styles = {}, columns } = attributes;
 	const { section, header, title, subTitle, card, img, cardContent } = styles
 
-	const { name, role, bio, button, badge } = cardContent
+	const { name, role, bio, badge } = cardContent
 
 
 	const mainSl = `#${id}`;
@@ -29,12 +29,12 @@ const Style = ({ attributes, id }) => {
 	const socialContainerSL = `${containerSL} .socials`
 	const linkSl = `${socialContainerSL} .link`
 	const iconSl = `${linkSl} .icon svg`
-	const themeOneSl = `${blockSl} .bBlocksBetaTeamSection`;
-	const themeTwoSl = `${blockSl} .bBlocksBetaTeamSectionV2`;
+	// const themeOneSl = `${blockSl} .bBlocksBetaTeamSection`;
+	// const themeTwoSl = `${blockSl} .bBlocksBetaTeamSectionV2`;
 	const themeThreeSl = `${blockSl} .bBlocksBetaTeamSectionV3`;
 	const themeFourSl = `${blockSl} .bBlocksBetaTeamSectionV4`;
 	const gridSL = `${containerSL} .grid`;
-	const cardGroupSL = `${containerSL} .btms-card-group`;
+	// const cardGroupSL = `${containerSL} .btms-card-group`;
 
 
 
@@ -114,6 +114,10 @@ const Style = ({ attributes, id }) => {
             color:${subTitle?.color};
 		  }
 
+		  ${socialContainerSL}{
+		  	column-gap: ${cardContent?.social?.gapX};
+		  }
+
         ${linkSl}{
 		        padding:${getBoxCSS(cardContent?.button?.padding?.desktop)};
 				${getBackgroundCSS(cardContent?.button?.bg)}
@@ -122,13 +126,18 @@ const Style = ({ attributes, id }) => {
 				${isValidCSS('width', cardContent?.button?.width)}
 				${isValidCSS('height', cardContent?.button?.height)}
 		  }
+			${blockSl} .container .socials .link:hover{
+				${getBackgroundCSS(cardContent?.button?.hover?.bg)}
+			}
            ${iconSl}{
 		  	 	fill:${cardContent?.button?.icon?.fill};
 				width:${cardContent.button?.icon?.size}px;
 				height:${cardContent.button?.icon?.size}px;
 				
 		  }
-
+	${blockSl} .container .socials .link:hover .icon svg{
+				fill:  ${cardContent?.button?.icon?.hover?.fill}!important;
+			}
 
 		  ${cardSL} {
 				  padding:${getBoxCSS(card?.padding?.desktop)};

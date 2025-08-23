@@ -549,8 +549,9 @@ const Style = ({ attributes, setAttributes, device }) => {
           defaults={bio?.color}
 
         />
-        <PanelRow><Label>Bio Margin</Label><Device /></PanelRow>
+        <PanelRow><Label className=" ">Bio Margin</Label><Device /></PanelRow>
         <BoxControl
+          className='mt10'
           values={bio?.margin?.[device]}
           resetValues={{
             "top": "8px",
@@ -569,20 +570,13 @@ const Style = ({ attributes, setAttributes, device }) => {
 
 
         {/* social */}
-        <Background
-          label="Social Background"
-          onChange={(v) =>
-            setAttributes({
-              styles: updateData(styles, v, 'cardContent', "button", 'bg')
-            })
-          }
-        />
+
 
         {/* width  */}
 
         <UnitControl
-          className="mt10"
-          label={__('Social Width', 'b-blocks')}
+          className="mt20"
+          label={__('Social Button Width', 'b-blocks')}
           value={button?.width}
           onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "button", 'width') }) }}
 
@@ -591,14 +585,14 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <UnitControl
           className="mt10"
-          label={__('Social Height', 'b-blocks')}
+          label={__('Social Button Height', 'b-blocks')}
           value={button?.height}
           onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "button", 'height') }) }}
 
         />
         {/* padding  */}
 
-        <PanelRow><Label>Social Padding</Label><Device /></PanelRow>
+        <PanelRow><Label>Social Button Padding</Label><Device /></PanelRow>
         <BoxControl
 
           values={cardContent.button?.padding?.[device]}
@@ -616,10 +610,9 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         />
 
-
         <BorderControl
           className='mt10'
-          label={__('Social Border', 'b-blocks')}
+          label={__('Social Button Border', 'b-blocks')}
           value={button?.border}
           onChange={(v) =>
             setAttributes({
@@ -631,7 +624,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <RangeControl
           className='mt10'
-          label='Social Radius'
+          label='Social Button Radius'
           value={button?.radius}
           onChange={(v) =>
             setAttributes({
@@ -639,9 +632,50 @@ const Style = ({ attributes, setAttributes, device }) => {
             })
           }
         />
+        <Background
+          label="Social Button Background"
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'cardContent', "button", 'bg')
+            })
+          }
+          defaults={cardContent?.button?.bg}
+        />
+        <Background
+          label="Social Button Hover Background"
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'cardContent', "button", 'hover', 'bg')
+            })
+          }
+          defaults={cardContent?.button?.hover?.bg}
+        />
+
+
+        <RangeControl
+          className='mt10'
+          label='Social Icon Size'
+          value={cardContent?.button?.icon?.size}
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'cardContent', "button", 'icon', "size")
+            })
+          }
+        />
+        <UnitControl
+          label={__('Social Icon Gap', 'b-blocks')}
+          value={columns?.gapY}
+          onChange={(v) =>
+            setAttributes({
+              styles: updateData(styles, v, 'cardContent', 'social', 'gapX')
+            })
+          }
+          className='mt10'
+        />
+
         <ColorControl
           className='mt10'
-          label={__('Icon Color', 'b-blocks')}
+          label={__('Social Icon Color', 'b-blocks')}
           value={cardContent?.button?.icon?.fill}
 
           onChange={(v) =>
@@ -653,17 +687,27 @@ const Style = ({ attributes, setAttributes, device }) => {
           defaults={cardContent?.button?.icon?.fill}
 
         />
-
-        <RangeControl
+        <ColorControl
           className='mt10'
-          label='Icon Size'
-          value={cardContent?.button?.icon?.size}
+          label={__('Social Icon Hover Color', 'b-blocks')}
+          value={cardContent?.button?.icon?.hover?.fill}
+
           onChange={(v) =>
             setAttributes({
-              styles: updateData(styles, v, 'cardContent', "button", 'icon', "size")
-            })
-          }
+              styles: updateData(styles, v, 'cardContent',
+                "button", "icon", "hover", 'fill')
+            }
+            )}
+          defaults={cardContent?.button?.icon?.hover?.fill}
+
         />
+
+
+
+
+
+
+
 
         {
           theme === 'theme3' || theme === 'theme4' ? (<>

@@ -1,7 +1,6 @@
-import { Award, Linkedin, Mail, MapPin, Users } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import React from 'react'
 import Header from './Header'
-import Image from './Image'
 import Social from './Social'
 
 const ThemeFour = ({ teamMembers, section, setAttributes }) => {

@@ -1,9 +1,9 @@
-import { Camera, Code, Lightbulb, Linkedin, Mail, Palette } from 'lucide-react';
+
 import Header from '../Common/team/Header';
 import Social from '../Common/team/Social';
 
 const ThemeThree = ({ section, teamMembers, setAttributes }) => {
-    const icons = [Palette, Code, Camera, Lightbulb];
+
     console.log("ThemeThree", teamMembers?.length);
     return (
         <div className="bBlocksBetaTeamSectionV3">
@@ -19,7 +19,7 @@ const ThemeThree = ({ section, teamMembers, setAttributes }) => {
                     <div className="grid">
                         {teamMembers?.map((member, index) => {
 
-                            const IconComponent = icons[index % icons.length]; // safe looping 
+
                             const isEven = index % 2 === 0;
 
                             return (
