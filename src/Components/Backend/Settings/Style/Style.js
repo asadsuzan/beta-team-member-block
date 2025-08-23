@@ -39,6 +39,23 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         />
 
+        <PanelRow>
+
+          <UnitControl
+            label={__('Row Gap', 'b-blocks')}
+            value={columns?.gapX}
+            onChange={v => setAttributes({ columns: updateData(columns, v, 'gapX') })}
+            className='mt10'
+          />
+          <UnitControl
+            label={__('Column Gap', 'b-blocks')}
+            value={columns?.gapY}
+            onChange={v => setAttributes({ columns: updateData(columns, v, 'gapY') })}
+            className='mt10'
+          />
+
+        </PanelRow>
+
 
       </PanelBody>
 

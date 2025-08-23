@@ -674,7 +674,9 @@
 			"default": {
 				"desktop": 4,
 				"tablet": 2,
-				"mobile": 1
+				"mobile": 1,
+				"gapX": "1.5rem",
+				"gapY": "2rem"
 			}
 		},
 		"options": {

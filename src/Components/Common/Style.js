@@ -82,6 +82,9 @@ const Style = ({ attributes, id }) => {
 
 		 ${gridSL}{
 		  grid-template-columns: repeat(${columns?.desktop}, 1fr);
+		  row-gap: ${columns?.gapX};
+		  column-gap: ${columns?.gapY};
+
 		
 		}
 		  

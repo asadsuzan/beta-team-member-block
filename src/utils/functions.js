@@ -496,7 +496,9 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
       draft['columns'] = {
         "desktop": 4,
         "tablet": 2,
-        "mobile": 1
+        "mobile": 1,
+        "gapX": "1.5rem",
+        "gapY": "2rem"
 
       }
 
@@ -974,7 +976,9 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
       draft['columns'] = {
         "desktop": 4,
         "tablet": 2,
-        "mobile": 1
+        "mobile": 1,
+        "gapX": "1.5rem",
+        "gapY": "2rem"
 
       }
       draft["teamMembers"] = [...draft?.teamMembers]
@@ -1451,7 +1455,9 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
       draft['columns'] = {
         "desktop": 2,
         "tablet": 2,
-        "mobile": 1
+        "mobile": 1,
+        "gapX": "1.5rem",
+        "gapY": "2rem"
 
       }
 
@@ -1935,7 +1941,9 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
       draft['columns'] = {
         "desktop": 2,
         "tablet": 1,
-        "mobile": 1
+        "mobile": 1,
+        "gapX": "1.5rem",
+        "gapY": "2rem"
 
       }
 
