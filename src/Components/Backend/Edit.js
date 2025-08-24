@@ -14,7 +14,7 @@ const Edit = (props) => {
 
   return (
     <>
-      <Settings {...{ attributes, setAttributes, device }} />
+      <Settings {...{ attributes, setAttributes, device, clientId }} />
 
       <div {...useBlockProps({
         draggable: false

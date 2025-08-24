@@ -2025,3 +2025,40 @@ export const themeSwitch = (theme = "default", attributes) => produce(attributes
 })
 
 
+
+
+export const toolTipPresets = [
+  {
+    label: "Default",
+    value: "default",
+    img: "https://i.ibb.co.com/14qZT1P/theme4.png",
+    height: "auto",
+    width: "160px",
+    isPro: false
+  },
+  {
+    label: "Theme-2",
+    value: "theme2",
+    img: "https://media.istockphoto.com/id/471926619/photo/moraine-lake-at-sunrise-banff-national-park-canada.jpg?s=612x612&w=0&k=20&c=mujiCtVk5QA697SD3d8V8BGmd91-8HlxCNHkolEA0Bo=",
+    height: "auto",
+    width: "160px",
+    isPro: false
+  },
+  {
+    label: "Theme-3",
+    value: "theme3",
+    img: "https://ibb.co.com/fzmf4skC",
+    height: "auto",
+    width: "160px",
+    isPro: true
+  },
+
+  {
+    label: "Theme-4",
+    value: "theme4",
+    img: "https://i.ibb.co.com/14qZT1P/theme4.png",
+    height: "auto",
+    width: "160px",
+    isPro: false
+  }
+];

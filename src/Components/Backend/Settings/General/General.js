@@ -3,6 +3,7 @@ import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
 import { generateId, themeSwitch, updateData } from "../../../../utils/functions";
 import { ItemsPanel } from '../../../../../../bpl-tools-main/Components';
 import TeamMembersItemPanel from '../../itemPanel/TeamMemberItemPanel';
+import { themeOptions } from '../../../../utils/options';
 
 const General = ({ attributes, setAttributes }) => {
   const { section, teamMembers, theme } = attributes;
@@ -18,12 +19,7 @@ const General = ({ attributes, setAttributes }) => {
           title={__("Themes", "b-blocks")}
           initialOpen={true}>
           <SelectControl
-            value={theme} options={[
-              { value: 'default', label: __('Default', 'b-blocks') },
-              { value: 'theme2', label: __('Theme-2', 'b-blocks') },
-              { value: 'theme3', label: __('Theme-3', 'b-blocks') },
-              { value: 'theme4', label: __('Theme-4', 'b-blocks') },
-            ]}
+            value={theme} options={themeOptions}
             onChange={(value) => setAttributes(themeSwitch(value, attributes))}
           />
         </PanelBody>

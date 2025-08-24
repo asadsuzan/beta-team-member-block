@@ -1,4 +1,3 @@
-
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, BlockControls, AlignmentToolbar } from '@wordpress/block-editor';
 import { TabPanel } from '@wordpress/components';
@@ -6,9 +5,14 @@ import { tabController } from '../../../../../bpl-tools-main/utils/functions';
 import { generalStyleTabs } from '../../../utils/options';
 import General from './General/General';
 import Style from './Style/Style';
+import { BplBlockPreview } from '../../../../../bpl-tools-main/Components';
+import { themes } from '../../../utils/themes';
+// import BlockPreview from './panel/BlockPreview';
+// import { toolTipPresets } from '../../../utils/functions';
 
-const Settings = ({ attributes, setAttributes, device }) => {
-	const { alignment } = attributes;
+const Settings = ({ attributes, setAttributes, device, clientId }) => {
+	const { alignment, theme } = attributes;
+	console.log(theme);
 	return <>
 		<InspectorControls>
 			<div className='bBlocksInspectorInfo'>
@@ -34,6 +38,22 @@ const Settings = ({ attributes, setAttributes, device }) => {
 				{ title: __('Block Name in center', 'textdomain'), align: 'center', icon: 'align-center' },
 				{ title: __('Block Name in right', 'textdomain'), align: 'right', icon: 'align-right' }
 			]} />
+
+			{/* for image/screenshot */}
+			{/* <BlockPreview
+				options={toolTipPresets}
+				isPremium={false}
+				value={theme}
+				onChange={val => setAttributes({ theme: val })}
+			/> */}
+
+			{/* for blocks */}
+			<BplBlockPreview
+				blocks={themes()}
+				clientId={clientId}
+				value={theme}
+			/>
+
 
 		</BlockControls>
 	</>;

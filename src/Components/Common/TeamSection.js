@@ -18,8 +18,6 @@ const TeamSection = ({ attributes, setAttributes }) => {
       {
         (() => {
           switch (theme) {
-            case 'default':
-              return <ThemeOne {...{ section, teamMembers, attributes, setAttributes }} />;
             case 'theme2':
               return <ThemeTwo {...{ section, teamMembers, attributes, setAttributes }} />;
             case 'theme3':
