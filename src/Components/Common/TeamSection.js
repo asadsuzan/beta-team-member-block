@@ -6,29 +6,23 @@ import ThemeFour from './team/ThemeFour';
 const TeamSection = ({ attributes, setAttributes }) => {
   const { theme = 'default', section = {}, teamMembers = [] } = attributes || {};
 
+  const themes = {
+    theme1: ThemeOne,
+    theme2: ThemeTwo,
+    theme3: ThemeThree,
+    theme4: ThemeFour
+  }
+
+
+  // pick the right theme , fallback to themeOne if not found 
+
+  const SelectedTheme = themes[theme] || ThemeOne
   return (
     <div className="tmsTeamWrapper">
-      {/* <ThemeThree {...{ section, teamMembers }} /> */}
 
-      {/* {
-        theme === 'default' ? <ThemeOne  {...{ section, teamMembers }} /> : <ThemeTwo {...{ section, teamMembers }} />
+      <SelectedTheme {...{ section, teamMembers, attributes, setAttributes }} />
 
-      } */}
 
-      {
-        (() => {
-          switch (theme) {
-            case 'theme2':
-              return <ThemeTwo {...{ section, teamMembers, attributes, setAttributes }} />;
-            case 'theme3':
-              return <ThemeThree {...{ section, teamMembers, attributes, setAttributes }} />;
-            case 'theme4':
-              return <ThemeFour {...{ section, teamMembers, attributes, setAttributes }} />;
-            default:
-              return <ThemeOne {...{ section, teamMembers, attributes, setAttributes }} />;
-          }
-        })()
-      }
     </div>
   );
 };

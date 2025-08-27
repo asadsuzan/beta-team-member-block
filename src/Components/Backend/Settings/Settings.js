@@ -7,12 +7,11 @@ import General from './General/General';
 import Style from './Style/Style';
 import { BplBlockPreview } from '../../../../../bpl-tools-main/Components';
 import { themes } from '../../../utils/themes';
-// import BlockPreview from './panel/BlockPreview';
-// import { toolTipPresets } from '../../../utils/functions';
+
 
 const Settings = ({ attributes, setAttributes, device, clientId }) => {
 	const { alignment, theme } = attributes;
-	console.log(theme);
+
 	return <>
 		<InspectorControls>
 			<div className='bBlocksInspectorInfo'>

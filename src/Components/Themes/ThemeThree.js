@@ -4,7 +4,7 @@ import Social from '../Common/team/Social';
 
 const ThemeThree = ({ section, teamMembers, setAttributes }) => {
 
-    console.log("ThemeThree", teamMembers?.length);
+
     return (
         <div className="bBlocksBetaTeamSectionV3">
             <section className="team-section">
