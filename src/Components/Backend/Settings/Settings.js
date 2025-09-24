@@ -1,11 +1,11 @@
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, BlockControls, AlignmentToolbar } from '@wordpress/block-editor';
 import { TabPanel } from '@wordpress/components';
-import { tabController } from '../../../../../bpl-tools-main/utils/functions';
+import { tabController } from '../../../../../bpl-tools/utils/functions';
 import { generalStyleTabs } from '../../../utils/options';
 import General from './General/General';
 import Style from './Style/Style';
-import { BplBlockPreview } from '../../../../../bpl-tools-main/Components';
+import { BplBlockPreview } from '../../../../../bpl-tools/Components';
 import { themes } from '../../../utils/themes';
 
 
@@ -15,10 +15,10 @@ const Settings = ({ attributes, setAttributes, device, clientId }) => {
 	return <>
 		<InspectorControls>
 			<div className='bBlocksInspectorInfo'>
-				Need more block like this? Checkout the bundle ➡ <a href='https://wordpress.org/plugins/b-blocks' target='_blank' rel='noopener noreferrer'>B Blocks</a>
+				Need more block like this? Checkout the bundle ➡ <a href='https://wordpress.org/plugins/btms-block' target='_blank' rel='noopener noreferrer'>B Blocks</a>
 			</div>
 
-			<TabPanel className='bPlTabPanel wp-block-b-blocks-team-section-beta' activeClass='activeTab' tabs={generalStyleTabs} onSelect={tabController}>
+			<TabPanel className='bPlTabPanel wp-block-btms-block-team-section' activeClass='activeTab' tabs={generalStyleTabs} onSelect={tabController}>
 				{
 					tab => <>
 						{'general' === tab.name && <General device={device} attributes={attributes} setAttributes={setAttributes} />}

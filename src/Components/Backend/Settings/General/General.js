@@ -1,7 +1,7 @@
 import { __ } from "@wordpress/i18n";
 import { PanelBody, SelectControl, TextControl } from "@wordpress/components";
 import { generateId, themeSwitch, updateData } from "../../../../utils/functions";
-import { ItemsPanel } from '../../../../../../bpl-tools-main/Components';
+import { ItemsPanel } from '../../../../../../bpl-tools/Components';
 import TeamMembersItemPanel from '../../itemPanel/TeamMemberItemPanel';
 import { themeOptions } from '../../../../utils/options';
 
@@ -16,7 +16,7 @@ const General = ({ attributes, setAttributes }) => {
       <>
         {/* theme switcher  */}
         <PanelBody className="bPlPanelBody"
-          title={__("Themes", "b-blocks")}
+          title={__("Themes", "btms-block")}
           initialOpen={true}>
           <SelectControl
             value={theme} options={themeOptions}
@@ -27,11 +27,11 @@ const General = ({ attributes, setAttributes }) => {
         {/* section setting  */}
         <PanelBody
           className="bPlPanelBody"
-          title={__("Section", "b-blocks")}
+          title={__("Section", "btms-block")}
           initialOpen={false}
         >
           <TextControl
-            label={__('Title', 'b-blocks')}
+            label={__('Title', 'btms-block')}
             value={section.headline}
             onChange={(v) =>
               setAttributes({
@@ -40,7 +40,7 @@ const General = ({ attributes, setAttributes }) => {
             }
           />
           <TextControl
-            label={__('Slogan', 'b-blocks')}
+            label={__('Slogan', 'btms-block')}
             value={section.slogan}
             onChange={(v) =>
               setAttributes({
@@ -54,7 +54,7 @@ const General = ({ attributes, setAttributes }) => {
         {/* team members  */}
         <PanelBody
           className="bPlPanelBody"
-          title={__("Team Members", "b-blocks")}
+          title={__("Team Members", "btms-block")}
           initialOpen={true} >
 
           <ItemsPanel

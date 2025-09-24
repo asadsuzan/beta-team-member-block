@@ -11,9 +11,9 @@ export const purposeTypeOptions = [
 ];
 
 export const themeOptions = [
-	{ value: 'default', label: __('Default', 'b-blocks') },
-	{ value: 'theme2', label: __('Theme-2', 'b-blocks') },
-	{ value: 'theme3', label: __('Theme-3', 'b-blocks') },
-	{ value: 'theme4', label: __('Theme-4', 'b-blocks') },
+	{ value: 'default', label: __('Default', 'btms-block') },
+	{ value: 'theme2', label: __('Theme-2', 'btms-block') },
+	{ value: 'theme3', label: __('Theme-3', 'btms-block') },
+	{ value: 'theme4', label: __('Theme-4', 'btms-block') },
 ]
 

@@ -9,488 +9,441 @@ $border-radius: 1.5rem;
 $transition: all 0.3s ease;
 $blur-amount: 16px; // Main section styles
 
-.wp-block-b-blocks-team-section-beta {
-	box-sizing: border-box;
-
-
-
-	* {
-		box-sizing: border-box;
-
-	}
-
-	.container {
-		width: 100%;
-		margin: 0 auto;
-		padding: 0 1rem;
-	}
-
-	.grid {
-		display: grid;
-
-		align-content: center;
-	}
-
-	.socials {
-		display: flex;
-		justify-content: center;
-		// gap: 0.75rem;
-
-
-		.link {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			transition: $transition;
-			cursor: pointer;
-
-
-			.icon {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-
-			}
-
-			// &:hover {
-			// 	background: rgba(255, 255, 255, .3) !important;
-			// }
-
-			svg {
-				transition: $transition;
-			}
-
-		}
-	}
-
-
-	// Image wrapper
-	.img-wrapper {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: relative;
-		overflow: hidden;
-
-		.image {
-			object-fit: cover;
-			transition: transform 0.8s ease;
-			height: 100%;
-			width: 100%;
-		}
-
-		.img-overlay {
-			position: absolute;
-			inset: 1;
-			background: linear-gradient(to top,
-					rgba(88, 28, 135, 0.4),
-					transparent 50%);
-			background: red !important;
-			border-radius: 1rem;
-			opacity: 0;
-			transition: opacity 0.3s ease;
-
-		}
-	}
-
-	.bio {
-		word-wrap: break-word;
-		overflow-wrap: break-word;
-		max-width: 100% !important;
-	}
-
-	.icon-badge {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-
-
-		span {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			height: 100%;
-
-
-		}
-
-
-	}
-
-
-	@media (min-width: 576px) {
-		.container {
-			max-width: 540px;
-
-		}
-	}
-
-
-	@media (min-width: 768px) {
-		.container {
-			max-width: 720px;
-
-
-		}
-	}
-
-	@media (min-width: 992px) {
-		.container {
-			max-width: 960px;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		.container {
-			max-width: 1200px;
-		}
-	}
-
-	.btms-variation2-section {
-		.btms-card-group {
-			position: relative;
-			transition: $transition;
-
-			&:hover .btms-card-blur-bg {
-				opacity: .70;
-				transition-duration: 0.2s;
-			}
-
-			&:hover .image {
-				transform: scale(1.1);
-			}
-
-			.btms-card-blur-bg {
-				position: absolute;
-				top: -4px;
-				right: -4px;
-				bottom: -4px;
-				left: -4px;
-				background: linear-gradient(to right, #facc15, #ef4444, #ec4899);
-				border-radius: 1.5rem;
-				filter: blur(8px);
-				opacity: .20;
-				transition: opacity 1s ease;
-			}
-
-
-			.btms-card {
-				position: relative;
-				background-color: $glass-bg;
-				backdrop-filter: blur($blur-amount);
-				border: 1px solid $glass-border;
-				border-radius: $border-radius;
-				display: flex;
-				transform: none;
-				flex-direction: column;
-				width: 100%;
-				max-width: 100%;
-				height: 100%;
-
-			}
-		}
-
-	}
-
-	// theme two css 
-
-	.bBlocksBetaTeamSectionV2 {
-
-		.btms-card {
-			cursor: pointer;
-			transition: all 0.3s ease;
-		}
-
-		.btms-card:hover .image {
-			transform: scale(1.05);
-		}
-	}
-
-
-	// theme three css 
-	.bBlocksBetaTeamSectionV3 {
-		/* Team Section Styles - Pure CSS conversion from Tailwind */
-
-		.team-section {
-			overflow: hidden;
-		}
-
-
-		.team-card {
-			position: relative;
-
-		}
-
-		@media (min-width: 768px) {
-			.offset-top {
-				margin-top: 3rem;
-			}
-		}
-
-
-
-		/* Hover effects for image */
-		.team-member:hover .image {
-			transform: scale(1.1) rotate(2deg);
-
-		}
-
-		.gradient-overlay {
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			background: linear-gradient(to top, #000000, rgba(0, 0, 0, 0.2), transparent);
-			opacity: 0.6;
-			transition-property: opacity;
-			transition-duration: 300ms;
-
-		}
-
-		.team-member:hover .gradient-overlay {
-			opacity: 0.4;
-		}
-
-		.member-info {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			padding: 1.5rem;
-		}
-
-		.info-content {
-			display: flex;
-			align-items: flex-end;
-			justify-content: space-between;
-		}
-
-		// .icon-badge {
-		// 	width: 3rem;
-		// 	height: 3rem;
-		// 	background-color: #facc15;
-		// 	border-radius: 9999px;
-		// 	display: flex;
-		// 	align-items: center;
-		// 	justify-content: center;
-		// 	transform: rotate(12deg);
-		// 	transition-property: transform;
-		// 	transition-duration: 300ms;
-
-
-		// 	span {
-		// 		display: flex;
-		// 		align-items: center;
-		// 		justify-content: center;
-		// 		width: 100%;
-		// 		height: 100%;
-
-		// 		svg {
-		// 			width: 24px;
-		// 			height: 24px;
-		// 			color: #ffffff;
-		// 		}
-		// 	}
-
-
-		// }
-		.icon-badge {
-			transform: rotate(12deg);
-			transition-property: transform;
-			transition-duration: 300ms;
-		}
-
-		.team-member:hover .icon-badge {
-			transform: rotate(0deg);
-		}
-
-
-
-		.socials {
-			position: absolute;
-			top: 1rem;
-			right: 1rem;
-			opacity: 0;
-			transition-property: opacity;
-			transition-duration: 300ms;
-
-
-		}
-
-		.team-member:hover .socials {
-			opacity: 1;
-
-		}
-
-
-
-	}
-
-	.bBlocksBetaTeamSectionV4 {
-		.team-icon-wrapper {
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			width: 4rem;
-			height: 4rem;
-			background-color: #dbeafe;
-			border-radius: 9999px;
-			margin-bottom: 1.5rem;
-		}
-
-		.team-icon {
-			width: 2rem;
-			height: 2rem;
-			color: #2563eb;
-
-		}
-
-
-
-
-
-
-		.team-card {
-			background-color: #ffffff;
-			border-radius: 0.75rem;
-			box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-			transition-property: box-shadow;
-			transition-duration: 300ms;
-			overflow: hidden;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-		}
-
-		.team-card:hover {
-			box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-		}
-
-		.team-card-content {
-			display: flex;
-			flex-direction: column;
-		}
-
-		@media (min-width: 640px) {
-			.team-card-content {
-				flex-direction: row;
-			}
-		}
-
-		.team-member-image-container {
-			flex-shrink: 0;
-		}
-
-		@media (min-width: 640px) {
-			.team-member-image-container {
-				width: 12rem;
-			}
-		}
-
-		.team-member-image {
-			width: 100%;
-			height: 16rem;
-			object-fit: cover;
-			transition-property: transform;
-			transition-duration: 500ms;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-		}
-
-		@media (min-width: 640px) {
-			.team-member-image {
-				height: 100%;
-
-			}
-		}
-
-		.team-card:hover .team-member-image {
-			transform: scale(1.05);
-
-		}
-
-		.team-member-info {
-			flex: 1 1 0%;
-			padding: 2rem;
-
-		}
-
-		.team-member-header {
-			display: flex;
-			align-items: flex-start;
-			justify-content: space-between;
-			margin-bottom: 1rem;
-
-		}
-
-
-
-
-		.icon-badge {
-			transform: rotate(0deg);
-			transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-			transition-duration: 150ms;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
-			span {
-				svg {
-					transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-					transition-duration: 150ms;
-					transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-				}
-			}
-		}
-
-
-
-
-
-		.team-member-footer {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-		}
-
-		.team-member-location {
-			display: flex;
-			align-items: center;
-			// font-size: 0.875rem;
-			// line-height: 1.25rem;
-			// color: #6b7280;
-
-		}
-
-		.location-icon {
-			margin-right: 0.25rem;
-		}
-
-		.team-member-social {
-			display: flex;
-		}
-
-		.team-member-social>*+* {
-			margin-left: 0.75rem;
-		}
-
-		.social-button {
-			width: 2rem;
-			height: 2rem;
-			background-color: #f3f4f6;
-			border-radius: 9999px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-			transition-duration: 150ms;
-			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-			border: none;
-			cursor: pointer;
-			color: inherit;
-		}
-
-		.social-button:hover {
-			background-color: #dbeafe;
-			color: #2563eb;
-		}
-	}
+.wp-block-btms-block-team-section {
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .grid {
+    display: grid !important;
+
+    align-content: center;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    // gap: 0.75rem;
+
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: $transition;
+      cursor: pointer;
+
+      .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      // &:hover {
+      // 	background: rgba(255, 255, 255, .3) !important;
+      // }
+
+      svg {
+        transition: $transition;
+      }
+    }
+  }
+
+  // Image wrapper
+  .img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    .image {
+      object-fit: cover;
+      transition: transform 0.8s ease;
+      height: 100%;
+      width: 100%;
+    }
+
+    .img-overlay {
+      position: absolute;
+      inset: 1;
+      background: linear-gradient(
+        to top,
+        rgba(88, 28, 135, 0.4),
+        transparent 50%
+      );
+      background: red !important;
+      border-radius: 1rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  .bio {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100% !important;
+  }
+
+  .icon-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1200px;
+    }
+  }
+
+  .btms-variation2-section {
+    .btms-card-group {
+      position: relative;
+      transition: $transition;
+
+      &:hover .btms-card-blur-bg {
+        opacity: 0.7;
+        transition-duration: 0.2s;
+      }
+
+      &:hover .image {
+        transform: scale(1.1);
+      }
+
+      .btms-card-blur-bg {
+        position: absolute;
+        top: -4px;
+        right: -4px;
+        bottom: -4px;
+        left: -4px;
+        background: linear-gradient(to right, #facc15, #ef4444, #ec4899);
+        border-radius: 1.5rem;
+        filter: blur(8px);
+        opacity: 0.2;
+        transition: opacity 1s ease;
+      }
+
+      .btms-card {
+        position: relative;
+        background-color: $glass-bg;
+        backdrop-filter: blur($blur-amount);
+        border: 1px solid $glass-border;
+        border-radius: $border-radius;
+        display: flex;
+        transform: none;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  // theme two css
+
+  .bBlocksBetaTeamSectionV2 {
+    .btms-card {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btms-card:hover .image {
+      transform: scale(1.05);
+    }
+  }
+
+  // theme three css
+  .bBlocksBetaTeamSectionV3 {
+    /* Team Section Styles - Pure CSS conversion from Tailwind */
+
+    .team-section {
+      overflow: hidden;
+    }
+
+    .team-card {
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .offset-top {
+        margin-top: 3rem;
+      }
+    }
+
+    /* Hover effects for image */
+    .team-member:hover .image {
+      transform: scale(1.1) rotate(2deg);
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(
+        to top,
+        #000000,
+        rgba(0, 0, 0, 0.2),
+        transparent
+      );
+      opacity: 0.6;
+      transition-property: opacity;
+      transition-duration: 300ms;
+    }
+
+    .team-member:hover .gradient-overlay {
+      opacity: 0.4;
+    }
+
+    .member-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+    }
+
+    .info-content {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    // .icon-badge {
+    // 	width: 3rem;
+    // 	height: 3rem;
+    // 	background-color: #facc15;
+    // 	border-radius: 9999px;
+    // 	display: flex;
+    // 	align-items: center;
+    // 	justify-content: center;
+    // 	transform: rotate(12deg);
+    // 	transition-property: transform;
+    // 	transition-duration: 300ms;
+
+    // 	span {
+    // 		display: flex;
+    // 		align-items: center;
+    // 		justify-content: center;
+    // 		width: 100%;
+    // 		height: 100%;
+
+    // 		svg {
+    // 			width: 24px;
+    // 			height: 24px;
+    // 			color: #ffffff;
+    // 		}
+    // 	}
+
+    // }
+    .icon-badge {
+      transform: rotate(12deg);
+      transition-property: transform;
+      transition-duration: 300ms;
+    }
+
+    .team-member:hover .icon-badge {
+      transform: rotate(0deg);
+    }
+
+    .socials {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 300ms;
+    }
+
+    .team-member:hover .socials {
+      opacity: 1;
+    }
+  }
+
+  .bBlocksBetaTeamSectionV4 {
+    .team-icon-wrapper {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      background-color: #dbeafe;
+      border-radius: 9999px;
+      margin-bottom: 1.5rem;
+    }
+
+    .team-icon {
+      width: 2rem;
+      height: 2rem;
+      color: #2563eb;
+    }
+
+    .team-card {
+      background-color: #ffffff;
+      border-radius: 0.75rem;
+      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      transition-property: box-shadow;
+      transition-duration: 300ms;
+      overflow: hidden;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .team-card:hover {
+      box-shadow:
+        0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .team-card-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 640px) {
+      .team-card-content {
+        flex-direction: row;
+      }
+    }
+
+    .team-member-image-container {
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 640px) {
+      .team-member-image-container {
+        width: 12rem;
+      }
+    }
+
+    .team-member-image {
+      width: 100%;
+      height: 16rem;
+      object-fit: cover;
+      transition-property: transform;
+      transition-duration: 500ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @media (min-width: 640px) {
+      .team-member-image {
+        height: 100%;
+      }
+    }
+
+    .team-card:hover .team-member-image {
+      transform: scale(1.05);
+    }
+
+    .team-member-info {
+      flex: 1 1 0%;
+      padding: 2rem;
+    }
+
+    .team-member-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .icon-badge {
+      transform: rotate(0deg);
+      transition-property: color, background-color, border-color,
+        text-decoration-color, fill, stroke;
+      transition-duration: 150ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+      span {
+        svg {
+          transition-property: color, background-color, border-color,
+            text-decoration-color, fill, stroke;
+          transition-duration: 150ms;
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+      }
+    }
+
+    .team-member-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .team-member-location {
+      display: flex;
+      align-items: center;
+      // font-size: 0.875rem;
+      // line-height: 1.25rem;
+      // color: #6b7280;
+    }
+
+    .location-icon {
+      margin-right: 0.25rem;
+    }
+
+    .team-member-social {
+      display: flex;
+    }
+
+    .team-member-social > * + * {
+      margin-left: 0.75rem;
+    }
+
+    .social-button {
+      width: 2rem;
+      height: 2rem;
+      background-color: #f3f4f6;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition-property: color, background-color, border-color,
+        text-decoration-color, fill, stroke;
+      transition-duration: 150ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    .social-button:hover {
+      background-color: #dbeafe;
+      color: #2563eb;
+    }
+  }
 }

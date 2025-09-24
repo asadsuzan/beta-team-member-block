@@ -1,6 +1,6 @@
 import { __ } from "@wordpress/i18n";
 import { CheckboxControl, Flex, FlexItem, PanelRow, TextareaControl, TextControl, ToggleControl } from "@wordpress/components";
-import { IconLibrary, InlineMediaUpload, Label } from '../../../../../bpl-tools-main/Components';
+import { IconLibrary, InlineMediaUpload, Label } from '../../../../../bpl-tools/Components';
 import { updateData } from '../../../utils/functions';
 
 const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
@@ -162,7 +162,7 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
 
                         <TextControl
                             className='mt10'
-                            label={__('URL', 'b-blocks')}
+                            label={__('URL', 'btms-block')}
                             disabled={!item.isShow || !isShowSocial}
                             value={item?.url}
                             onChange={(v) => {
@@ -181,7 +181,7 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
 
 
                         <TextControl
-                            label={__('Name', 'b-blocks')}
+                            label={__('Name', 'btms-block')}
                             disabled={!item.isShow || !isShowSocial}
                             value={item?.name}
                             onChange={(v) => {
@@ -314,7 +314,7 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
                             <>
                                 <TextControl
                                     className='mb10'
-                                    label={__('City', 'b-blocks')}
+                                    label={__('City', 'btms-block')}
                                     value={teamMembers[index]?.location?.city || ''}
                                     onChange={(v) => {
                                         setAttributes({
@@ -330,7 +330,7 @@ const TeamMembersItemPanel = ({ attributes, setAttributes, index }) => {
                                 />
 
                                 <TextControl
-                                    label={__('Country', 'b-blocks')}
+                                    label={__('Country', 'btms-block')}
                                     value={teamMembers[index]?.location?.country || ''}
                                     onChange={(v) => {
                                         setAttributes({

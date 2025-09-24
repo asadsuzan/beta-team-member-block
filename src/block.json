@@ -1,15 +1,15 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "b-blocks/team-section-beta",
+	"name": "btms-block/team-section",
 	"version": "1.0.0",
-	"title": "Team Section Beta",
+	"title": "Team Section",
 	"category": "widgets",
 	"description": "A team section block for beta testing.",
 	"keywords": [
 		"team section"
 	],
-	"textdomain": "b-blocks",
+	"textdomain": "btms-block",
 	"attributes": {
 		"alignment": {
 			"type": "string",

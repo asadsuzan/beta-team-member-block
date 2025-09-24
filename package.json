@@ -13,7 +13,7 @@
 		"format": "wp-scripts format",
 		"start": "wp-scripts start --webpack-copy-php",
 		"build": "wp-scripts build --webpack-copy-php",
-		"i18n-pot": "wp i18n make-pot . languages/b-blocks.pot --exclude=\"src\" && cp ./languages/b-blocks.pot ./languages/b-blocks-en_US.po",
+		"i18n-pot": "wp i18n make-pot . languages/btms-block.pot --exclude=\"src\" && cp ./languages/btms-block.pot ./languages/btms-block-en_US.po",
 		"i18n-json": "wp i18n make-json languages/ --no-purge",
 		"i18n-mo": "wp i18n make-mo languages/",
 		"i18n": "npm run i18n-pot && npm run i18n-json && npm run i18n-mo",
@@ -22,7 +22,8 @@
 	},
 	"dependencies": {
 		"immer": "^10.1.1",
-		"lucide-react": "^0.537.0"
+		"lucide-react": "^0.537.0",
+		"react-router-dom": "^7.9.1"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^30.22.0",

@@ -1,59 +1,51 @@
 $primaryColor: #4527a4;
 
 .bBlocksInspectorInfo {
-	padding: 6px;
+  padding: 6px;
 
-	a {
-		text-decoration: none;
-		font-weight: 700;
-	}
+  a {
+    text-decoration: none;
+    font-weight: 700;
+  }
 }
 
+.wp-block-btms-block-team-section {
+  .btms-card {
+    cursor: pointer;
+  }
 
+  .btms-icon-lib {
+    .components-button.has-icon {
+      span {
+        color: #395a08;
+      }
 
+      font-size: 2px;
+      width: 20px;
+      height: 20px;
+      background: none;
+    }
+  }
 
+  .btms-social-panel {
+    margin-bottom: 1rem;
+    padding: 10px;
+    border-radius: 1px;
+    border: 1px solid #ddd;
+  }
 
-.wp-block-b-blocks-team-section-beta {
-	.btms-card {
-		cursor: pointer;
-	}
+  .btms-control-panel-svg {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
 
-	.btms-icon-lib {
-		.components-button.has-icon {
-			span {
-				color: #395a08;
-			}
-
-			font-size: 2px;
-			width: 20px;
-			height: 20px;
-			background: none;
-		}
-
-	}
-
-	.btms-social-panel {
-		margin-bottom: 1rem;
-		padding: 10px;
-		border-radius: 1px;
-		border: 1px solid #ddd;
-	}
-
-
-
-	.btms-control-panel-svg {
-		position: relative;
-		border: 1px solid #ddd;
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 4px;
-
-		svg {
-			height: 15px;
-			width: 15px;
-
-		}
-	}
+    svg {
+      height: 15px;
+      width: 15px;
+    }
+  }
 }

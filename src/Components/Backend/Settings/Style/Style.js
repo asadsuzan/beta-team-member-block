@@ -1,7 +1,7 @@
 
 import { __ } from '@wordpress/i18n';
 import { PanelBody, PanelRow, RangeControl } from '@wordpress/components';
-import { Background, BButtonGroup, BoxControl, ColorControl, Device, Label, Typography } from "../../../../../../bpl-tools-main/Components";
+import { Background, BButtonGroup, BoxControl, ColorControl, Device, Label, Typography } from "../../../../../../bpl-tools/Components";
 import { __experimentalUnitControl as UnitControl, __experimentalBorderControl as BorderControl } from "@wordpress/components"
 import { updateData } from '../../../../utils/functions';
 const Style = ({ attributes, setAttributes, device }) => {
@@ -42,13 +42,13 @@ const Style = ({ attributes, setAttributes, device }) => {
         <PanelRow>
 
           <UnitControl
-            label={__('Row Gap', 'b-blocks')}
+            label={__('Row Gap', 'btms-block')}
             value={columns?.gapX}
             onChange={v => setAttributes({ columns: updateData(columns, v, 'gapX') })}
             className='mt10'
           />
           <UnitControl
-            label={__('Column Gap', 'b-blocks')}
+            label={__('Column Gap', 'btms-block')}
             value={columns?.gapY}
             onChange={v => setAttributes({ columns: updateData(columns, v, 'gapY') })}
             className='mt10'
@@ -66,7 +66,7 @@ const Style = ({ attributes, setAttributes, device }) => {
       {/* section  */}
       <PanelBody
         className='bPlPanelBody'
-        title={__('Section', 'b-blocks')}
+        title={__('Section', 'btms-block')}
         initialOpen={false}
       >
 
@@ -148,17 +148,17 @@ const Style = ({ attributes, setAttributes, device }) => {
 
       <PanelBody
         className='bPlPanelBody'
-        title={__('Header', 'b-blocks')}
+        title={__('Header', 'btms-block')}
         initialOpen={false}
       >
 
         <BButtonGroup
           className="mt10"
-          label={__('Text Align', 'b-blocks')}
+          label={__('Text Align', 'btms-block')}
           options={[
-            { label: __('Left', 'b-blocks'), value: 'left' },
-            { label: __('Center', 'b-blocks'), value: 'center' },
-            { label: __('Right', 'b-blocks'), value: 'right' },
+            { label: __('Left', 'btms-block'), value: 'left' },
+            { label: __('Center', 'btms-block'), value: 'center' },
+            { label: __('Right', 'btms-block'), value: 'right' },
           ]}
           value={textAlign}
           onChange={(v) =>
@@ -220,7 +220,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <Typography
           className="mt10"
-          label={__('Title Typo', 'b-blocks')}
+          label={__('Title Typo', 'btms-block')}
           value={title.typo}
           onChange={(v) =>
             setAttributes({
@@ -233,7 +233,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <ColorControl
           className='mt10'
-          label={__('Title Color', 'b-blocks')}
+          label={__('Title Color', 'btms-block')}
           value={title?.color}
 
           onChange={(v) =>
@@ -268,7 +268,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         {/* header subtitle typo  */}
         <Typography
-          label={__('Subtitle Typography', 'b-blocks')}
+          label={__('Subtitle Typography', 'btms-block')}
           value={subTitle?.typo}
           onChange={(v) =>
             setAttributes({
@@ -280,7 +280,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         {/* header subtitle color  */}
 
         <ColorControl
-          label={__('Subtitle Color', 'b-blocks')}
+          label={__('Subtitle Color', 'btms-block')}
           value={subTitle.color}
 
           onChange={(v) =>
@@ -323,7 +323,7 @@ const Style = ({ attributes, setAttributes, device }) => {
       {/* card /  theme member    styles*/}
       <PanelBody
         className='bPlPanelBody'
-        title={__('Team Member', 'b-blocks')}
+        title={__('Team Member', 'btms-block')}
         initialOpen={false}
       >
 
@@ -333,11 +333,11 @@ const Style = ({ attributes, setAttributes, device }) => {
         {
           theme == 'default' | theme == 'theme2' ? (
             <BButtonGroup
-              label={__('Text align', 'b-blocks')}
+              label={__('Text align', 'btms-block')}
               options={[
-                { label: __('Left', 'b-blocks'), value: 'left' },
-                { label: __('Center', 'b-blocks'), value: 'center' },
-                { label: __('Right', 'b-blocks'), value: 'right' },
+                { label: __('Left', 'btms-block'), value: 'left' },
+                { label: __('Center', 'btms-block'), value: 'center' },
+                { label: __('Right', 'btms-block'), value: 'right' },
               ]}
               value={cardContent?.textAlign}
               onChange={(v) =>
@@ -362,7 +362,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <BorderControl
           className='mt10'
-          label={__('Border', 'b-blocks')}
+          label={__('Border', 'btms-block')}
           value={card?.border}
           onChange={(v) =>
             setAttributes({
@@ -434,7 +434,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         {/* name  */}
         <Typography
           className='mt10'
-          label={__('Name Typo', 'b-blocks')}
+          label={__('Name Typo', 'btms-block')}
           value={name?.typo}
           onChange={(v) =>
             setAttributes({
@@ -444,7 +444,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
         <ColorControl
           className='mt10'
-          label={__('Name Color', 'b-blocks')}
+          label={__('Name Color', 'btms-block')}
           value={name?.color}
 
           onChange={(v) =>
@@ -480,7 +480,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <Typography
           className="mt10"
-          label={__('Role Typo', 'b-blocks')}
+          label={__('Role Typo', 'btms-block')}
           value={role?.typo}
           onChange={(v) =>
             setAttributes({
@@ -490,7 +490,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
         <ColorControl
           className='mt10'
-          label={__('Role Color', 'b-blocks')}
+          label={__('Role Color', 'btms-block')}
           value={role?.color}
 
           onChange={(v) =>
@@ -528,7 +528,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <Typography
           className="mt10"
-          label={__('Bio Typo', 'b-blocks')}
+          label={__('Bio Typo', 'btms-block')}
           value={bio?.typo}
           onChange={(v) =>
             setAttributes({
@@ -538,7 +538,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
         <ColorControl
           className='mt10'
-          label={__('Bio Color', 'b-blocks')}
+          label={__('Bio Color', 'btms-block')}
           value={bio.color}
 
           onChange={(v) =>
@@ -576,7 +576,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <UnitControl
           className="mt20"
-          label={__('Social Button Width', 'b-blocks')}
+          label={__('Social Button Width', 'btms-block')}
           value={button?.width}
           onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "button", 'width') }) }}
 
@@ -585,7 +585,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <UnitControl
           className="mt10"
-          label={__('Social Button Height', 'b-blocks')}
+          label={__('Social Button Height', 'btms-block')}
           value={button?.height}
           onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "button", 'height') }) }}
 
@@ -612,7 +612,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <BorderControl
           className='mt10'
-          label={__('Social Button Border', 'b-blocks')}
+          label={__('Social Button Border', 'btms-block')}
           value={button?.border}
           onChange={(v) =>
             setAttributes({
@@ -663,7 +663,7 @@ const Style = ({ attributes, setAttributes, device }) => {
           }
         />
         <UnitControl
-          label={__('Social Icon Gap', 'b-blocks')}
+          label={__('Social Icon Gap', 'btms-block')}
           value={columns?.gapY}
           onChange={(v) =>
             setAttributes({
@@ -675,7 +675,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         <ColorControl
           className='mt10'
-          label={__('Social Icon Color', 'b-blocks')}
+          label={__('Social Icon Color', 'btms-block')}
           value={cardContent?.button?.icon?.fill}
 
           onChange={(v) =>
@@ -689,7 +689,7 @@ const Style = ({ attributes, setAttributes, device }) => {
         />
         <ColorControl
           className='mt10'
-          label={__('Social Icon Hover Color', 'b-blocks')}
+          label={__('Social Icon Hover Color', 'btms-block')}
           value={cardContent?.button?.icon?.hover?.fill}
 
           onChange={(v) =>
@@ -717,7 +717,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
             <UnitControl
               className="mt10"
-              label={__('Badge Height', 'b-blocks')}
+              label={__('Badge Height', 'btms-block')}
               value={badge?.height}
               onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "badge", 'height') }) }}
 
@@ -726,7 +726,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
             <UnitControl
               className="mt10"
-              label={__('Badge Width', 'b-blocks')}
+              label={__('Badge Width', 'btms-block')}
               value={badge?.width}
               onChange={(v) => { setAttributes({ styles: updateData(styles, v, 'cardContent', "badge", 'width') }) }}
             />
@@ -771,7 +771,7 @@ const Style = ({ attributes, setAttributes, device }) => {
             {/* badge icon color */}
             <ColorControl
               className='mt10'
-              label={__('Icon Color', 'b-blocks')}
+              label={__('Icon Color', 'btms-block')}
               value={cardContent?.badge?.icon?.fill}
               onChange={(v) =>
                 setAttributes({
@@ -783,7 +783,7 @@ const Style = ({ attributes, setAttributes, device }) => {
             {/* badge icon hover color */}
             <ColorControl
               className='mt10'
-              label={__('Icon Hover Color', 'b-blocks')}
+              label={__('Icon Hover Color', 'btms-block')}
               value={cardContent?.badge?.icon?.hover?.fill}
               onChange={(v) =>
                 setAttributes({
@@ -803,7 +803,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
           <Typography
             className="mt10"
-            label={__('Location Typo', 'b-blocks')}
+            label={__('Location Typo', 'btms-block')}
             value={cardContent?.location?.typo}
             onChange={(v) =>
               setAttributes({
@@ -815,7 +815,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
           <ColorControl
             className='mt10'
-            label={__('Location Color', 'b-blocks')}
+            label={__('Location Color', 'btms-block')}
             value={cardContent?.location?.color}
 
             onChange={(v) =>
@@ -835,13 +835,13 @@ const Style = ({ attributes, setAttributes, device }) => {
 
       <PanelBody
         className='bPlPanelBody'
-        title={__('Image', 'b-blocks')}
+        title={__('Image', 'btms-block')}
         initialOpen={false}
 
       >
 
         <BorderControl
-          label={__('Wrapper Border', 'b-blocks')}
+          label={__('Wrapper Border', 'btms-block')}
           value={img?.wrapper?.border}
           onChange={(v) =>
             setAttributes({
@@ -852,7 +852,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
 
         <BoxControl
-          label={__('Wrapper Radius', 'b-blocks')}
+          label={__('Wrapper Radius', 'btms-block')}
           className='mt10'
           values={img?.wrapper?.radius}
           resetValues={{
@@ -869,7 +869,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
         />
         <PanelRow>
-          <Label>{__('Wrapper Padding', 'b-blocks')} <Device /> </Label>
+          <Label>{__('Wrapper Padding', 'btms-block')} <Device /> </Label>
         </PanelRow>
 
         <BoxControl
@@ -888,7 +888,7 @@ const Style = ({ attributes, setAttributes, device }) => {
           }}
 
         />
-        <Label>{__('Wrapper Margin', 'b-blocks')} <Device /> </Label>
+        <Label>{__('Wrapper Margin', 'btms-block')} <Device /> </Label>
 
         <BoxControl
 
@@ -915,7 +915,7 @@ const Style = ({ attributes, setAttributes, device }) => {
 
 
 
-        <Label>{__('Avatar Width', 'b-blocks')} <Device /></Label>
+        <Label>{__('Avatar Width', 'btms-block')} <Device /></Label>
 
         <UnitControl
 
@@ -927,7 +927,7 @@ const Style = ({ attributes, setAttributes, device }) => {
           }}
 
         />
-        <Label>{__('Avatar Height', 'b-blocks')} <Device /></Label>
+        <Label>{__('Avatar Height', 'btms-block')} <Device /></Label>
 
         <UnitControl
 
@@ -940,12 +940,12 @@ const Style = ({ attributes, setAttributes, device }) => {
           unit='px'
           units={{
             px: {
-              label: __('px', 'b-blocks'),
+              label: __('px', 'btms-block'),
             }
           }}
         />
 
-        <Label>{__('Avatar Radius', 'b-blocks')} </Label>
+        <Label>{__('Avatar Radius', 'btms-block')} </Label>
         <BoxControl
 
           values={img?.avatar?.radius}
