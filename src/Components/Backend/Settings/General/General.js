@@ -4,10 +4,12 @@ import { generateId, themeSwitch, updateData } from "../../../../utils/functions
 import { ItemsPanel } from '../../../../../../bpl-tools/Components';
 import TeamMembersItemPanel from '../../itemPanel/TeamMemberItemPanel';
 import { themeOptions } from '../../../../utils/options';
+import { BControlPro } from '../../../../../../bpl-tools/ProControls';
 
-const General = ({ attributes, setAttributes }) => {
+const General = ({ attributes, setAttributes, isPremium, setIsProModalOpen }) => {
   const { section, teamMembers, theme } = attributes;
-
+  const premiumProps = { isPremium, setIsProModalOpen };
+  console.log(premiumProps);
 
   return (
     <>
@@ -18,9 +20,11 @@ const General = ({ attributes, setAttributes }) => {
         <PanelBody className="bPlPanelBody"
           title={__("Themes", "btms-block")}
           initialOpen={true}>
-          <SelectControl
+          <BControlPro
             value={theme} options={themeOptions}
             onChange={(value) => setAttributes(themeSwitch(value, attributes))}
+            Component={SelectControl}
+            {...premiumProps}
           />
         </PanelBody>
 
@@ -30,7 +34,7 @@ const General = ({ attributes, setAttributes }) => {
           title={__("Section", "btms-block")}
           initialOpen={false}
         >
-          <TextControl
+          <BControlPro
             label={__('Title', 'btms-block')}
             value={section.headline}
             onChange={(v) =>
@@ -38,6 +42,8 @@ const General = ({ attributes, setAttributes }) => {
                 section: updateData(section, v, 'headline')
               })
             }
+            Component={TextControl}
+            {...premiumProps}
           />
           <TextControl
             label={__('Slogan', 'btms-block')}

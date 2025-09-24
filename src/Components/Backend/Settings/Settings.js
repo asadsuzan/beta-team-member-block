@@ -7,10 +7,14 @@ import General from './General/General';
 import Style from './Style/Style';
 import { BplBlockPreview } from '../../../../../bpl-tools/Components';
 import { themes } from '../../../utils/themes';
-
-
-const Settings = ({ attributes, setAttributes, device, clientId }) => {
+import { compose } from '@wordpress/compose';
+import { withSelect } from '@wordpress/data';
+import { useState } from 'react';
+import { AboutProModal } from "../../../../../bpl-tools/ProControls";
+const Settings = ({ attributes, setAttributes, device, clientId, siteUrl, isPremium }) => {
+	const [isProModalOpen, setIsProModalOpen] = useState(false);
 	const { alignment, theme } = attributes;
+	const siteLocation = `${siteUrl}/wp-admin/edit.php?post_type=btms_team_section&page=demo_page#/pricing`;
 
 	return <>
 		<InspectorControls>
@@ -21,9 +25,14 @@ const Settings = ({ attributes, setAttributes, device, clientId }) => {
 			<TabPanel className='bPlTabPanel wp-block-btms-block-team-section' activeClass='activeTab' tabs={generalStyleTabs} onSelect={tabController}>
 				{
 					tab => <>
-						{'general' === tab.name && <General device={device} attributes={attributes} setAttributes={setAttributes} />}
+						{'general' === tab.name && <General device={device} attributes={attributes} setAttributes={setAttributes} setIsProModalOpen={setIsProModalOpen}
+							isPremium={isPremium}
+						/>}
 
-						{'style' === tab.name && <Style device={device} attributes={attributes} setAttributes={setAttributes} />}
+						{'style' === tab.name && <Style device={device} attributes={attributes} setAttributes={setAttributes}
+							isProModalOpen={isProModalOpen} isPremium={isPremium}
+
+						/>}
 					</>
 				}
 			</TabPanel>
@@ -38,23 +47,42 @@ const Settings = ({ attributes, setAttributes, device, clientId }) => {
 				{ title: __('Block Name in right', 'textdomain'), align: 'right', icon: 'align-right' }
 			]} />
 
-			{/* for image/screenshot */}
-			{/* <BlockPreview
-				options={toolTipPresets}
-				isPremium={false}
-				value={theme}
-				onChange={val => setAttributes({ theme: val })}
-			/> */}
 
 			{/* for blocks */}
 			<BplBlockPreview
 				blocks={themes()}
 				clientId={clientId}
 				value={theme}
+
 			/>
 
 
 		</BlockControls>
+		<AboutProModal
+			isProModalOpen={isProModalOpen}
+			setIsProModalOpen={setIsProModalOpen}
+			link={siteLocation}
+		>
+			<li>
+				<strong>
+					{__("Themes: ", "btms-block")}
+				</strong>
+
+			</li>
+			<li>
+				<strong>
+					{__("Headline: ", "btms-block")}
+				</strong>
+
+			</li>
+		</AboutProModal>
 	</>;
 };
-export default Settings;
+// export default Settings;
+export default compose(
+	withSelect((select) => {
+		return {
+			siteUrl: select('core').getSite()?.url,
+		};
+	})
+)(Settings);

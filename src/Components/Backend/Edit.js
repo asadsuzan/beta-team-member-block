@@ -4,17 +4,18 @@ import Settings from "./Settings/Settings";
 import Style from "../Common/Style";
 import TeamSection from '../Common/TeamSection';
 import ClipBoard from '../../shortcode/clipBoard';
-
+import { usePremiumInEditor } from '../../../../bpl-tools/hooks';
 
 const Edit = (props) => {
   const { attributes, setAttributes, clientId, device, postType, postId } = props;
 
+  const { isPremium, isLoading } = usePremiumInEditor("btmsUtils", "btmsPremiumChecker");
 
-
+  console.log({ isPremium, isLoading });
 
   return (
     <>
-      <Settings {...{ attributes, setAttributes, device, clientId }} />
+      <Settings {...{ attributes, setAttributes, device, clientId, isPremium }} />
 
       <div {...useBlockProps({
         draggable: false
