@@ -1,4 +1,4 @@
-const slug = 'panorama';
+const slug = 'btms-block';
 
 export const dashboardInfo = (info) => {
 	const { version, isPremium, hasPro } = info;
@@ -6,12 +6,12 @@ export const dashboardInfo = (info) => {
 	const proSuffix = isPremium ? ' Pro' : '';
 
 	return {
-		name: ` Service Card Block ${proSuffix}`,
-		displayName: `Service Card Block${proSuffix}`,
+		name: `Team Members Section${proSuffix}`,
+		displayName: `Team Members Section${proSuffix}`,
 		description: 'Create and showcase your services in style with our Service Card Block plugin. Easily add customizable service cards to your WordPress site, complete with icons, images, and descriptions. Perfect for highlighting your offerings and engaging visitors.',
 		slug,
 		logo: `https://i.ibb.co.com/zTbMR32d/Generated-Image-September-22-2025-2-49-PM.png`,
-		banner: `https://i.ibb.co.com/LhZjvPFq/Generated-Image-September-22-2025-2-54-PM.png`,
+		banner: `https://i.ibb.co.com/1GHSQBjB/Generated-Image-September-24-2025-5-53-PM.png`,
 		// video: 'https://www.youtube.com/watch?v=bs-U13KtYEA',
 		isYoutube: true,
 		version,
@@ -24,9 +24,9 @@ export const dashboardInfo = (info) => {
 			pricing: `https://bplugins.com/products/${slug}/pricing`,
 		},
 		freemius: {
-			product_id: 8824,
-			plan_id: 14971,
-			public_key: 'pk_a112d1d1d66d3b480dbea5690d3ff'
+			product_id: 20878,
+			plan_id: 34779,
+			public_key: 'pk_f59a4867d8a87ae45bc5c97962bd7'
 		}
 	}
 }
@@ -62,27 +62,27 @@ export const demoInfo = {
 	demos: [
 		{
 			icon: '',
-			title: 'Vertical Layout',
+			title: 'Theme One',
 			description: '',
 			category: '',
 			type: 'image',
-			url: 'https://i.ibb.co.com/Ld54Mt7f/Generated-Image-September-22-2025-3-01-PM.png'
+			url: 'https://i.ibb.co.com/7HYmt7p/Generated-Image-September-24-2025-5-56-PM.png'
 		},
 		{
 			icon: '',
-			title: 'Horizontal Layout',
+			title: 'Theme two',
 			description: '',
 			category: '',
 			type: 'image',
-			url: 'https://i.ibb.co.com/1t2frHD3/Generated-Image-September-22-2025-3-05-PM.png'
+			url: 'https://i.ibb.co.com/Tqd60gPp/Generated-Image-September-24-2025-5-56-PM-1.png'
 		},
 		{
 			icon: '',
-			title: 'Diagonal Layout',
+			title: 'Theme Theree',
 			description: '',
 			category: '',
 			type: 'image',
-			url: 'https://i.ibb.co.com/jPLhTL7S/Generated-Image-September-22-2025-3-10-PM.png'
+			url: 'https://i.ibb.co.com/HDsNqFky/Generated-Image-September-24-2025-5-56-PM-2.png'
 		},
 
 	]

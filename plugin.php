@@ -89,12 +89,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			add_action( 'admin_menu', [ $this, 'add_demo_submenu' ] );
 
 			// for premium only
-				add_action('wp_ajax_btmsPremiumChecker', [$this, 'btmsPremiumChecker']);
-				add_action('wp_ajax_nopriv_btmsPremiumChecker', [$this, 'btmsPremiumChecker']);
-				add_action('admin_init', [$this, 'registerSettings']);
-				add_action('rest_api_init', [$this, 'registerSettings']);
+			add_action('wp_ajax_btmsPremiumChecker', [$this, 'btmsPremiumChecker']);
+			add_action('wp_ajax_nopriv_btmsPremiumChecker', [$this, 'btmsPremiumChecker']);
+			add_action('admin_init', [$this, 'registerSettings']);
+			add_action('rest_api_init', [$this, 'registerSettings']);
 		}
-			function btmsPremiumChecker(){
+		function btmsPremiumChecker(){
 				$nonce = sanitize_text_field($_POST['_wpnonce'] ?? null);
 
 				if (!wp_verify_nonce($nonce, 'wp_ajax')) {
@@ -118,7 +118,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				]);
 			}
         
-		function onInit() {
+		
+			function onInit() {
 			register_block_type( __DIR__ . '/build' );
 			register_post_type(
 				'btms_team_section',
