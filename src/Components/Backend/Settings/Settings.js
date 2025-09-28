@@ -53,6 +53,7 @@ const Settings = ({ attributes, setAttributes, device, clientId, siteUrl, isPrem
 				blocks={themes()}
 				clientId={clientId}
 				value={theme}
+				isPremium={isPremium}
 
 			/>
 

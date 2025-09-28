@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Team Section 
  * Description:  A team section plugin with multiple styles and layouts with easy to use interface.
- * Version: 1.0.0
+ * Version: 1.0.2
  * Author: void
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -17,28 +17,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
-   if ( function_exists( 'bb_fs' ) ) {
-        bb_fs()->set_basename( true, __FILE__ );
+   if ( function_exists( 'btms_fs' ) ) {
+        btms_fs()->set_basename( true, __FILE__ );
     } else {
 		// Constant
-	define( 'BTMS_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.0' );
+	define( 'BTMS_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '1.0.2' );
 	define( 'BTMS_DIR_URL', plugin_dir_url( __FILE__ ) );
 	define( 'BTMS_DIR_PATH', plugin_dir_path( __FILE__ ) );
 	define( 'BTMS_HAS_PRO', file_exists( dirname(__FILE__) . '/freemius/start.php' ) );
-        if ( ! function_exists( 'bb_fs' ) ) {
+        if ( ! function_exists( 'btms_fs' ) ) {
     // Create a helper function for easy SDK access.
-    function bb_fs() {
-        global $bb_fs;
+    function btms_fs() {
+        global $btms_fs;
 
-        if ( ! isset( $bb_fs ) ) {
+        if ( ! isset( $btms_fs ) ) {
 			if(BTMS_HAS_PRO){
 				require_once dirname( __FILE__ ) . '/freemius/start.php';
 			}else{
 				require_once dirname( __FILE__ ) . '/freemius-light/start.php';
 			}
 			$btms_config= array(
-                'id'                  => '20878',
+                'id'          => '20878',
                 'slug'                => 'btms-block',
+                'premium_slug'        => 'btms-block-pro',
                 'type'                => 'plugin',
                 'public_key'          => 'pk_f59a4867d8a87ae45bc5c97962bd7',
                 'is_premium'          => true,
@@ -48,33 +49,33 @@ if ( ! defined( 'ABSPATH' ) ) {
                 'has_addons'          => false,
                 'has_paid_plans'      => true,
                 // Automatically removed in the free version. If you're not using the
-                // auto-generated free version, delete this line before uploading to wp.org.
+                // auto-generated free version, delete this line befotms_fs()re uploading to wp.org.
                 'wp_org_gatekeeper'   => 'OA7#BoRiBNqdf52FvzEf!!074aRLPs8fspif$7K1#4u4Csys1fQlCecVcUTOs2mcpeVHi#C2j9d09fOTvbC0HloPT7fFee5WdS3G',
                 'trial'               => array(
                     'days'               => 3,
                     'is_require_payment' => false,
                 ),
                 'menu'                => array(
+                    'slug'           => 'edit.php?post_type=btms_team_section',
                     'first-path'     => 'edit.php?post_type=btms_team_section&page=demo_page',
-                    'contact'        => false,
                     'support'        => false,
                 ),
             );
          
-            $bb_fs = BTMS_HAS_PRO ? fs_dynamic_init( $btms_config ) : fs_light_dynamic_init( $btms_config );
+            $btms_fs = BTMS_HAS_PRO ? fs_dynamic_init( $btms_config ) : fs_light_dynamic_init( $btms_config );
         }
 
-        return $bb_fs;
+        return $btms_fs;
     }
 
     // Init Freemius.
-    bb_fs();
+    btms_fs();
     // Signal that SDK was initiated.
-    do_action( 'bb_fs_loaded' );
+    do_action( 'btms_fs_loaded' );
 }
        
  	function btmsIsPremium(){
-		return BTMS_HAS_PRO ? bb_fs()->can_use_premium_code() : false;
+		return BTMS_HAS_PRO ? btms_fs()->can_use_premium_code() : false;
 	}
 
      // ... Your plugin's main file logic ...
@@ -87,12 +88,44 @@ if ( ! defined( 'ABSPATH' ) ) {
 			add_shortcode( 'btms_team_section', [ $this, 'btmsShortcode' ] );
 			add_action( 'admin_enqueue_scripts', [ $this, 'adminEnqueueScripts' ] );
 			add_action( 'admin_menu', [ $this, 'add_demo_submenu' ] );
+			add_action('wp_ajax_hrb_save_room', [$this, 'hrb_save_room_handler']);
+			add_action('wp_ajax_hrb_get_room_data', [$this, 'hrb_get_room_data_handler']);
 
 			// for premium only
 			add_action('wp_ajax_btmsPremiumChecker', [$this, 'btmsPremiumChecker']);
 			add_action('wp_ajax_nopriv_btmsPremiumChecker', [$this, 'btmsPremiumChecker']);
 			add_action('admin_init', [$this, 'registerSettings']);
 			add_action('rest_api_init', [$this, 'registerSettings']);
+
+		}
+			function hrb_save_room_handler() {
+			if (!check_ajax_referer('hrb_nonce', 'nonce', false)) {
+				wp_send_json_error('Invalid nonce');
+			}
+		
+			$title = sanitize_text_field($_POST['title']);
+			
+			$image = $_FILES['image'];
+			$upload = wp_handle_upload($image, array('test_form' => false));
+			
+			if ($upload && !isset($upload['error'])) {
+				$room_data = array(
+					'title' => $title,
+					'image_url' => $upload['url']
+				);
+				
+				update_option('hrb_room_data', $room_data);
+				wp_send_json_success('Room saved successfully');
+			} else {
+				wp_send_json_error('Failed to upload image');
+			}
+		}
+
+		function hrb_get_room_data_handler() {
+			check_ajax_referer('hrb_nonce', 'nonce');
+			
+			$room_data = get_option('hrb_room_data', []);
+			wp_send_json_success($room_data);
 		}
 		function btmsPremiumChecker(){
 				$nonce = sanitize_text_field($_POST['_wpnonce'] ?? null);
@@ -117,7 +150,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 					'sanitize_callback' => 'sanitize_text_field'
 				]);
 			}
-        
+        	
+	
 		
 			function onInit() {
 			register_block_type( __DIR__ . '/build' );
@@ -142,6 +176,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				]
 			);
 		}
+		
 
 		function add_demo_submenu() {
 			add_submenu_page(
@@ -239,6 +274,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		public function adminEnqueueScripts( $screen ): void {
 			global $typenow;
+			echo $typenow;
 
 			if ( 'btms_team_section' === $typenow ) {
 				wp_enqueue_script( 'admin-post-js', BTMS_DIR_URL . 'build/admin-post.js', [], BTMS_VERSION, true );
@@ -248,6 +284,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					wp_enqueue_script( 'bpl-admin-dashboard-js', BTMS_DIR_URL . 'build/admin-dashboard.js', [ 'react', 'react-dom', 'react-jsx-runtime' ], BTMS_VERSION, true );
 					wp_enqueue_style( 'bpl-admin-dashboard-css', BTMS_DIR_URL . 'build/admin-dashboard.css', [], BTMS_VERSION );
 				}
+
+				wp_localize_script('bpl-admin-dashboard-js', 'hrbData', [
+					'nonce' => wp_create_nonce( 'hrb_nonce' ),
+					'ajaxUrl' => admin_url('admin-ajax.php')
+				]);
 			}
 		}
 

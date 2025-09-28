@@ -10,6 +10,7 @@ import Welcome from './Welcome';
 
 const App = (props) => {
 	const { isPremium } = props;
+	console.log('ajax', window?.hrbData)
 
 	return <Router>
 		<Routes>
