@@ -15,5 +15,8 @@ export const themeOptions = [
 	{ value: 'theme2', label: __('Theme-2', 'btms-block') },
 	{ value: 'theme3', label: __('Theme-3', 'btms-block') },
 	{ value: 'theme4', label: __('Theme-4', 'btms-block') },
+	{ value: 'theme5', label: __('Theme-5', 'btms-block') },
+	{ value: 'theme6', label: __('Theme-6', 'btms-block') }
+
 ]
 
